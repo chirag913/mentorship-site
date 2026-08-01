@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Profit Calculator — Indian Ecommerce | Chirag Sharma</title>
+<meta name="description" content="Your ₹1 lakh sale isn't ₹32,000 profit. Calculate what RTO actually leaves you with.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0E11;
+    --surface:#13171C;
+    --surface-2:#191E25;
+    --rule:#242C35;
+    --rule-soft:#1C232B;
+    --gold:#E8B84B;
+    --gold-dim:#8A6E28;
+    --loss:#E5484D;
+    --loss-dim:#5C2326;
+    --text:#F2F4F6;
+    --muted:#8B95A1;
+    --muted-2:#5E6873;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --sans:'Space Grotesk',system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:0 20px 80px;
+  }
+
+  .wrap{max-width:560px;margin:0 auto}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 40px}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted-2);
+    margin-bottom:24px;
+  }
+
+  .hero h1{
+    font-size:clamp(30px,8.5vw,42px);
+    font-weight:700;
+    letter-spacing:-.03em;
+    line-height:1.08;
+  }
+  .hero h1 .strike{
+    color:var(--muted-2);
+    text-decoration:line-through;
+    text-decoration-thickness:2px;
+  }
+  .hero h1 .hit{color:var(--gold)}
+
+  .hero p{
+    margin-top:20px;
+    color:var(--muted);
+    font-size:15px;
+    max-width:44ch;
+  }
+
+  /* ---------- ledger card ---------- */
+  .card{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    overflow:hidden;
+  }
+
+  .card-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    padding:16px 20px;
+    border-bottom:1px solid var(--rule);
+    background:var(--surface-2);
+  }
+  .card-head span{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted-2);
+  }
+
+  .rows{padding:4px 20px 18px}
+
+  .row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:13px 0;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .row:last-child{border-bottom:0}
+
+  .row label{
+    font-size:14px;
+    color:var(--muted);
+    flex:1;
+  }
+  .row .unit{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--muted-2);
+    margin-left:6px;
+  }
+
+  input[type=number]{
+    width:112px;
+    background:transparent;
+    border:0;
+    border-bottom:1px solid var(--rule);
+    color:var(--text);
+    font-family:var(--mono);
+    font-size:16px;
+    font-weight:500;
+    text-align:right;
+    padding:4px 2px;
+    border-radius:0;
+    transition:border-color .15s ease;
+  }
+  input[type=number]:focus{
+    outline:none;
+    border-bottom-color:var(--gold);
+  }
+  input[type=number]:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  input[type=number]{-moz-appearance:textfield}
+
+  /* ---------- rto slider ---------- */
+  .rto{
+    padding:20px;
+    border-top:1px solid var(--rule);
+    background:var(--surface-2);
+  }
+  .rto-top{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+  .rto-top label{font-size:14px;color:var(--text);font-weight:500}
+  .rto-val{
+    font-family:var(--mono);
+    font-size:24px;
+    font-weight:600;
+    color:var(--loss);
+    font-variant-numeric:tabular-nums;
+  }
+
+  input[type=range]{
+    -webkit-appearance:none;
+    appearance:none;
+    width:100%;
+    height:3px;
+    background:var(--rule);
+    border-radius:99px;
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance:none;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--loss);
+    border:3px solid var(--ink);
+    cursor:pointer;
+    box-shadow:0 0 0 1px var(--loss);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--loss);
+    border:3px solid var(--ink);
+    cursor:pointer;
+    box-shadow:0 0 0 1px var(--loss);
+  }
+  input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+
+  .scale{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+    font-family:var(--mono);
+    font-size:10.5px;
+    color:var(--muted-2);
+    letter-spacing:.06em;
+  }
+
+  /* ---------- the reveal ---------- */
+  .reveal{margin-top:14px}
+
+  .stack{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    padding:22px 20px 24px;
+  }
+
+  .line{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .line + .line{margin-top:6px}
+
+  .line .k{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted-2);
+  }
+  .line .v{
+    font-family:var(--mono);
+    font-size:19px;
+    font-weight:500;
+    color:var(--muted);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* signature: the drain bar */
+  .bar{
+    display:flex;
+    height:10px;
+    border-radius:99px;
+    overflow:hidden;
+    margin:20px 0 22px;
+    background:var(--loss-dim);
+  }
+  .bar-kept{
+    background:var(--gold);
+    transition:width .35s cubic-bezier(.4,0,.2,1);
+  }
+  .bar-lost{
+    background:var(--loss);
+    flex:1;
+    transition:width .35s cubic-bezier(.4,0,.2,1);
+  }
+
+  .final .k{color:var(--muted);font-size:11px}
+  .final .v{
+    font-size:clamp(34px,10vw,46px);
+    font-weight:600;
+    color:var(--gold);
+    letter-spacing:-.02em;
+    line-height:1;
+    transition:color .2s ease;
+  }
+  .final .v.neg{color:var(--loss)}
+
+  .verdict{
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid var(--rule-soft);
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+  .verdict b{color:var(--text);font-weight:600}
+  .verdict .warn{color:var(--loss);font-weight:600}
+
+  /* ---------- breakeven note ---------- */
+  .note{
+    margin-top:14px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 18px;
+    border:1px dashed var(--rule);
+    border-radius:12px;
+  }
+  .note .n-val{
+    font-family:var(--mono);
+    font-size:22px;
+    font-weight:600;
+    color:var(--loss);
+    font-variant-numeric:tabular-nums;
+    flex-shrink:0;
+  }
+  .note .n-txt{font-size:13px;color:var(--muted);line-height:1.5}
+
+  /* ---------- cta ---------- */
+  .cta{
+    margin-top:44px;
+    padding:32px 24px;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    text-align:center;
+  }
+  .cta h2{
+    font-size:21px;
+    font-weight:600;
+    letter-spacing:-.02em;
+    margin-bottom:10px;
+  }
+  .cta p{
+    color:var(--muted);
+    font-size:14px;
+    max-width:38ch;
+    margin:0 auto 22px;
+    line-height:1.6;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--gold);
+    color:#100C02;
+    font-family:var(--sans);
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:-.01em;
+    padding:15px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,184,75,.18)}
+  .btn:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+  .cta .sub{
+    margin-top:14px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted-2);
+  }
+
+  footer{
+    margin-top:36px;
+    text-align:center;
+    font-size:12.5px;
+    color:var(--muted-2);
+    line-height:1.7;
+  }
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+  footer a:hover{color:var(--gold);border-color:var(--gold-dim)}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+  }
+
+  @media (max-width:400px){
+    .row{gap:10px}
+    input[type=number]{width:96px;font-size:15px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Indian ecommerce · RTO calculator</div>
+    <h1>
+      Your ₹1 lakh sale is<br>
+      <span class="strike">₹32,000 profit</span><br>
+      <span class="hit">until RTO happens.</span>
+    </h1>
+    <p>Put your real numbers in. See what actually reaches your bank account after returns eat their share.</p>
+  </header>
+
+  <section class="card" aria-label="Your numbers">
+    <div class="card-head">
+      <span>Per order</span>
+      <span>₹</span>
+    </div>
+
+    <div class="rows">
+      <div class="row">
+        <label for="price">Selling price</label>
+        <input type="number" id="price" value="1000" min="0" inputmode="numeric">
+      </div>
+      <div class="row">
+        <label for="cost">Product cost</label>
+        <input type="number" id="cost" value="200" min="0" inputmode="numeric">
+      </div>
+      <div class="row">
+        <label for="ship">Forward shipping</label>
+        <input type="number" id="ship" value="100" min="0" inputmode="numeric">
+      </div>
+      <div class="row">
+        <label for="rship">Return shipping <span class="unit">on RTO</span></label>
+        <input type="number" id="rship" value="100" min="0" inputmode="numeric">
+      </div>
+      <div class="row">
+        <label for="ad">Ad cost per order</label>
+        <input type="number" id="ad" value="200" min="0" inputmode="numeric">
+      </div>
+      <div class="row">
+        <label for="gst">GST <span class="unit">%</span></label>
+        <input type="number" id="gst" value="18" min="0" max="100" inputmode="numeric">
+      </div>
+      <div class="row">
+        <label for="orders">Orders this month</label>
+        <input type="number" id="orders" value="100" min="1" inputmode="numeric">
+      </div>
+    </div>
+
+    <div class="rto">
+      <div class="rto-top">
+        <label for="rto">RTO rate</label>
+        <div class="rto-val"><span id="rtoOut">30</span>%</div>
+      </div>
+      <input type="range" id="rto" min="0" max="90" value="30" step="1"
+             aria-describedby="rtoScale">
+      <div class="scale" id="rtoScale">
+        <span>0%</span><span>India avg 30%</span><span>90%</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="stack">
+      <div class="line">
+        <span class="k">Revenue booked</span>
+        <span class="v" id="gmv">₹1,00,000</span>
+      </div>
+      <div class="line">
+        <span class="k">Profit if all delivered</span>
+        <span class="v" id="ideal">₹32,000</span>
+      </div>
+
+      <div class="bar" role="img" aria-label="Share of expected profit you keep">
+        <div class="bar-kept" id="barKept" style="width:32%"></div>
+        <div class="bar-lost" id="barLost"></div>
+      </div>
+
+      <div class="line final">
+        <span class="k">You actually keep</span>
+        <span class="v" id="real">₹10,400</span>
+      </div>
+
+      <p class="verdict" id="verdict"></p>
+    </div>
+
+    <div class="note">
+      <div class="n-val" id="breakeven">44%</div>
+      <div class="n-txt">RTO ke iss level pe tumhara profit zero ho jaata hai. Uske upar, har order loss hai.</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Numbers theek nahi lag rahe?</h2>
+    <p>RTO fix karna niche, pricing aur process pe depend karta hai. Agar tum stuck ho, apna setup dekhte hain saath mein.</p>
+    <a class="btn" href="https://chiragsharma.co" target="_blank" rel="noopener">Book a consultation</a>
+    <div class="sub">Applications reviewed manually</div>
+  </section>
+
+  <footer>
+    Built by <a href="https://chiragsharma.co" target="_blank" rel="noopener">Chirag Sharma</a><br>
+    Estimates only — apne actual courier aur ad numbers use karo.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var f = {
+    price:  document.getElementById('price'),
+    cost:   document.getElementById('cost'),
+    ship:   document.getElementById('ship'),
+    rship:  document.getElementById('rship'),
+    ad:     document.getElementById('ad'),
+    gst:    document.getElementById('gst'),
+    orders: document.getElementById('orders'),
+    rto:    document.getElementById('rto')
+  };
+
+  var out = {
+    rto:       document.getElementById('rtoOut'),
+    gmv:       document.getElementById('gmv'),
+    ideal:     document.getElementById('ideal'),
+    real:      document.getElementById('real'),
+    barKept:   document.getElementById('barKept'),
+    verdict:   document.getElementById('verdict'),
+    breakeven: document.getElementById('breakeven')
+  };
+
+  function num(el, fallback){
+    var v = parseFloat(el.value);
+    return (isNaN(v) || v < 0) ? fallback : v;
+  }
+
+  function inr(n){
+    var neg = n < 0;
+    n = Math.round(Math.abs(n));
+    var s = n.toString();
+    if (s.length > 3){
+      var last3 = s.slice(-3);
+      var rest  = s.slice(0, -3);
+      s = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + last3;
+    }
+    return (neg ? '−₹' : '₹') + s;
+  }
+
+  function calc(){
+    var price  = num(f.price, 0),
+        cost   = num(f.cost, 0),
+        ship   = num(f.ship, 0),
+        rship  = num(f.rship, 0),
+        ad     = num(f.ad, 0),
+        gstPct = Math.min(num(f.gst, 0), 100),
+        orders = Math.max(Math.round(num(f.orders, 1)), 1),
+        rtoPct = num(f.rto, 0);
+
+    var gstAmt = price * (gstPct / 100);
+
+    // profit on an order that actually gets delivered
+    var perDelivered = price - cost - ship - ad - gstAmt;
+    // money burnt on an order that comes back
+    var perRTO = ad + ship + rship;
+
+    var rto       = rtoPct / 100;
+    var delivered = orders * (1 - rto);
+    var returned  = orders * rto;
+
+    var idealProfit = orders * perDelivered;
+    var realProfit  = (delivered * perDelivered) - (returned * perRTO);
+    var gmv         = orders * price;
+
+    // RTO % where profit hits exactly zero
+    var beDen = perDelivered + perRTO;
+    var breakeven = (perDelivered <= 0) ? 0
+                  : (beDen <= 0 ? 100 : (perDelivered / beDen) * 100);
+
+    // paint
+    out.rto.textContent   = Math.round(rtoPct);
+    out.gmv.textContent   = inr(gmv);
+    out.ideal.textContent = inr(idealProfit);
+    out.real.textContent  = inr(realProfit);
+
+    var realEl = out.real;
+    if (realProfit < 0) realEl.classList.add('neg');
+    else realEl.classList.remove('neg');
+
+    var keptShare = (idealProfit > 0) ? (realProfit / idealProfit) * 100 : 0;
+    keptShare = Math.max(0, Math.min(100, keptShare));
+    out.barKept.style.width = keptShare.toFixed(1) + '%';
+
+    out.breakeven.textContent = Math.max(0, Math.round(breakeven)) + '%';
+
+    // verdict copy
+    var v;
+    if (perDelivered <= 0){
+      v = '<span class="warn">Har delivered order pe bhi loss hai.</span> Pricing ya cost structure pehle theek karo — RTO uske baad ki problem hai.';
+    } else if (realProfit < 0){
+      v = 'Is RTO rate pe tum <span class="warn">' + inr(Math.abs(realProfit)) + ' ka loss</span> kar rahe ho. Sale ho rahi hai, paisa shipping aur ads mein jaa raha hai.';
+    } else {
+      var lostPct = Math.round(100 - keptShare);
+      var margin  = (gmv > 0) ? (realProfit / gmv) * 100 : 0;
+      v = 'RTO ne tumhara <b>' + lostPct + '% profit</b> kha liya. Real margin: <b>' +
+          margin.toFixed(1) + '%</b> — jo dikh raha tha ' +
+          ((gmv > 0) ? ((idealProfit / gmv) * 100).toFixed(1) : '0') + '% uske against.';
+    }
+    out.verdict.innerHTML = v;
+  }
+
+  Object.keys(f).forEach(function(k){
+    f[k].addEventListener('input', calc);
+  });
+
+  calc();
+})();
+</script>
+</body>
+</html>
