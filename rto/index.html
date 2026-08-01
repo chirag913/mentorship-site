@@ -377,7 +377,7 @@
       <span class="strike">₹32,000 profit</span><br>
       <span class="hit">until RTO happens.</span>
     </h1>
-    <p>Put your real numbers in. See what actually reaches your bank account after returns eat their share.</p>
+    <p>Put your real numbers in. See what actually reaches your bank account after returns take their cut.</p>
   </header>
 
   <section class="card" aria-label="Your numbers">
@@ -456,20 +456,20 @@
 
     <div class="note">
       <div class="n-val" id="breakeven">44%</div>
-      <div class="n-txt">RTO ke iss level pe tumhara profit zero ho jaata hai. Uske upar, har order loss hai.</div>
+      <div class="n-txt">At this RTO rate your profit hits zero. Above it, every order costs you money.</div>
     </div>
   </section>
 
   <section class="cta">
-    <h2>Numbers theek nahi lag rahe?</h2>
-    <p>RTO fix karna niche, pricing aur process pe depend karta hai. Agar tum stuck ho, apna setup dekhte hain saath mein.</p>
-    <a class="btn" href="https://chiragsharma.co" target="_blank" rel="noopener">Book a consultation</a>
-    <div class="sub">Applications reviewed manually</div>
+    <h2>That gap is fixable.</h2>
+    <p>RTO isn't luck — it's process. Cities, couriers, confirmation flow, prepaid mix. I've taken a store from 35% RTO down to single digits. Let's look at yours.</p>
+    <a class="btn" href="/">Book a consultation</a>
+    <div class="sub">45 min · 1-on-1 · ₹2,499</div>
   </section>
 
   <footer>
     Built by <a href="https://chiragsharma.co" target="_blank" rel="noopener">Chirag Sharma</a><br>
-    Estimates only — apne actual courier aur ad numbers use karo.
+    Estimates only — use your own courier and ad numbers for accuracy.
   </footer>
 
 </div>
@@ -563,15 +563,15 @@
     // verdict copy
     var v;
     if (perDelivered <= 0){
-      v = '<span class="warn">Har delivered order pe bhi loss hai.</span> Pricing ya cost structure pehle theek karo — RTO uske baad ki problem hai.';
+      v = '<span class="warn">You lose money even on delivered orders.</span> Fix pricing or cost structure first — RTO is a problem for after that.';
     } else if (realProfit < 0){
-      v = 'Is RTO rate pe tum <span class="warn">' + inr(Math.abs(realProfit)) + ' ka loss</span> kar rahe ho. Sale ho rahi hai, paisa shipping aur ads mein jaa raha hai.';
+      v = 'At this RTO rate you\'re running a <span class="warn">' + inr(Math.abs(realProfit)) + ' loss</span>. Sales are happening. The money is going to couriers and ads.';
     } else {
       var lostPct = Math.round(100 - keptShare);
       var margin  = (gmv > 0) ? (realProfit / gmv) * 100 : 0;
-      v = 'RTO ne tumhara <b>' + lostPct + '% profit</b> kha liya. Real margin: <b>' +
-          margin.toFixed(1) + '%</b> — jo dikh raha tha ' +
-          ((gmv > 0) ? ((idealProfit / gmv) * 100).toFixed(1) : '0') + '% uske against.';
+      var shownMargin = (gmv > 0) ? ((idealProfit / gmv) * 100).toFixed(1) : '0';
+      v = 'RTO just ate <b>' + lostPct + '%</b> of your profit. Real margin: <b>' +
+          margin.toFixed(1) + '%</b> — not the ' + shownMargin + '% it looked like.';
     }
     out.verdict.innerHTML = v;
   }
