@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropshipping on Google Ads — The Real Playbook | Chirag Sharma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12131A;
+    --bg-raised:#191B24;
+    --ink:#ECE9E2;
+    --ink-dim:#8B90A3;
+    --line:#2A2D3A;
+    --gold:#D4A44C;
+    --gold-dim:#8B7038;
+    --coral:#FF6B4A;
+    --search:#4C8BD4;
+    --shop:#4CD48A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold); color:#12131A;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+  a{color:inherit;}
+
+  h1,h2,h3{font-family:'Space Grotesk', sans-serif; font-weight:700; letter-spacing:-0.02em;}
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--gold);}
+
+  /* HERO */
+  .hero{
+    padding:96px 0 72px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:'';
+    position:absolute; top:-40%; right:-10%;
+    width:520px; height:520px;
+    background:radial-gradient(circle, rgba(212,164,76,0.10) 0%, rgba(212,164,76,0) 70%);
+    pointer-events:none;
+  }
+  .hero h1{
+    font-size:clamp(34px, 5.6vw, 58px);
+    line-height:1.05;
+    margin:20px 0 22px;
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold);
+  }
+  .hero p.sub{
+    font-size:18px;
+    color:var(--ink-dim);
+    max-width:52ch;
+    margin-bottom:34px;
+  }
+  .byline{
+    display:flex; align-items:center; gap:14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--ink-dim);
+  }
+  .byline .dot{width:6px; height:6px; border-radius:50%; background:var(--coral);}
+  .byline strong{color:var(--ink); font-weight:500;}
+
+  /* SECTION SCAFFOLDING */
+  section{padding:64px 0; border-bottom:1px solid var(--line);}
+  .section-head{margin-bottom:34px;}
+  .section-head h2{font-size:clamp(24px,3.4vw,32px); margin-top:14px;}
+  .lede{color:var(--ink-dim); font-size:16.5px; max-width:60ch; margin-top:12px;}
+
+  /* OVERVIEW: search vs social intent */
+  .compare{
+    display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:30px;
+  }
+  .compare > div{background:var(--bg-raised); padding:26px 24px;}
+  .compare h3{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    font-weight:500; margin-bottom:14px; display:flex; align-items:center; gap:8px;
+  }
+  .compare h3.tag-search{color:var(--search);}
+  .compare h3.tag-social{color:var(--ink-dim);}
+  .compare h3 .sq{width:8px; height:8px; border-radius:2px;}
+  .tag-search .sq{background:var(--search);}
+  .tag-social .sq{background:var(--ink-dim);}
+  .compare ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .compare li{font-size:14.5px; color:var(--ink); padding-left:16px; position:relative;}
+  .compare li::before{content:'—'; position:absolute; left:0; color:var(--ink-dim);}
+
+  /* CAMPAIGN STRUCTURE DIAGRAM — signature element */
+  .diagram{
+    margin-top:40px;
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:36px 28px 30px;
+  }
+  .diagram .dcap{
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--ink-dim);
+    text-align:center; margin-bottom:26px; letter-spacing:0.05em;
+  }
+  .tier{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; position:relative;}
+  .tier + .tier{margin-top:6px;}
+  .node{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    padding:10px 16px;
+    border-radius:7px;
+    border:1px solid var(--line);
+    background:#14161F;
+    white-space:nowrap;
+  }
+  .node.campaign{border-color:var(--gold-dim); color:var(--gold); font-weight:500; padding:12px 22px; font-size:13.5px;}
+  .node.adgroup{border-color:var(--search); color:var(--search);}
+  .node.leaf{color:var(--ink-dim); font-size:11.5px; padding:7px 12px;}
+  .connector{
+    width:1px; height:22px; background:var(--line); margin:0 auto;
+  }
+  .connector-row{display:flex; justify-content:center;}
+  .branch-row{display:flex; justify-content:center; gap:0; margin-top:0;}
+
+  /* STEPS */
+  .steps{counter-reset:step; margin-top:40px; position:relative; padding-left:2px;}
+  .steps::before{
+    content:'';
+    position:absolute; left:41px; top:10px; bottom:10px; width:1px;
+    background:var(--line);
+  }
+  .step{
+    counter-increment:step;
+    display:grid; grid-template-columns:84px 1fr; align-items:start; gap:26px;
+    padding:32px 0;
+    position:relative;
+  }
+  .step:first-child{padding-top:4px;}
+  .step:last-child{padding-bottom:4px;}
+  .step::before{
+    content:counter(step, decimal-leading-zero);
+    font-family:'Space Grotesk', sans-serif;
+    font-size:32px; font-weight:700;
+    color:var(--gold);
+    line-height:1;
+    position:relative; z-index:1;
+    padding-top:1px;
+  }
+  .step::after{
+    content:'';
+    position:absolute; left:37px; top:14px;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--gold);
+    z-index:2;
+  }
+  .step h3{font-size:19px; margin-bottom:10px;}
+  .step p{color:var(--ink-dim); font-size:15px; max-width:64ch;}
+  .step .meta{
+    display:inline-block; margin-top:12px;
+    font-family:'JetBrains Mono', monospace; font-size:11.5px;
+    color:var(--gold); background:rgba(212,164,76,0.09);
+    padding:4px 9px; border-radius:5px; letter-spacing:0.03em;
+  }
+
+  /* MISTAKES */
+  .mistakes{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:30px;}
+  .mistake{
+    background:var(--bg-raised); border:1px solid var(--line); border-radius:10px;
+    padding:20px 22px;
+  }
+  .mistake .x{color:var(--coral); font-family:'JetBrains Mono', monospace; font-size:13px; font-weight:500;}
+  .mistake p{font-size:14.5px; color:var(--ink-dim); margin-top:8px;}
+
+  /* NUMBERS STRIP */
+  .numbers{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;
+    margin-top:34px;
+  }
+  .numbers > div{background:var(--bg-raised); padding:22px 18px;}
+  .numbers .val{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:var(--gold);}
+  .numbers .lbl{font-size:12px; color:var(--ink-dim); margin-top:4px; line-height:1.4;}
+
+  /* PITCH */
+  .pitch{
+    background:linear-gradient(180deg, var(--bg-raised) 0%, #15161E 100%);
+    border-bottom:none;
+  }
+  .pitch .section-head h2{max-width:16ch;}
+  .pitch .lede{max-width:66ch;}
+  .offers{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:36px;}
+  .offer{
+    border:1px solid var(--line); border-radius:12px; padding:28px 26px;
+    background:var(--bg);
+    display:flex; flex-direction:column;
+  }
+  .offer.highlight{border-color:var(--gold-dim); box-shadow:0 0 0 1px rgba(212,164,76,0.15) inset;}
+  .offer .otag{
+    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--ink-dim); margin-bottom:12px;
+  }
+  .offer.highlight .otag{color:var(--gold);}
+  .offer h3{font-size:20px; margin-bottom:6px;}
+  .offer .price{font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; margin:10px 0 14px;}
+  .offer p.desc{color:var(--ink-dim); font-size:14.5px; flex-grow:1;}
+  .offer ul{list-style:none; margin:16px 0 0; display:flex; flex-direction:column; gap:8px;}
+  .offer li{font-size:13.5px; color:var(--ink); padding-left:16px; position:relative;}
+  .offer li::before{content:'✓'; position:absolute; left:0; color:var(--gold); font-size:11px; top:2px;}
+  .offer-link{
+    margin-top:22px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px; font-weight:500;
+    text-align:center;
+    padding:12px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    border:1px solid var(--line);
+    color:var(--ink);
+  }
+  .offer.highlight .offer-link{
+    background:var(--gold); color:#14161F; border-color:var(--gold);
+  }
+
+  .cta-band{
+    margin-top:40px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:30px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+    background:var(--bg);
+  }
+  .cta-band .ctext strong{display:block; font-family:'Space Grotesk',sans-serif; font-size:19px; margin-bottom:4px;}
+  .cta-band .ctext span{color:var(--ink-dim); font-size:14px;}
+  .ig-btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px; font-weight:500;
+    background:var(--gold); color:#14161F;
+    padding:13px 22px; border-radius:8px;
+    text-decoration:none; white-space:nowrap;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+
+  footer{padding:36px 0 60px; text-align:center;}
+  footer p{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--ink-dim);}
+
+  @media (max-width:640px){
+    .compare{grid-template-columns:1fr;}
+    .mistakes{grid-template-columns:1fr;}
+    .numbers{grid-template-columns:1fr 1fr;}
+    .offers{grid-template-columns:1fr;}
+    .step{grid-template-columns:40px 1fr; gap:16px;}
+    .step::before{font-size:22px;}
+    .steps::before{left:19px;}
+    .step::after{left:15px; top:10px; width:8px; height:8px;}
+    .cta-band{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">The reel, expanded</div>
+      <h1>If I had to start dropshipping today, I'd skip organic and go straight to <em>Google Ads.</em></h1>
+      <p class="sub">Everyone's teaching Facebook creatives and TikTok hooks. Here's the version I'd actually run — built on search intent, not scroll interruption. Overview, full setup sequence, and the mistakes that burn most people's ad budget in week one.</p>
+      <div class="byline">
+        <span class="dot"></span>
+        <span>Written by <strong>Chirag Sharma</strong></span>
+        <span>·</span>
+        <span>Entrepreneur · Mentor</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="overview">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Overview</div>
+        <h2>Why Google Ads over the usual playbook</h2>
+        <p class="lede">Most dropshipping advice defaults to Meta because that's where the store you're copying started. But Meta sells to people who weren't looking for anything. Google Ads puts your product in front of someone who already typed "buy" into a search bar. That's a completely different — and cheaper — kind of customer to convert.</p>
+      </div>
+
+      <div class="compare">
+        <div>
+          <h3 class="tag-search"><span class="sq"></span>Google Ads — Intent</h3>
+          <ul>
+            <li>Person is actively searching to solve a problem or buy a product</li>
+            <li>You compete on relevance and offer, not just scroll-stopping creative</li>
+            <li>Shopping ads show price + image right in the results — pre-qualifies the click</li>
+            <li>Slower to blow up, but cheaper to sustain once it works</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="tag-social"><span class="sq"></span>Meta / TikTok — Interruption</h3>
+          <ul>
+            <li>Person wasn't looking for your product — you have to create the want</li>
+            <li>Wins live and die on creative testing volume and video production</li>
+            <li>Higher top-of-funnel reach, much lower baseline purchase intent</li>
+            <li>Cheaper to test fast, but algorithm fatigue kills winners quickly</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="diagram">
+        <div class="dcap">HOW A GOOGLE ADS ACCOUNT IS ACTUALLY STRUCTURED</div>
+        <div class="tier">
+          <div class="node campaign">Shopping Campaign</div>
+        </div>
+        <div class="connector-row"><div class="connector"></div></div>
+        <div class="tier">
+          <div class="node adgroup">Product Group</div>
+        </div>
+        <div class="connector-row"><div class="connector"></div></div>
+        <div class="tier">
+          <div class="node leaf">Merchant feed</div>
+          <div class="node leaf">Bid + budget</div>
+          <div class="node leaf">Priority tier</div>
+        </div>
+        <div style="height:30px"></div>
+        <div class="tier">
+          <div class="node campaign">Search Campaign</div>
+        </div>
+        <div class="connector-row"><div class="connector"></div></div>
+        <div class="tier">
+          <div class="node adgroup">Ad Group: high-intent keywords</div>
+        </div>
+        <div class="connector-row"><div class="connector"></div></div>
+        <div class="tier">
+          <div class="node leaf">Exact match kw</div>
+          <div class="node leaf">Responsive search ad</div>
+          <div class="node leaf">Negative keywords</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The sequence</div>
+        <h2>Setup, in the order it actually has to happen</h2>
+        <p class="lede">This is the process — not a summary of it. Each step depends on the one before it, which is exactly why most people who skip ahead end up with a Shopping campaign and no idea why it's not spending.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-body">
+          <h3>Pick a product with provable search demand</h3>
+          <p>Before you touch Shopify, open Google Trends and Keyword Planner. You're looking for a product people already search to solve a problem — not something you saw go viral. Viral proves attention exists on social; it proves nothing about search intent.</p>
+          <span class="meta">Tool: Keyword Planner, Google Trends</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-body">
+          <h3>Build a store that answers the search, not just "sells"</h3>
+          <p>Single-product Shopify page, above-the-fold answer to the exact question someone searched, real reviews, fast load time. If your page doesn't match what the person typed, Google will quietly punish your Quality Score and your cost-per-click climbs.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-body">
+          <h3>Set up Merchant Center and launch a Shopping campaign</h3>
+          <p>This is usually the first campaign to run because Shopping ads carry the lowest friction — price and image are visible before the click. Get your product feed approved, title and description optimized for the actual search terms from step one, and start with Google's Smart Bidding off.</p>
+          <span class="meta">Start: Manual CPC or Maximize Clicks</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-body">
+          <h3>Layer in a Search campaign on your highest-intent terms</h3>
+          <p>Separate campaign, exact-match keywords only for the first two weeks — no broad match. You want data on the terms that convert before you let Google's algorithm interpret what "similar" means. Write ad copy that mirrors the search term, not generic "Shop Now" language.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-body">
+          <h3>Set a budget you can survive losing for two weeks</h3>
+          <p>Realistic starting range is ₹1,000–₹2,000/day. This isn't a guess — it's what it takes to get enough clicks to reach statistical significance on which keywords and products actually convert. Anything less and you're optimizing on noise.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-body">
+          <h3>Install conversion tracking before you spend a rupee more</h3>
+          <p>GA4 plus native Google Ads conversion tracking, tied to actual purchases — not "add to cart." Without this, every optimization decision you make afterward is a guess dressed up as a strategy.</p>
+          <span class="meta">Non-negotiable before scaling</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-body">
+          <h3>Run the weekly cut-and-scale cycle</h3>
+          <p>Every week: kill keywords and products spending without converting, push budget toward the ones that are. This is the actual job of running the account — the setup is one afternoon, the optimization is the business.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mistakes">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Where people lose the budget</div>
+        <h2>The five mistakes I see on repeat</h2>
+      </div>
+      <div class="mistakes">
+        <div class="mistake">
+          <div class="x">✕ Broad match on day one</div>
+          <p>Lets Google spend your budget on loosely related searches before you know which exact terms convert.</p>
+        </div>
+        <div class="mistake">
+          <div class="x">✕ No negative keyword list</div>
+          <p>Without it, you're paying for clicks from people searching "free," "jobs," or "reviews" who were never buying.</p>
+        </div>
+        <div class="mistake">
+          <div class="x">✕ Judging results before 15–30 conversions</div>
+          <p>Turning off a campaign after three days of no sales is reading a coin flip as a pattern.</p>
+        </div>
+        <div class="mistake">
+          <div class="x">✕ Store built for the ad, not the search</div>
+          <p>If the landing page doesn't answer what the person typed, Quality Score drops and every click gets more expensive.</p>
+        </div>
+        <div class="mistake">
+          <div class="x">✕ Scaling budget and creative at the same time</div>
+          <p>Change one variable at a time, or you'll never know which decision actually moved the number.</p>
+        </div>
+        <div class="mistake">
+          <div class="x">✕ No conversion tracking, ever</div>
+          <p>Running ads on vibes. You'll feel busy and stay unprofitable at the same time.</p>
+        </div>
+      </div>
+
+      <div class="numbers">
+        <div>
+          <div class="val">₹1–2K</div>
+          <div class="lbl">realistic daily budget to get a genuine read in the first two weeks</div>
+        </div>
+        <div>
+          <div class="val">15–30</div>
+          <div class="lbl">conversions needed before you can trust a bidding decision</div>
+        </div>
+        <div>
+          <div class="val">2–4 wks</div>
+          <div class="lbl">typical time from launch to a data-backed go/no-go call</div>
+        </div>
+        <div>
+          <div class="val">1 var</div>
+          <div class="lbl">the number of things to change per optimization pass</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch" id="pitch">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Where the overview ends</div>
+        <h2>This is the map. Most people still lose money holding it.</h2>
+        <p class="lede">Everything above is real and it's enough to start. What it can't do is tell you which product idea of yours specifically has search demand, catch the mistake in your account before it burns ₹10,000, or tell you when to scale versus when to kill a campaign. That's the part that's different for every account — and it's the part I actually work through with people 1:1.</p>
+      </div>
+
+      <div class="offers">
+        <div class="offer">
+          <div class="otag">Start here</div>
+          <h3>1:1 Consultation</h3>
+          <div class="price">₹2,499</div>
+          <p class="desc">A single focused call. Bring your product idea or your live account — we go through it together and you leave with a specific next step, not generic advice.</p>
+          <ul>
+            <li>Product & search-demand sanity check</li>
+            <li>Live review of your account or store, if you have one</li>
+            <li>Clear next action, no upsell pressure on the call</li>
+          </ul>
+          <a class="offer-link" href="https://chiragsharma.co" target="_blank" rel="noopener">Book at chiragsharma.co ↗</a>
+        </div>
+        <div class="offer highlight">
+          <div class="otag">For serious builders</div>
+          <h3>1:1 Mentorship</h3>
+          <div class="price">₹24,999<span style="font-size:14px; color:var(--ink-dim); font-family:'Inter',sans-serif; font-weight:400;"> minimum</span></div>
+          <p class="desc">Ongoing, hands-on. I'm in your account and your decisions with you — from picking the product to the week your Search campaign actually turns profitable.</p>
+          <ul>
+            <li>Direct access for account reviews and weekly check-ins</li>
+            <li>Campaign structure, bidding, and scaling built with you</li>
+            <li>The mistakes above, caught before they cost you</li>
+          </ul>
+          <a class="offer-link" href="https://chiragsharma.co" target="_blank" rel="noopener">Apply at chiragsharma.co ↗</a>
+        </div>
+      </div>
+
+      <div class="cta-band">
+        <div class="ctext">
+          <strong>Ready to talk it through?</strong>
+          <span>DM "ADS" on Instagram and I'll send you the booking link myself.</span>
+        </div>
+        <a class="ig-btn" href="https://instagram.com/thechirag13" target="_blank" rel="noopener">@thechirag13 ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>CHIRAG SHARMA — ENTREPRENEURSHIP · 1:1 MENTORSHIP</p>
+    </div>
+  </footer>
+
+</body>
+</html>
