@@ -147,7 +147,7 @@ body {
         <span class="serif italic font-normal text-[var(--gold-bright)]"> I'll make sure you're not one of them.</span>
       </h1>
       <p class="text-lg md:text-xl text-[var(--muted)] leading-relaxed max-w-2xl mb-9 reveal">
-        I've run dropshipping stores in both the Indian and international markets since I was 17 — winning products, dead products, banned ad accounts, COD chaos, all of it. Mentorship is me sitting next to you while you build yours, so you skip the ₹5–10L worth of mistakes I already made.
+        I've run dropshipping stores in both the Indian and international markets since I was 18 — winning products, dead products, banned ad accounts, COD chaos, all of it. Mentorship is me sitting next to you while you build yours, so you skip the ₹5–10L worth of mistakes I already made.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mb-8 reveal">
         <a href="#application" class="btn-primary text-base px-8 py-4 text-center">Apply for mentorship →</a>
@@ -273,15 +273,15 @@ body {
       <div class="md:col-span-3 reveal">
         <p class="eyebrow mb-4">Your mentor</p>
         <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-6">
-          I've had ₹0 days and ₹10L-a-day days. Both taught me something.
+          I've had ₹0 days and ₹1L-a-day days. Both taught me something.
         </h2>
         <div class="space-y-4 text-[var(--muted)] leading-relaxed text-[16px]">
-          <p>I started dropshipping at 17 with no money, no mentor, and no idea what a "winning product" even meant. I found out the hard way — banned ad accounts, dead stock, suppliers who ghosted me mid-order.</p>
+          <p>I started dropshipping at 18 with no money, no mentor, and no idea what a "winning product" even meant. I found out the hard way — banned ad accounts, dead stock, suppliers who ghosted me mid-order.</p>
           <p>Over 8+ years I've run stores in both the Indian and international markets, generating ₹30 crore+ in combined revenue — and I've documented most of it publicly on YouTube to 60,000+ subscribers.</p>
           <p>Mentorship is me applying everything I've personally tested, spent on, and broken — directly to your store, not a recycled course from 2021.</p>
         </div>
         <div class="flex flex-wrap gap-3 mt-8">
-          <span class="chip">Started at 17</span>
+          <span class="chip">Started at 18</span>
           <span class="chip">₹30 Cr+ in revenue</span>
           <span class="chip">India + International operator</span>
         </div>
@@ -510,9 +510,9 @@ body {
     <p class="eyebrow mb-4">Risk reversal</p>
     <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-5">My guarantee to you</h2>
     <p class="text-[var(--muted)] leading-relaxed max-w-2xl mx-auto">
-      I won't promise you a specific income — nobody honest can, and anyone who does is selling you a lie. What I will guarantee: if you show up, implement what we agree on, and I'm not giving you real, direct support in return.
+      I won't promise you a specific income — nobody honest can, and anyone who does is selling you a lie. What I will guarantee: if you show up, implement what we agree on, and I'm not giving you real, direct support in return, I'll extend your mentorship at no extra cost until I do.
     </p>
-   
+    <p class="text-xs text-[var(--faint)] mt-6">[Edit this to whatever guarantee you're actually willing to stand behind before publishing.]</p>
   </div>
 </section>
 
@@ -571,7 +571,7 @@ body {
       <p class="eyebrow mb-4">Mentorship application</p>
       <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">Apply to work with me</h2>
       <p class="text-[var(--muted)] max-w-xl mx-auto leading-relaxed">Takes 3 minutes and becomes your mentorship intake. Applications are reviewed personally — I don't accept everyone.</p>
-      <p class="mono text-xs text-[var(--gold)] mt-4"> Only 6 mentorship spots open this month</p>
+      <p class="mono text-xs text-[var(--gold)] mt-4">[EDIT MANUALLY] Only 6 mentorship spots open this month</p>
     </div>
 
     <form onsubmit="handleSubmit(event)" class="card p-8 md:p-10 space-y-6 reveal" novalidate>
@@ -603,6 +603,13 @@ body {
           <input id="f-whatsapp" type="tel" name="whatsapp" required placeholder="+91 XXXXX XXXXX" class="field" />
         </div>
         <div>
+          <label class="label" for="f-income">Current monthly income</label>
+          <input id="f-income" type="text" name="income" placeholder="₹0 – ₹1,00,000+" class="field" />
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
           <label class="label" for="f-experience">Have you dropshipped before?</label>
           <select id="f-experience" name="experience" required class="field">
             <option value="">Select one</option>
@@ -611,18 +618,24 @@ body {
             <option value="running">Running a store now, want to scale</option>
           </select>
         </div>
+        <div>
+          <label class="label" for="budget">Mentorship investment</label>
+          <select id="budget" name="budget" required class="field">
+            <option value="">Select your range</option>
+            <option value="below25k">Below ₹25,000</option>
+            <option value="25k">₹25,000 – ₹50,000</option>
+            <option value="50k">₹50,000 – ₹1,00,000</option>
+            <option value="100k">₹1,00,000+</option>
+          </select>
+        </div>
       </div>
 
-      <div>
-        <label class="label" for="budget">Mentorship investment</label>
-        <select id="budget" name="budget" required class="field">
-          <option value="">Select your range</option>
-          <option value="below25k">Below ₹25,000</option>
-          <option value="25k">₹25,000 – ₹50,000</option>
-          <option value="50k">₹50,000 – ₹1,00,000</option>
-          <option value="100k">₹1,00,000+</option>
-        </select>
+      <!-- honeypot: real visitors never see or fill this. Bots do. -->
+      <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
+        <label for="f-website">Website</label>
+        <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" />
       </div>
+
 
       <div>
         <label class="label" for="f-goal">Your 6-month goal</label>
@@ -699,10 +712,12 @@ body {
       name: form.name.value,
       email: form.email.value,
       whatsapp: form.whatsapp.value,
+      income: form.income.value,
       experience: form.experience.value,
       budget: form.budget.value,
       goal: form.goal.value,
-      struggle: form.struggle.value
+      struggle: form.struggle.value,
+      website: form.website.value
     };
 
     btn.disabled = true;
