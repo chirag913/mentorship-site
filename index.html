@@ -94,6 +94,16 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 
 .sticky-cta { position: fixed; left:0; right:0; bottom:0; z-index:50; background: rgba(11,10,8,0.92); backdrop-filter: blur(10px); border-top:1px solid var(--line); }
 
+.wa-float { position: fixed; right: 20px; bottom: 88px; z-index: 60; width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold)); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px -6px rgba(211,164,59,0.55), 0 0 0 1px rgba(211,164,59,0.25);
+  transition: transform .18s ease, box-shadow .18s ease; }
+.wa-float:hover { transform: scale(1.07); box-shadow: 0 10px 28px -6px rgba(211,164,59,0.65), 0 0 0 1px rgba(211,164,59,0.35); }
+.wa-float::before { content:''; position:absolute; inset:-5px; border-radius:50%; border:1px solid rgba(211,164,59,0.35); animation: waRing 2.4s ease-out infinite; }
+@keyframes waRing { 0% { transform: scale(0.9); opacity: .8; } 100% { transform: scale(1.25); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .wa-float::before { animation: none; display:none; } }
+@media (min-width: 768px) { .wa-float { bottom: 24px; } }
+
 /* fit check option cards */
 .opt-card { display:flex; align-items:center; gap:14px; width:100%; text-align:left; background: var(--surface-2); border:1px solid var(--line); border-radius: 14px; padding: 16px 18px; cursor:pointer; transition: all .18s ease; color: var(--text); }
 .opt-card:hover { border-color: var(--gold-deep); background: rgba(211,164,59,0.06); }
@@ -146,7 +156,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
       <a href="#mentorship" class="hover:text-[var(--text)] transition">Mentorship</a>
       <a href="#faq" class="hover:text-[var(--text)] transition">FAQ</a>
     </nav>
-    <button onclick="openWizard()" class="btn-primary text-sm px-5 py-2.5">Get started →</button>
+    <button onclick="openWizard()" class="btn-primary text-sm px-5 py-2.5">Let's talk →</button>
   </div>
 </header>
 
@@ -165,8 +175,8 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
         I've run dropshipping stores in both the Indian and international markets since I was 18 — winning products, dead products, banned ad accounts, COD chaos, all of it. Mentorship is me sitting next to you while you build yours, so you skip the ₹5–10L worth of mistakes I already made.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 mb-6 reveal">
-        <button onclick="startFitCheck()" class="btn-ghost text-base px-8 py-4 text-center">Not sure where to start? →</button>
-        <button onclick="openWizard()" class="btn-primary text-base px-8 py-4 text-center">I know what I need →</button>
+        <button onclick="startFitCheck()" class="btn-ghost text-base px-8 py-4 text-center">Not sure yet? Let's figure it out →</button>
+        <button onclick="openWizard()" class="btn-primary text-base px-8 py-4 text-center">I already know — let's talk →</button>
       </div>
       <p class="text-xs text-[var(--faint)] reveal">No fluff. No "get rich in 30 days." Real store data, real supplier lists, real ad accounts reviewed live.</p>
     </div>
@@ -184,6 +194,26 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
       <div class="tick">2 MARKETS: COD (IN) &amp; PREPAID/CARD (GLOBAL)</div>
     </div>
   </div>
+</section>
+
+<!-- QUICK PROOF TEASER (for scroll-happy social traffic) -->
+<section class="max-w-6xl mx-auto px-6 py-14">
+  <p class="text-center text-sm text-[var(--faint)] mb-6 reveal">Real messages, unedited — from students on this exact program</p>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 reveal">
+    <div class="card overflow-hidden">
+      <img src="proofs/testimonial-01.jpeg" alt="Student message about scaling to 117 orders" class="w-full h-40 object-cover object-top" loading="lazy" />
+      <p class="text-xs text-[var(--muted)] p-3 leading-relaxed">"Aapki 1-2 tips use krke scale kiya... Aaj 117 orders so far"</p>
+    </div>
+    <div class="card overflow-hidden">
+      <img src="proofs/testimonial-04.jpeg" alt="Instagram DM about first sale from Google ads" class="w-full h-40 object-cover object-top" loading="lazy" />
+      <p class="text-xs text-[var(--muted)] p-3 leading-relaxed">"Sir finally got the first sale by Google ads 🐎✨❤️"</p>
+    </div>
+    <div class="card overflow-hidden">
+      <img src="proofs/testimonial-05.jpeg" alt="Instagram DM about generating $4.5k" class="w-full h-40 object-cover object-top" loading="lazy" />
+      <p class="text-xs text-[var(--muted)] p-3 leading-relaxed">"generated $4.5k solely using your Instagram Influencer strategy"</p>
+    </div>
+  </div>
+  <p class="text-center mt-6 reveal"><a href="#proof" class="text-sm text-[var(--gold)] hover:text-[var(--gold-bright)] transition">See all the real results ↓</a></p>
 </section>
 
 <!-- PAIN / AGITATION -->
@@ -512,9 +542,15 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 </footer>
 
 <!-- STICKY MOBILE CTA -->
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/918447355977?text=Hi%20Chirag!%20I%20have%20a%20question%20about%20dropshipping%20mentorship." target="_blank" rel="noopener" class="wa-float" aria-label="Message Chirag on WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="#14100A"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.913.53 3.703 1.451 5.232L2 22l4.897-1.406A9.943 9.943 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12.001 2zm0 18.031a8.001 8.001 0 01-4.29-1.247l-.308-.183-3.13.898.905-3.09-.2-.32A7.985 7.985 0 014 12c0-4.411 3.589-8 8.001-8C16.412 4 20 7.589 20 12s-3.588 8.031-7.999 8.031z"/></svg>
+</a>
+
 <div class="sticky-cta md:hidden">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex gap-3">
-    <button onclick="openWizard('consultation')" class="btn-ghost flex-1 text-center py-3 text-sm">₹2,499 call</button>
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+    <img src="mentor-photo.png" alt="Chirag Sharma" class="w-9 h-9 rounded-full object-cover border border-[var(--line)] flex-shrink-0" loading="lazy" />
+    <button onclick="openWizard('consultation')" class="btn-ghost flex-1 text-center py-3 text-sm">Book a call</button>
     <button onclick="openWizard('mentorship')" class="btn-primary flex-1 text-center py-3 text-sm">Apply now →</button>
   </div>
 </div>
@@ -685,7 +721,7 @@ function renderProofGrid() {
   const items = activeFilter === 'all' ? proofItems : proofItems.filter(p => p.cat === activeFilter);
   grid.innerHTML = items.map((p, i) =>
     '<div class="card proof-tile reveal in" tabindex="0" role="button" aria-label="' + p.title + '" onclick="openProof(' + proofItems.indexOf(p) + ')" onkeydown="if(event.key===\'Enter\')openProof(' + proofItems.indexOf(p) + ')">' +
-      '<div class="overflow-hidden"><img src="' + p.img + '" alt="' + p.title + '" class="w-full h-40 object-cover" /></div>' +
+      '<div class="overflow-hidden"><img src="' + p.img + '" alt="' + p.title + '" class="w-full h-40 object-cover" loading="lazy" /></div>' +
       '<p class="mono text-[11px] text-[var(--muted)] p-3">' + p.title + '</p>' +
     '</div>'
   ).join('');
