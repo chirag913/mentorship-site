@@ -781,6 +781,7 @@ let wizSteps = [];
 
 function wizStepsFor(path) {
   const steps = [];
+  if (!path) steps.push('path');
   if (!state.market) steps.push('market');
   if (!state.stage) steps.push('experience');
   steps.push('contact');
@@ -789,14 +790,22 @@ function wizStepsFor(path) {
   return steps;
 }
 
-function openWizard(path) {
+function openWizard(path, scroll) {
+  if (scroll === undefined) scroll = true;
   if (path) state.path = path;
-  if (!state.path) state.path = 'consultation';
   wizSteps = wizStepsFor(state.path);
   wizIndex = 0;
-  document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+  if (scroll) document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
   applyRecommendedBadge();
   renderWizard();
+}
+
+function wizChoosePath(path) {
+  state.path = path;
+  wizSteps = wizStepsFor(path);
+  wizIndex = 0;
+  applyRecommendedBadge();
+  setTimeout(renderWizard, 200);
 }
 
 function renderDots() {
@@ -818,7 +827,13 @@ function renderWizard() {
   const step = wizSteps[wizIndex];
   let html = '<div class="fade-step">';
 
-  if (step === 'market') {
+  if (step === 'path') {
+    html += '<h3 class="text-xl font-semibold mb-5">What are you looking for?</h3><div class="space-y-3">' +
+      '<button type="button" class="opt-card" onclick="wizChoosePath(\'consultation\')"><span class="opt-num">✓</span><span>₹2,499 · 45-Min Clarity Call</span></button>' +
+      '<button type="button" class="opt-card" onclick="wizChoosePath(\'mentorship\')"><span class="opt-num">✓</span><span>Private Dropshipping Mentorship</span></button>' +
+      '<button type="button" class="opt-card" onclick="startFitCheck()"><span class="opt-num">?</span><span>Not sure — help me figure it out</span></button>' +
+    '</div>';
+  } else if (step === 'market') {
     html += pathBadge() + '<h3 class="text-xl font-semibold mb-5">Which market are you focused on?</h3><div class="space-y-3">' +
       optCard('market', 'India', '🇮🇳 India (COD)') + optCard('market', 'International', '🌍 International') + '</div>';
     html += navButtons(false, false);
@@ -976,6 +991,7 @@ async function submitWizard() {
 /* ============ INIT ============ */
 renderProofFilters();
 renderProofGrid();
+openWizard(null, false);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
