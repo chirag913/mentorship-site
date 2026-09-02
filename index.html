@@ -36,51 +36,34 @@
   --red: #C1594A;
 }
 html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
 .display { font-family: 'Space Grotesk', sans-serif; }
 .serif { font-family: 'Fraunces', serif; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 
-.hero-glow {
-  position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(ellipse 55% 40% at 20% -5%, rgba(211,164,59,0.14), transparent 65%),
-    radial-gradient(ellipse 35% 30% at 90% 5%, rgba(211,164,59,0.06), transparent 60%);
-}
+.hero-glow { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 55% 40% at 20% -5%, rgba(211,164,59,0.14), transparent 65%),
+              radial-gradient(ellipse 35% 30% at 90% 5%, rgba(211,164,59,0.06), transparent 60%); }
 .noise { position: absolute; inset: 0; opacity: .035; pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
 .card-hover { transition: border-color .25s ease, transform .25s ease; }
 .card-hover:hover { border-color: #45391C; transform: translateY(-2px); }
 
-.btn-primary {
-  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-  color: #14100A; font-weight: 700; border-radius: 12px;
-  transition: filter .2s ease, transform .15s ease;
-  box-shadow: 0 8px 24px -8px rgba(211,164,59,0.45);
-}
+.btn-primary { background: linear-gradient(180deg, var(--gold-bright), var(--gold)); color: #14100A; font-weight: 700; border-radius: 12px;
+  transition: filter .2s ease, transform .15s ease; box-shadow: 0 8px 24px -8px rgba(211,164,59,0.45); border:none; cursor:pointer; }
 .btn-primary:hover { filter: brightness(1.06); }
 .btn-primary:active { transform: scale(.985); }
+.btn-primary:disabled { opacity:.4; cursor:not-allowed; filter:none; }
+.btn-primary:focus-visible, .btn-ghost:focus-visible, .opt-card:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
 
-.btn-ghost {
-  background: transparent; border: 1px solid var(--line); color: var(--text);
-  font-weight: 500; border-radius: 12px;
-  transition: border-color .2s ease, background .2s ease;
-}
+.btn-ghost { background: transparent; border: 1px solid var(--line); color: var(--text); font-weight: 500; border-radius: 12px;
+  transition: border-color .2s ease, background .2s ease; cursor:pointer; }
 .btn-ghost:hover { border-color: #4A3E20; background: rgba(211,164,59,0.05); }
 
-.field {
-  width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
-  padding: 13px 15px; font-size: 15px; color: var(--text); outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease;
-}
+.field { width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; font-size: 15px; color: var(--text); outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease; }
 .field::placeholder { color: var(--faint); }
 .field:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(211,164,59,0.14); }
 
@@ -91,7 +74,6 @@ body {
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
-/* mono stat ticker - signature element */
 .ticker-wrap { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
 .ticker-track { display: flex; gap: 0; width: max-content; animation: ticker 32s linear infinite; }
 @keyframes ticker { to { transform: translateX(-50%); } }
@@ -101,21 +83,54 @@ body {
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
 .chip { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); background: var(--surface-2); color: var(--muted); border-radius: 999px; padding: 9px 16px; font-size: 13.5px; font-weight: 500; white-space: nowrap; }
+.pill-btn { border:1px solid var(--line); background: var(--surface-2); color: var(--muted); border-radius: 999px; padding: 9px 18px; font-size: 13.5px; font-weight: 600; cursor:pointer; transition: all .18s ease; white-space:nowrap; }
+.pill-btn:hover { border-color: #4A3E20; }
+.pill-btn.active { background: var(--gold); color:#14100A; border-color: var(--gold); }
 
 .step-line::before { content:''; position:absolute; left:19px; top:44px; bottom:-28px; width:1px; background: var(--line); }
 .step:last-child .step-line::before { display:none; }
-
-.bubble { max-width: 82%; padding: 11px 14px; border-radius: 14px; font-size: 14.5px; line-height:1.45; }
-.bubble-in { background: var(--surface-2); border:1px solid var(--line); border-bottom-left-radius:4px; }
-.bubble-out { background: rgba(211,164,59,0.14); border:1px solid rgba(211,164,59,0.3); border-bottom-right-radius:4px; margin-left:auto; }
 
 ::selection { background: rgba(211,164,59,.32); }
 
 .sticky-cta { position: fixed; left:0; right:0; bottom:0; z-index:50; background: rgba(11,10,8,0.92); backdrop-filter: blur(10px); border-top:1px solid var(--line); }
 
-.market-toggle input { display:none; }
-.market-toggle label { cursor:pointer; }
-.market-toggle input:checked + label { background: var(--gold); color:#14100A; border-color: var(--gold); }
+/* fit check option cards */
+.opt-card { display:flex; align-items:center; gap:14px; width:100%; text-align:left; background: var(--surface-2); border:1px solid var(--line); border-radius: 14px; padding: 16px 18px; cursor:pointer; transition: all .18s ease; color: var(--text); }
+.opt-card:hover { border-color: var(--gold-deep); background: rgba(211,164,59,0.06); }
+.opt-card.selected { border-color: var(--gold); background: rgba(211,164,59,0.12); }
+.opt-num { width:28px; height:28px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--faint); flex-shrink:0; }
+.opt-card.selected .opt-num { border-color: var(--gold); color: var(--gold-bright); }
+
+.progress-track { height:4px; background: var(--line); border-radius: 999px; overflow:hidden; }
+.progress-fill { height:100%; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); transition: width .35s ease; }
+
+.step-dot { width:8px; height:8px; border-radius:50%; background: var(--line); transition: all .2s ease; }
+.step-dot.active { background: var(--gold); width:22px; border-radius:999px; }
+.step-dot.done { background: var(--gold-deep); }
+
+.fade-step { animation: fadeStep .35s ease; }
+@keyframes fadeStep { from { opacity:0; transform: translateX(8px); } to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion: reduce) { .fade-step { animation:none; } }
+
+/* proof explorer */
+.proof-tile { cursor:pointer; overflow:hidden; }
+.proof-tile img { transition: transform .3s ease; }
+.proof-tile:hover img { transform: scale(1.04); }
+
+.modal-overlay { position:fixed; inset:0; background: rgba(6,5,3,0.86); backdrop-filter: blur(4px); z-index:100; display:flex; align-items:center; justify-content:center; padding: 20px; }
+
+/* timeline */
+.tl-item { cursor:pointer; }
+.tl-dot { width:14px; height:14px; border-radius:50%; background: var(--surface-2); border:2px solid var(--line); flex-shrink:0; transition: all .2s ease; }
+.tl-item.open .tl-dot { background: var(--gold); border-color: var(--gold-bright); }
+.tl-body { max-height:0; overflow:hidden; transition: max-height .3s ease; }
+.tl-item.open .tl-body { max-height: 240px; }
+.tl-chevron { transition: transform .2s ease; }
+.tl-item.open .tl-chevron { transform: rotate(45deg); }
+
+/* comparison */
+.cmp-recommended { border-color: var(--gold) !important; box-shadow: 0 0 0 1px var(--gold); }
+.rec-badge { display:inline-flex; align-items:center; gap:6px; background: rgba(211,164,59,0.16); border:1px solid var(--gold-deep); color: var(--gold-bright); font-size:12px; font-weight:600; padding:5px 12px; border-radius:999px; }
 </style>
 </head>
 
@@ -131,7 +146,7 @@ body {
       <a href="#mentorship" class="hover:text-[var(--text)] transition">Mentorship</a>
       <a href="#faq" class="hover:text-[var(--text)] transition">FAQ</a>
     </nav>
-    <a href="#application" class="btn-primary text-sm px-5 py-2.5">Apply now</a>
+    <button onclick="openWizard()" class="btn-primary text-sm px-5 py-2.5">Get started →</button>
   </div>
 </header>
 
@@ -149,15 +164,14 @@ body {
       <p class="text-lg md:text-xl text-[var(--muted)] leading-relaxed max-w-2xl mb-9 reveal">
         I've run dropshipping stores in both the Indian and international markets since I was 18 — winning products, dead products, banned ad accounts, COD chaos, all of it. Mentorship is me sitting next to you while you build yours, so you skip the ₹5–10L worth of mistakes I already made.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 mb-8 reveal">
-        <a href="#application" class="btn-primary text-base px-8 py-4 text-center">Apply for mentorship →</a>
-        <a href="#clarity" class="btn-ghost text-base px-8 py-4 text-center">Book a ₹2,499 clarity call</a>
+      <div class="flex flex-col sm:flex-row gap-4 mb-6 reveal">
+        <button onclick="startFitCheck()" class="btn-ghost text-base px-8 py-4 text-center">Not sure where to start? →</button>
+        <button onclick="openWizard()" class="btn-primary text-base px-8 py-4 text-center">I know what I need →</button>
       </div>
       <p class="text-xs text-[var(--faint)] reveal">No fluff. No "get rich in 30 days." Real store data, real supplier lists, real ad accounts reviewed live.</p>
     </div>
   </div>
 
-  <!-- signature: mono proof ticker -->
   <div class="ticker-wrap">
     <div class="ticker-track mono text-[13px] text-[var(--muted)]">
       <div class="tick"><span class="dot-live"></span>₹30,00,00,000+ REVENUE GENERATED ACROSS STORES</div>
@@ -179,36 +193,37 @@ body {
     <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight">Does this sound like where you're stuck right now?</h2>
   </div>
   <div class="grid md:grid-cols-2 gap-4">
-    <div class="card p-6 flex gap-4 reveal">
-      <span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span>
-      <p class="text-[15px] text-[var(--muted)] leading-relaxed">You've launched 3–4 products and none of them "hit" — and you don't actually know if it was the product, the creative, or the targeting.</p>
-    </div>
-    <div class="card p-6 flex gap-4 reveal">
-      <span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span>
-      <p class="text-[15px] text-[var(--muted)] leading-relaxed">Your Meta or TikTok ad account got flagged or banned, and you're rebuilding from zero with no idea how to avoid it next time.</p>
-    </div>
-    <div class="card p-6 flex gap-4 reveal">
-      <span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span>
-      <p class="text-[15px] text-[var(--muted)] leading-relaxed">(India) COD return rates are quietly eating every rupee of margin and you don't have a system to fix it.</p>
-    </div>
-    <div class="card p-6 flex gap-4 reveal">
-      <span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span>
-      <p class="text-[15px] text-[var(--muted)] leading-relaxed">(International) You can't get a reliable payment gateway or your Shopify payouts keep getting held, and support won't give you a straight answer.</p>
-    </div>
-    <div class="card p-6 flex gap-4 reveal">
-      <span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span>
-      <p class="text-[15px] text-[var(--muted)] leading-relaxed">You're learning from YouTube videos and courses that were filmed in 2022 — and the platforms have changed since then.</p>
-    </div>
-    <div class="card p-6 flex gap-4 reveal">
-      <span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span>
-      <p class="text-[15px] text-[var(--muted)] leading-relaxed">Nobody who actually knows what they're doing will look at your store and tell you the truth about why it's not working.</p>
-    </div>
+    <div class="card p-6 flex gap-4 reveal"><span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span><p class="text-[15px] text-[var(--muted)] leading-relaxed">You've launched 3–4 products and none of them "hit" — and you don't actually know if it was the product, the creative, or the targeting.</p></div>
+    <div class="card p-6 flex gap-4 reveal"><span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span><p class="text-[15px] text-[var(--muted)] leading-relaxed">Your Meta or TikTok ad account got flagged or banned, and you're rebuilding from zero with no idea how to avoid it next time.</p></div>
+    <div class="card p-6 flex gap-4 reveal"><span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span><p class="text-[15px] text-[var(--muted)] leading-relaxed">(India) COD return rates are quietly eating every rupee of margin and you don't have a system to fix it.</p></div>
+    <div class="card p-6 flex gap-4 reveal"><span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span><p class="text-[15px] text-[var(--muted)] leading-relaxed">(International) You can't get a reliable payment gateway or your Shopify payouts keep getting held, and support won't give you a straight answer.</p></div>
+    <div class="card p-6 flex gap-4 reveal"><span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span><p class="text-[15px] text-[var(--muted)] leading-relaxed">You're learning from YouTube videos and courses that were filmed in 2022 — and the platforms have changed since then.</p></div>
+    <div class="card p-6 flex gap-4 reveal"><span class="text-[var(--red)] text-xl leading-none mt-0.5">×</span><p class="text-[15px] text-[var(--muted)] leading-relaxed">Nobody who actually knows what they're doing will look at your store and tell you the truth about why it's not working.</p></div>
   </div>
   <p class="text-center text-[var(--muted)] mt-10 reveal">If even two of those hit — that's exactly what mentorship exists to fix.</p>
 </section>
 
+<!-- FIT CHECK -->
+<section id="fitcheck" class="border-t border-[var(--line)] bg-[var(--surface)]">
+  <div class="max-w-3xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center mb-10 reveal">
+      <p class="eyebrow mb-4">Quick diagnosis</p>
+      <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-3">Where are you right now?</h2>
+      <p class="text-[var(--muted)]">Three questions. I'll tell you honestly what actually makes sense for your situation — before you apply for anything.</p>
+    </div>
+
+    <div class="card p-6 md:p-8 reveal">
+      <div class="flex items-center justify-between mb-6">
+        <div class="progress-track flex-1 mr-4"><div id="fcProgress" class="progress-fill" style="width:0%"></div></div>
+        <span id="fcStepLabel" class="mono text-xs text-[var(--faint)]">Step 1 of 3</span>
+      </div>
+      <div id="fcContent"></div>
+    </div>
+  </div>
+</section>
+
 <!-- MARKET SEGMENTATION -->
-<section class="border-t border-[var(--line)] bg-[var(--surface)]">
+<section class="bg-[var(--surface)] border-t border-[var(--line)]">
   <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
     <div class="text-center max-w-2xl mx-auto mb-14 reveal">
       <p class="eyebrow mb-4">Built for both markets</p>
@@ -240,7 +255,7 @@ body {
   </div>
 </section>
 
-<!-- CURRICULUM / TOPICS -->
+<!-- CURRICULUM -->
 <section id="curriculum" class="max-w-6xl mx-auto px-6 py-20 md:py-24">
   <div class="max-w-2xl mb-12 reveal">
     <p class="eyebrow mb-4">What we actually work on</p>
@@ -260,7 +275,7 @@ body {
   </div>
 </section>
 
-<!-- ABOUT THE MENTOR -->
+<!-- MENTOR -->
 <section class="border-t border-[var(--line)]">
   <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
     <div class="grid md:grid-cols-5 gap-12 md:gap-16 items-center">
@@ -272,9 +287,7 @@ body {
       </div>
       <div class="md:col-span-3 reveal">
         <p class="eyebrow mb-4">Your mentor</p>
-        <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-6">
-          I've had ₹0 days and ₹1L-a-day days. Both taught me something.
-        </h2>
+        <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-6">I've had ₹0 days and ₹1L-a-day days. Both taught me something.</h2>
         <div class="space-y-4 text-[var(--muted)] leading-relaxed text-[16px]">
           <p>I started dropshipping at 18 with no money, no mentor, and no idea what a "winning product" even meant. I found out the hard way — banned ad accounts, dead stock, suppliers who ghosted me mid-order.</p>
           <p>Over 8+ years I've run stores in both the Indian and international markets, generating ₹30 crore+ in combined revenue — and I've documented most of it publicly on YouTube to 60,000+ subscribers.</p>
@@ -290,112 +303,23 @@ body {
   </div>
 </section>
 
-<!-- PROOF / RESULTS -->
+<!-- PROOF EXPLORER -->
 <section id="proof" class="border-t border-[var(--line)] bg-[var(--surface)]">
   <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
-    <div class="max-w-2xl mb-4 reveal">
+    <div class="max-w-2xl mb-8 reveal">
       <p class="eyebrow mb-4">Proof, not promises</p>
       <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight">Real dashboards. Real ad accounts. Real students.</h2>
-      <p class="text-[var(--muted)] mt-4 leading-relaxed">Every screenshot below is an actual store, ad account or conversation. Nothing staged.</p>
+      <p class="text-[var(--muted)] mt-4 leading-relaxed">Every item below is an actual store, ad account or conversation. Click any card for the full picture. Nothing staged.</p>
     </div>
 
-    <!-- FEATURED: student testimonials in their own words -->
-    <div class="mt-14 mb-4">
-      <p class="mono text-xs text-[var(--gold)] mb-6 tracking-widest">STUDENTS, IN THEIR OWN WORDS</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5 mb-16">
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/testimonial-01.jpeg" alt="Student WhatsApp message about scaling to 117 orders" class="w-full h-56 object-cover object-top" />
-        <p class="text-xs text-[var(--muted)] p-4 leading-relaxed">"Aapki 1-2 tips use krke scale kiya... Aaj 117 orders so far, 120+ ho jaayenge. Pehele 50-70 orders per day the."</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/testimonial-04.jpeg" alt="Instagram DM: first sale by Google ads" class="w-full h-56 object-cover object-top" />
-        <p class="text-xs text-[var(--muted)] p-4 leading-relaxed">"Sir finally got the first sale by Google ads 🐎✨❤️" — "Thank you sir it's all possible because of you"</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/testimonial-05.jpeg" alt="Instagram DM: $4.5k using Instagram influencer strategy" class="w-full h-56 object-cover object-top" />
-        <p class="text-xs text-[var(--muted)] p-4 leading-relaxed">"generated $4.5k solely using your Instagram Influencer strategy. It works if you have the right product..."</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/testimonial-02.jpeg" alt="WhatsApp: first day in 1 hour, India ecom" class="w-full h-56 object-cover object-top" />
-        <p class="text-xs text-[var(--muted)] p-4 leading-relaxed">"Sir first day in 1 hour india ecom" — ₹3,998 in sales, 10.46 avg ROAS, within the first hour live.</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/testimonial-06.jpeg" alt="Instagram DM: continuous support and Google Shopping ads" class="w-full h-56 object-cover object-top" />
-        <p class="text-xs text-[var(--muted)] p-4 leading-relaxed">"Thank u for ur continuous support bro. Google shopping is amazing bro. Loved it!! Learning all your strategies..."</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/testimonial-03.jpeg" alt="WhatsApp coaching conversation on backend and netbanking" class="w-full h-56 object-cover object-top" />
-        <p class="text-xs text-[var(--muted)] p-4 leading-relaxed">Real 1-on-1 coaching thread — "Focus more on backend isme" — the kind of direct feedback you get every week.</p>
-      </div>
-    </div>
-
-    <!-- INDIA -->
-    <p class="mono text-xs text-[var(--gold)] mb-6 tracking-widest">🇮🇳 INDIA — STORE REVENUE</p>
-    <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-4 mb-14">
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/india-01.jpeg" alt="Indian store dashboard, 2.44 million rupees total sales" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹2.44M · 1,186 orders</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/india-04.jpeg" alt="Indian store dashboard, 6.63 million rupees monthly" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹6.63M this month</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/india-03.jpeg" alt="Student doing 1 lakh rupees per day dashboard" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹1.14L in a day — student</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/india-02.jpeg" alt="One product store dashboard with 25 percent RTO shown" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹1.79M · one-product store</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/india-05.jpeg" alt="Training student's first live store dashboard" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">Live store, day one of training</p>
-      </div>
-    </div>
-
-    <!-- AD PERFORMANCE -->
-    <p class="mono text-xs text-[var(--gold)] mb-6 tracking-widest">AD ACCOUNT PERFORMANCE — ROAS</p>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-14">
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/ads-04.jpeg" alt="Ad account scale, 1.3 crore rupees" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹1.3Cr · 5,498 purchases</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/ads-02.jpeg" alt="Amount spent vs conversion value, 9.36 average ROAS" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹12.7L spend → ₹1.19Cr revenue</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/ads-01.jpeg" alt="Cost per purchase and ROAS table, 11.97 average" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹27.7L revenue · 11.97 avg ROAS</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/ads-03.jpeg" alt="Ad campaign performance, 11.06 ROAS" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">₹7.19L · 11.06 ROAS</p>
-      </div>
-    </div>
-
-    <!-- INTERNATIONAL -->
-    <p class="mono text-xs text-[var(--gold)] mb-6 tracking-widest">🌍 INTERNATIONAL — STORE REVENUE</p>
-    <div class="grid sm:grid-cols-3 gap-4">
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/intl-03.jpeg" alt="Store showing 6625 US dollars in last 30 days, up 1505 percent" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">$6,625 · +1505% YoY</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/intl-01.jpeg" alt="Laptop screen showing 539 US dollars in dropshipping sales" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">$539.82 · 18 orders</p>
-      </div>
-      <div class="card overflow-hidden reveal">
-        <img src="proofs/intl-02.jpeg" alt="Overview dashboard showing 1252 US dollars, watermarked Chirag Sharma" class="w-full h-40 object-cover" />
-        <p class="mono text-[11px] text-[var(--muted)] p-3">$1,252.53 · 2.85% CVR</p>
-      </div>
-    </div>
+    <div class="flex flex-wrap gap-3 mb-10 reveal" id="proofFilters"></div>
+    <div id="proofGrid" class="grid sm:grid-cols-2 md:grid-cols-4 gap-4"></div>
 
     <p class="text-center text-xs text-[var(--faint)] mt-10 reveal">Screenshots are from real stores and student conversations. Identifying details have been redacted for privacy.</p>
   </div>
 </section>
+
+<div id="proofModal"></div>
 
 <!-- WHO IT'S FOR -->
 <section class="max-w-6xl mx-auto px-6 py-20 md:py-24">
@@ -425,80 +349,87 @@ body {
   </div>
 </section>
 
-<!-- OFFERS -->
+<!-- MENTORSHIP COMPARISON -->
 <section id="mentorship" class="border-t border-[var(--line)]">
   <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
     <div class="max-w-2xl mb-14 reveal">
       <p class="eyebrow mb-4">Two ways to work with me</p>
       <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight">Choose the depth you need right now</h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="card card-hover p-8 md:p-10 relative overflow-hidden reveal">
-        <div class="absolute top-0 left-0 right-0 h-[3px]" style="background: linear-gradient(90deg, var(--gold), var(--gold-bright));"></div>
-        <p class="text-xs font-semibold tracking-widest uppercase text-[var(--gold)] mb-4">Most serious</p>
-        <h3 class="display text-3xl font-bold mb-4">Private Dropshipping Mentorship</h3>
-        <p class="text-[var(--muted)] leading-relaxed mb-8">Direct 1-on-1 guidance to build a dropshipping business that survives past month one — product to profit, with someone reviewing your actual numbers.</p>
-        <ul class="space-y-3 mb-10 text-[15px]">
-          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>Store, product &amp; ad account audit in week one</li>
-          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>India or international roadmap, built for your market</li>
-          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>Direct access to me for reviews and course-correction</li>
-          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>Limited students at a time — real attention, not a Discord you get lost in</li>
-        </ul>
-        <a href="#application" class="btn-primary block text-center py-4 text-base">Apply for mentorship →</a>
-      </div>
-      <div id="clarity" class="card card-hover p-8 md:p-10 reveal">
+    <div class="grid md:grid-cols-2 gap-6" id="cmpGrid">
+      <div class="card card-hover p-8 md:p-10 reveal" id="cmpConsult">
         <p class="text-xs font-semibold tracking-widest uppercase text-[var(--faint)] mb-4">Quick start</p>
         <h3 class="display text-3xl font-bold mb-4">45-Min Clarity Call</h3>
-        <p class="text-[var(--muted)] leading-relaxed mb-8">One focused call to get unstuck on your store, your product, or which market to go after — leave with an exact next step.</p>
-        <div class="flex items-baseline gap-3 mb-8">
+        <p class="text-[var(--muted)] leading-relaxed mb-6">One focused call to get unstuck on your store, your product, or which market to go after — leave with an exact next step.</p>
+        <div class="flex items-baseline gap-3 mb-6">
           <p class="display text-5xl font-bold">₹2,499</p>
-          <p class="text-sm text-[var(--faint)]">one-time · limited slots weekly</p>
+          <p class="text-sm text-[var(--faint)]">one-time</p>
         </div>
         <ul class="space-y-3 mb-10 text-[15px]">
           <li class="flex gap-3"><span class="text-[var(--faint)] mt-0.5">→</span>45 minutes, 1-on-1, on video call</li>
           <li class="flex gap-3"><span class="text-[var(--faint)] mt-0.5">→</span>Bring your store or your idea — we go through it live</li>
           <li class="flex gap-3"><span class="text-[var(--faint)] mt-0.5">→</span>Walk away with a concrete next-90-days plan</li>
         </ul>
-        <a href="https://rzp.io/rzp/fwSC52pF" target="_blank" rel="noopener" class="btn-ghost block text-center py-4 text-base">Book clarity call →</a>
+        <button onclick="openWizard('consultation')" class="btn-ghost block w-full text-center py-4 text-base">Apply for clarity call →</button>
+      </div>
+      <div class="card card-hover p-8 md:p-10 relative overflow-hidden reveal" id="cmpMentor">
+        <div class="absolute top-0 left-0 right-0 h-[3px]" style="background: linear-gradient(90deg, var(--gold), var(--gold-bright));"></div>
+        <p class="text-xs font-semibold tracking-widest uppercase text-[var(--gold)] mb-4">Most serious</p>
+        <h3 class="display text-3xl font-bold mb-4">Private Dropshipping Mentorship</h3>
+        <p class="text-[var(--muted)] leading-relaxed mb-6">Direct 1-on-1 guidance to build a dropshipping business that survives past month one — product to profit, with someone reviewing your actual numbers.</p>
+        <p class="text-sm text-[var(--faint)] mb-6">Investment discussed personally on WhatsApp, based on where you're starting from.</p>
+        <ul class="space-y-3 mb-10 text-[15px]">
+          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>Store, product &amp; ad account audit in week one</li>
+          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>India or international roadmap, built for your market</li>
+          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>Direct access to me for reviews and course-correction</li>
+          <li class="flex gap-3"><span class="text-[var(--gold)] mt-0.5">→</span>Limited students at a time — real attention, not a Discord you get lost in</li>
+        </ul>
+        <button onclick="openWizard('mentorship')" class="btn-primary block w-full text-center py-4 text-base">Apply for mentorship →</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- PROCESS TIMELINE -->
 <section class="border-t border-[var(--line)] bg-[var(--surface)]">
-  <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
-    <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-start">
-      <div class="md:sticky md:top-28 reveal">
-        <p class="eyebrow mb-4">The process</p>
-        <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-6">From application to your first fix — fast</h2>
-        <p class="text-[var(--muted)] leading-relaxed">I keep this small so every student gets real attention. Your application is your intake, so day one is spent on your actual store — not generic onboarding.</p>
+  <div class="max-w-4xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="eyebrow mb-4">The process</p>
+      <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">From application to your first fix</h2>
+      <p class="text-[var(--muted)] leading-relaxed">Click any stage to see what actually happens.</p>
+    </div>
+    <div class="space-y-3" id="timelineWrap">
+      <div class="tl-item card p-5 reveal" data-step="1">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="toggleTl(this)">
+          <div class="tl-dot"></div>
+          <div class="flex-1"><p class="mono text-xs text-[var(--faint)] mb-0.5">STAGE 1</p><h3 class="font-semibold text-lg">Apply</h3></div>
+          <span class="tl-chevron text-[var(--faint)] text-xl leading-none">+</span>
+        </div>
+        <div class="tl-body pl-[30px]"><p class="text-[15px] text-[var(--muted)] leading-relaxed pt-3">A short, honest intake — your market, your current status, and what's actually broken right now. This becomes the starting point for everything after.</p></div>
       </div>
-      <div class="space-y-7">
-        <div class="step relative pl-14 reveal">
-          <div class="step-line"></div>
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full border border-[var(--line)] bg-[var(--surface-2)] flex items-center justify-center display font-bold text-sm">1</div>
-          <h3 class="font-semibold text-lg mb-1.5">Fill your intake</h3>
-          <p class="text-[var(--muted)] text-[15px] leading-relaxed">Your market, your current store status, your budget, and what's actually broken right now.</p>
+      <div class="tl-item card p-5 reveal" data-step="2">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="toggleTl(this)">
+          <div class="tl-dot"></div>
+          <div class="flex-1"><p class="mono text-xs text-[var(--faint)] mb-0.5">STAGE 2</p><h3 class="font-semibold text-lg">I message you on WhatsApp</h3></div>
+          <span class="tl-chevron text-[var(--faint)] text-xl leading-none">+</span>
         </div>
-        <div class="step relative pl-14 reveal">
-          <div class="step-line"></div>
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full border border-[var(--line)] bg-[var(--surface-2)] flex items-center justify-center display font-bold text-sm">2</div>
-          <h3 class="font-semibold text-lg mb-1.5">Secure your spot</h3>
-          <p class="text-[var(--muted)] text-[15px] leading-relaxed">Complete payment securely via Razorpay to lock your start date.</p>
+        <div class="tl-body pl-[30px]"><p class="text-[15px] text-[var(--muted)] leading-relaxed pt-3">Personally, usually within 24 hours — having already read your intake. No call centre, no assistant screening you first.</p></div>
+      </div>
+      <div class="tl-item card p-5 reveal" data-step="3">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="toggleTl(this)">
+          <div class="tl-dot"></div>
+          <div class="flex-1"><p class="mono text-xs text-[var(--faint)] mb-0.5">STAGE 3</p><h3 class="font-semibold text-lg">We confirm the right fit</h3></div>
+          <span class="tl-chevron text-[var(--faint)] text-xl leading-none">+</span>
         </div>
-        <div class="step relative pl-14 reveal">
-          <div class="step-line"></div>
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full border border-[var(--line)] bg-[var(--surface-2)] flex items-center justify-center display font-bold text-sm">3</div>
-          <h3 class="font-semibold text-lg mb-1.5">I reach out within 24 hours</h3>
-          <p class="text-[var(--muted)] text-[15px] leading-relaxed">Personally, on WhatsApp — having already read your intake and store details.</p>
+        <div class="tl-body pl-[30px]"><p class="text-[15px] text-[var(--muted)] leading-relaxed pt-3">We talk through your situation directly and agree on what makes sense — clarity call or full mentorship — before anything is locked in.</p></div>
+      </div>
+      <div class="tl-item card p-5 reveal" data-step="4">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="toggleTl(this)">
+          <div class="tl-dot"></div>
+          <div class="flex-1"><p class="mono text-xs text-[var(--faint)] mb-0.5">STAGE 4</p><h3 class="font-semibold text-lg">We audit and fix</h3></div>
+          <span class="tl-chevron text-[var(--faint)] text-xl leading-none">+</span>
         </div>
-        <div class="step relative pl-14 reveal">
-          <div class="step-line"></div>
-          <div class="absolute left-0 top-0 w-10 h-10 rounded-full border border-[var(--line)] bg-[var(--surface-2)] flex items-center justify-center display font-bold text-sm">4</div>
-          <h3 class="font-semibold text-lg mb-1.5">We audit and fix</h3>
-          <p class="text-[var(--muted)] text-[15px] leading-relaxed">First priority: find what's actually broken, and start fixing it that week.</p>
-        </div>
+        <div class="tl-body pl-[30px]"><p class="text-[15px] text-[var(--muted)] leading-relaxed pt-3">First priority: find what's actually broken in your store, product or ads — and start fixing it that week.</p></div>
       </div>
     </div>
   </div>
@@ -509,10 +440,7 @@ body {
   <div class="card p-8 md:p-12 text-center reveal" style="border-color:#33501F;">
     <p class="eyebrow mb-4">Risk reversal</p>
     <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-5">My guarantee to you</h2>
-    <p class="text-[var(--muted)] leading-relaxed max-w-2xl mx-auto">
-      I won't promise you a specific income — nobody honest can, and anyone who does is selling you a lie. What I will guarantee: if you show up, implement what we agree on, and I'm not giving you real, direct support in return, I'll extend your mentorship at no extra cost until I do.
-    </p>
-    
+    <p class="text-[var(--muted)] leading-relaxed max-w-2xl mx-auto">I won't promise you a specific income — nobody honest can, and anyone who does is selling you a lie. What I will guarantee: if you show up, implement what we agree on, and I'm not giving you real, direct support in return, I'll extend your mentorship at no extra cost until I do.</p>
   </div>
 </section>
 
@@ -523,133 +451,45 @@ body {
       <p class="eyebrow mb-4">Real questions people ask before applying</p>
       <h2 class="display text-3xl md:text-4xl font-bold tracking-tight">Before you ask</h2>
     </div>
-    <div class="space-y-3">
-      <details class="card px-6 py-5 group reveal" open>
-        <summary class="cursor-pointer font-medium flex justify-between items-center list-none">
-          Is dropshipping even still viable in 2026?
-          <span class="text-[var(--faint)] group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-        </summary>
-        <p class="text-[var(--muted)] text-[15px] leading-relaxed mt-4">Yes — but the "pick any product, run one ad" era is over. What works now is proper product research, real creative testing, and treating it like a business with margins and retention, not a lottery ticket. That's exactly what mentorship teaches.</p>
+    <div class="space-y-2.5" id="faqWrap">
+      <details class="reveal" style="background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding: 4px 20px;" open>
+        <summary class="cursor-pointer font-medium flex justify-between items-center list-none py-4">Is dropshipping even still viable in 2026?<span class="text-[var(--faint)] text-xl leading-none">＋</span></summary>
+        <p class="text-[var(--muted)] text-[15px] leading-relaxed pb-4">Yes — but the "pick any product, run one ad" era is over. What works now is proper product research, real creative testing, and treating it like a business with margins and retention, not a lottery ticket. That's exactly what mentorship teaches.</p>
       </details>
-      <details class="card px-6 py-5 group reveal">
-        <summary class="cursor-pointer font-medium flex justify-between items-center list-none">
-          Should I do Indian or international dropshipping?
-          <span class="text-[var(--faint)] group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-        </summary>
-        <p class="text-[var(--muted)] text-[15px] leading-relaxed mt-4">Depends on your budget, risk tolerance and payment access — both are covered in your intake, and we decide together in your first session rather than guessing upfront.</p>
+      <details class="reveal" style="background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding: 4px 20px;">
+        <summary class="cursor-pointer font-medium flex justify-between items-center list-none py-4">Should I do Indian or international dropshipping?<span class="text-[var(--faint)] text-xl leading-none">＋</span></summary>
+        <p class="text-[var(--muted)] text-[15px] leading-relaxed pb-4">Depends on your budget, risk tolerance and payment access — both are covered in your intake, and we decide together in your first conversation rather than guessing upfront.</p>
       </details>
-      <details class="card px-6 py-5 group reveal">
-        <summary class="cursor-pointer font-medium flex justify-between items-center list-none">
-          I have a small budget for ads. Can I still start?
-          <span class="text-[var(--faint)] group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-        </summary>
-        <p class="text-[var(--muted)] text-[15px] leading-relaxed mt-4">You need some capital for testing — dropshipping isn't free. But you don't need a huge budget to start testing properly if the process is right. We'll be honest with you about what's realistic for your specific number.</p>
+      <details class="reveal" style="background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding: 4px 20px;">
+        <summary class="cursor-pointer font-medium flex justify-between items-center list-none py-4">I have a small budget for ads. Can I still start?<span class="text-[var(--faint)] text-xl leading-none">＋</span></summary>
+        <p class="text-[var(--muted)] text-[15px] leading-relaxed pb-4">You need some capital for testing — dropshipping isn't free. But you don't need a huge budget to start testing properly if the process is right. We'll be honest with you about what's realistic for your specific number.</p>
       </details>
-      <details class="card px-6 py-5 group reveal">
-        <summary class="cursor-pointer font-medium flex justify-between items-center list-none">
-          Why does the mentorship investment vary?
-          <span class="text-[var(--faint)] group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-        </summary>
-        <p class="text-[var(--muted)] text-[15px] leading-relaxed mt-4">Someone starting from zero needs a different depth of involvement than someone scaling an existing store. Your application helps me match the right structure to where you actually are.</p>
+      <details class="reveal" style="background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding: 4px 20px;">
+        <summary class="cursor-pointer font-medium flex justify-between items-center list-none py-4">Why isn't mentorship pricing shown on the site?<span class="text-[var(--faint)] text-xl leading-none">＋</span></summary>
+        <p class="text-[var(--muted)] text-[15px] leading-relaxed pb-4">Someone starting from zero needs a different depth of involvement than someone scaling an existing store — so it's discussed directly on WhatsApp once I understand your situation, not guessed at with a generic price tag.</p>
       </details>
-      <details class="card px-6 py-5 group reveal">
-        <summary class="cursor-pointer font-medium flex justify-between items-center list-none">
-          What if I'm not ready for full mentorship yet?
-          <span class="text-[var(--faint)] group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-        </summary>
-        <p class="text-[var(--muted)] text-[15px] leading-relaxed mt-4">Start with the ₹2,499 clarity call. One focused session on your store or your plan — and if you join mentorship later, you'll already know how I work.</p>
+      <details class="reveal" style="background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding: 4px 20px;">
+        <summary class="cursor-pointer font-medium flex justify-between items-center list-none py-4">What if I'm not ready for full mentorship yet?<span class="text-[var(--faint)] text-xl leading-none">＋</span></summary>
+        <p class="text-[var(--muted)] text-[15px] leading-relaxed pb-4">Start with the ₹2,499 clarity call. One focused session on your store or your plan — and if you join mentorship later, you'll already know how I work.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- APPLICATION FORM -->
-<section id="application" class="border-t border-[var(--line)] relative overflow-hidden">
+<!-- APPLICATION WIZARD -->
+<section id="apply" class="border-t border-[var(--line)] relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 50% 40% at 50% 0%, rgba(211,164,59,0.08), transparent 65%);"></div>
-  <div class="max-w-3xl mx-auto px-6 py-20 md:py-28 relative pb-32 md:pb-28">
-    <div class="text-center mb-10 reveal">
-      <p class="eyebrow mb-4">Mentorship application</p>
-      <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">Apply to work with me</h2>
-      <p class="text-[var(--muted)] max-w-xl mx-auto leading-relaxed">Takes 3 minutes and becomes your mentorship intake. Applications are reviewed personally — I don't accept everyone.</p>
-      <p class="mono text-xs text-[var(--gold)] mt-4"> Only 3 mentorship spots open this month</p>
+  <div class="max-w-2xl mx-auto px-6 py-20 md:py-28 relative pb-32 md:pb-28">
+    <div class="text-center mb-8 reveal">
+      <p class="eyebrow mb-4">Apply</p>
+      <h2 class="display text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-3">Let's get you the right help</h2>
+      <p class="text-[var(--muted)] leading-relaxed">A few quick questions, then straight to WhatsApp with me.</p>
     </div>
 
-    <form onsubmit="handleSubmit(event)" class="card p-8 md:p-10 space-y-6 reveal" novalidate>
-
-      <div>
-        <label class="label">Which market are you focused on?</label>
-        <div class="market-toggle grid grid-cols-2 gap-3">
-          <input type="radio" id="mkt-in" name="market" value="India" checked>
-          <label for="mkt-in" class="field text-center py-3 cursor-pointer">🇮🇳 India (COD)</label>
-          <input type="radio" id="mkt-intl" name="market" value="International">
-          <label for="mkt-intl" class="field text-center py-3 cursor-pointer">🌍 International</label>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <label class="label" for="f-name">Full name</label>
-          <input id="f-name" type="text" name="name" required placeholder="Your full name" class="field" />
-        </div>
-        <div>
-          <label class="label" for="f-email">Email address</label>
-          <input id="f-email" type="email" name="email" required placeholder="you@example.com" class="field" />
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <label class="label" for="f-whatsapp">WhatsApp number</label>
-          <input id="f-whatsapp" type="tel" name="whatsapp" required placeholder="+91 XXXXX XXXXX" class="field" />
-        </div>
-        <div>
-          <label class="label" for="f-income">Current monthly income</label>
-          <input id="f-income" type="text" name="income" placeholder="₹0 – ₹1,00,000+" class="field" />
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <label class="label" for="f-experience">Have you dropshipped before?</label>
-          <select id="f-experience" name="experience" required class="field">
-            <option value="">Select one</option>
-            <option value="never">No, complete beginner</option>
-            <option value="tried">Tried it, no real success yet</option>
-            <option value="running">Running a store now, want to scale</option>
-          </select>
-        </div>
-        <div>
-          <label class="label" for="budget">Mentorship investment</label>
-          <select id="budget" name="budget" required class="field">
-            <option value="">Select your range</option>
-            <option value="below25k">Below ₹25,000</option>
-            <option value="25k">₹25,000 – ₹50,000</option>
-            <option value="50k">₹50,000 – ₹1,00,000</option>
-            <option value="100k">₹1,00,000+</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- honeypot: real visitors never see or fill this. Bots do. -->
-      <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
-        <label for="f-website">Website</label>
-        <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" />
-      </div>
-
-
-      <div>
-        <label class="label" for="f-goal">Your 6-month goal</label>
-        <textarea id="f-goal" name="goal" rows="4" required placeholder="Where do you want your store / income to be in 6 months?" class="field resize-none"></textarea>
-      </div>
-
-      <div>
-        <label class="label" for="f-struggle">Biggest current struggle</label>
-        <textarea id="f-struggle" name="struggle" rows="3" placeholder="Product research? Ads? Suppliers? COD/RTO? Payments? Be specific." class="field resize-none"></textarea>
-      </div>
-
-      <button type="submit" id="submitBtn" class="btn-primary w-full py-4 text-base">Submit application →</button>
-      <p class="text-center text-xs text-[var(--faint)]">Your details stay private and are only used to review your application.</p>
-    </form>
+    <div class="card p-6 md:p-9">
+      <div class="flex items-center gap-2 justify-center mb-8" id="wizDots"></div>
+      <div id="wizContent"></div>
+    </div>
   </div>
 </section>
 
@@ -666,91 +506,445 @@ body {
     </div>
     <div class="mt-16 pt-8 border-t border-[var(--line)] flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--faint)]">
       <p>© 2026 Chirag Sharma. All rights reserved.</p>
-      <p>Payments secured by Razorpay</p>
+      <p>Applications go directly to WhatsApp</p>
     </div>
   </div>
 </footer>
 
-<!-- LOW BUDGET MODAL -->
-<div id="lowBudgetModal" class="hidden fixed inset-0 bg-black/85 backdrop-blur-sm flex items-center justify-center z-50 px-6">
-  <div class="card p-8 md:p-10 max-w-lg w-full text-center">
-    <h2 class="display text-3xl font-bold mb-4 leading-tight">Start with a 1-on-1 clarity call</h2>
-    <p class="text-[var(--muted)] leading-relaxed mb-6">Private mentorship starts at ₹25,000 — but you don't need it to get moving. Book a 45-minute call instead. Bring your store or your product idea and leave with a clear next-90-days plan.</p>
-    <div class="flex items-baseline gap-2 justify-center mb-8">
-      <p class="display text-4xl font-bold">₹2,499</p>
-      <p class="text-sm text-[var(--faint)]">· 45 minutes · 1-on-1</p>
-    </div>
-    <div class="flex flex-col gap-3">
-      <a href="https://rzp.io/rzp/fwSC52pF" target="_blank" rel="noopener" class="btn-primary py-4">Book clarity call — ₹2,499 →</a>
-      <a href="https://youtube.com/chiragsharma" target="_blank" rel="noopener" class="btn-ghost py-4">Or start with free YouTube training →</a>
-      <button onclick="document.getElementById('lowBudgetModal').classList.add('hidden')" class="text-[var(--faint)] text-sm mt-2 hover:text-[var(--muted)] transition">Close</button>
-    </div>
-  </div>
-</div>
-
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta md:hidden">
   <div class="max-w-6xl mx-auto px-4 py-3 flex gap-3">
-    <a href="#clarity" class="btn-ghost flex-1 text-center py-3 text-sm">₹2,499 call</a>
-    <a href="#application" class="btn-primary flex-1 text-center py-3 text-sm">Apply now →</a>
+    <button onclick="openWizard('consultation')" class="btn-ghost flex-1 text-center py-3 text-sm">₹2,499 call</button>
+    <button onclick="openWizard('mentorship')" class="btn-primary flex-1 text-center py-3 text-sm">Apply now →</button>
   </div>
 </div>
 
 <script>
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const btn = document.getElementById('submitBtn');
+/* ============ CONFIG ============ */
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwbRvqPAxdnRGGSPnVbXSVrCDxBvhhdke6EbRLSwpus9-hE5bmwKmB8VPH7LeeAtjA/exec";
+const WHATSAPP_NUMBER = "918447355977";
 
-    if (!form.name.value || !form.email.value || !form.whatsapp.value || !form.budget.value || !form.experience.value || !form.goal.value) {
-      form.reportValidity ? form.reportValidity() : alert('Please fill all required fields.');
-      if (!form.checkValidity()) return;
-    }
+/* ============ SHARED STATE ============ */
+const state = { path: null, market: "", stage: "", problem: "", experience: "", income: "", budget: "", name: "", email: "", whatsapp: "", goal: "", struggle: "" };
 
-    const data = {
-      market: form.market.value,
-      name: form.name.value,
-      email: form.email.value,
-      whatsapp: form.whatsapp.value,
-      income: form.income.value,
-      experience: form.experience.value,
-      budget: form.budget.value,
-      goal: form.goal.value,
-      struggle: form.struggle.value,
-      website: form.website.value
-    };
+/* ============ FIT CHECK ============ */
+const fcQuestions = [
+  { key: "stage", label: "Where are you right now?", options: [
+    { v: "beginner", t: "Never actually started" },
+    { v: "tried", t: "Tried it, didn't really work" },
+    { v: "existing", t: "Running a store, not scaling" },
+    { v: "scaling", t: "Scaling, but hitting a ceiling" }
+  ]},
+  { key: "market", label: "Which market are you building for?", options: [
+    { v: "India", t: "🇮🇳 India (COD)" },
+    { v: "International", t: "🌍 International" }
+  ]},
+  { key: "problem", label: "What's actually stopping you right now?", options: [] }
+];
 
-    btn.disabled = true;
-    btn.textContent = 'Submitting…';
+let fcIndex = 0;
 
-    try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbwbRvqPAxdnRGGSPnVbXSVrCDxBvhhdke6EbRLSwpus9-hE5bmwKmB8VPH7LeeAtjA/exec",
-        { method: "POST", body: JSON.stringify(data) }
-      );
-    } catch (e) { /* continue even if logging fails */ }
+function startFitCheck() {
+  document.getElementById('fitcheck').scrollIntoView({ behavior: 'smooth' });
+  fcIndex = 0;
+  renderFc();
+}
 
-    btn.disabled = false;
-    btn.textContent = 'Submit application →';
+function fcProblemOptions() {
+  if (state.market === "India") {
+    return [
+      { v: "product", t: "Can't find a winning product" },
+      { v: "ads", t: "Ads aren't converting / account issues" },
+      { v: "rto", t: "COD returns / RTO eating margin" },
+      { v: "unsure", t: "Honestly, not sure where to start" }
+    ];
+  }
+  return [
+    { v: "product", t: "Can't find a winning product" },
+    { v: "ads", t: "Ads aren't converting / account issues" },
+    { v: "payments", t: "Payment gateway / payout issues" },
+    { v: "unsure", t: "Honestly, not sure where to start" }
+  ];
+}
 
-    if (data.budget === "below25k") {
-      document.getElementById("lowBudgetModal").classList.remove("hidden");
-      return;
-    } else if (data.budget === "25k") {
-      window.location.href = "https://rzp.io/rzp/iIx1lI0J";
-    } else if (data.budget === "50k") {
-      window.location.href = "https://rzp.io/rzp/Aj3yBeJZ";
-    } else {
-      window.location.href = "https://rzp.io/rzp/NuqJrqC";
-    }
+function renderFc() {
+  const content = document.getElementById('fcContent');
+  const progress = document.getElementById('fcProgress');
+  const stepLabel = document.getElementById('fcStepLabel');
+
+  if (fcIndex >= fcQuestions.length) {
+    progress.style.width = '100%';
+    stepLabel.textContent = 'Done';
+    content.innerHTML = fcResultHtml();
+    return;
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const q = fcQuestions[fcIndex];
+  const options = q.key === "problem" ? fcProblemOptions() : q.options;
+  progress.style.width = Math.round((fcIndex / fcQuestions.length) * 100) + '%';
+  stepLabel.textContent = 'Step ' + (fcIndex + 1) + ' of ' + fcQuestions.length;
+
+  let html = '<div class="fade-step"><h3 class="text-xl font-semibold mb-5">' + q.label + '</h3><div class="space-y-3">';
+  options.forEach((o, i) => {
+    const selected = state[q.key] === o.v;
+    html += '<button type="button" class="opt-card' + (selected ? ' selected' : '') + '" onclick="fcAnswer(\'' + q.key + '\',\'' + o.v + '\')"><span class="opt-num">' + (i + 1) + '</span><span>' + o.t + '</span></button>';
+  });
+  html += '</div>';
+  if (fcIndex > 0) html += '<button type="button" class="btn-ghost text-sm px-5 py-2.5 mt-6" onclick="fcBack()">← Back</button>';
+  html += '</div>';
+  content.innerHTML = html;
+}
+
+function fcAnswer(key, value) {
+  state[key] = value;
+  setTimeout(() => { fcIndex++; renderFc(); }, 220);
+}
+function fcBack() { fcIndex--; renderFc(); }
+
+function fcResultHtml() {
+  const rec = fcRecommendation();
+  return '<div class="fade-step text-center">' +
+    '<p class="eyebrow mb-4">My honest read</p>' +
+    '<p class="text-lg leading-relaxed mb-8">' + rec.text + '</p>' +
+    '<div class="flex flex-col sm:flex-row gap-3 justify-center">' +
+      '<button type="button" class="btn-' + (rec.path === 'consultation' ? 'primary' : 'ghost') + ' px-6 py-3.5" onclick="openWizard(\'consultation\')">Book the ₹2,499 clarity call →</button>' +
+      '<button type="button" class="btn-' + (rec.path === 'mentorship' ? 'primary' : 'ghost') + ' px-6 py-3.5" onclick="openWizard(\'mentorship\')">Apply for mentorship →</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function fcRecommendation() {
+  const { stage, market, problem } = state;
+  let path = 'consultation';
+  let text = '';
+
+  if (stage === 'beginner') {
+    path = 'consultation';
+    text = "You're at the very start — before you spend real money on ads or products, you need the fundamentals in place. A 45-minute clarity call is the right first move. Full mentorship can wait until you've actually got a store running.";
+  } else if (stage === 'scaling') {
+    path = 'mentorship';
+    text = "You don't need someone explaining dropshipping basics — you need someone reviewing your actual numbers every week and helping you scale without breaking what's working. That's private mentorship, not a single call.";
+  } else if (stage === 'tried' || stage === 'existing') {
+    if (problem === 'unsure') {
+      path = 'consultation';
+      text = "You've got real experience but you're not sure what's actually broken. That's exactly what a clarity call is for — we'll get eyes on your " + (market === 'India' ? 'India COD' : 'international') + " store together and figure out the real bottleneck before committing to anything bigger.";
+    } else {
+      path = 'mentorship';
+      const problemText = { product: 'product research', ads: 'ad account and creative testing', rto: 'COD returns and RTO', payments: 'payment gateway setup' }[problem] || 'this';
+      text = "Sounds like " + problemText + " is the real blocker on your " + (market === 'India' ? 'India' : 'international') + " store. That's specific, fixable, and exactly the kind of thing mentorship exists for — direct, ongoing feedback instead of a one-time call.";
+    }
+  } else {
+    text = "Based on what you've told me, either option can work — the clarity call if you want a single focused session first, or mentorship if you're ready for ongoing direct support.";
+  }
+  return { path, text };
+}
+
+/* ============ PROOF EXPLORER ============ */
+const proofItems = [
+  { cat: 'testimonial', img: 'proofs/testimonial-01.jpeg', title: 'Scaled to 117 orders/day', caption: '"Aapki 1-2 tips use krke scale kiya... Aaj 117 orders so far, 120+ ho jaayenge. Pehele 50-70 orders per day the."', context: 'A student\'s own message after applying scaling adjustments discussed directly. Previously running 50-70 orders/day.' },
+  { cat: 'testimonial', img: 'proofs/testimonial-04.jpeg', title: 'First sale via Google Ads', caption: '"Sir finally got the first sale by Google ads" — "Thank you sir it\'s all possible because of you"', context: 'Real Instagram DM after their first Google Ads conversion.' },
+  { cat: 'testimonial', img: 'proofs/testimonial-05.jpeg', title: '$4.5k via Instagram influencer strategy', caption: '"generated $4.5k solely using your Instagram Influencer strategy. It works if you have the right product..."', context: 'International student applying an influencer-led traffic strategy.' },
+  { cat: 'testimonial', img: 'proofs/testimonial-02.jpeg', title: 'First day live, first hour', caption: '"Sir first day in 1 hour india ecom" — ₹3,998 in sales, 10.46 avg ROAS.', context: 'India COD store, first hour after going live.' },
+  { cat: 'testimonial', img: 'proofs/testimonial-06.jpeg', title: 'Google Shopping results', caption: '"Thank u for ur continuous support bro. Google shopping is amazing bro. Loved it!! Learning all your strategies..."', context: 'Ongoing support conversation, international store.' },
+  { cat: 'testimonial', img: 'proofs/testimonial-03.jpeg', title: 'Real 1-on-1 coaching thread', caption: '"Focus more on backend isme" — direct feedback on store backend setup.', context: 'The kind of specific, direct feedback exchanged weekly with mentorship students.' },
+  { cat: 'india', img: 'proofs/india-01.jpeg', title: '₹2.44M · 1,186 orders', caption: 'Indian store dashboard, total sales.', context: 'India COD store — monthly view.' },
+  { cat: 'india', img: 'proofs/india-04.jpeg', title: '₹6.63M this month', caption: 'Indian store dashboard, monthly total.', context: 'India COD store, 83% of social referrals from Facebook.' },
+  { cat: 'india', img: 'proofs/india-03.jpeg', title: '₹1.14L in a day — student', caption: 'Student store doing over ₹1 lakh in a single day.', context: '58 orders in one day, India market.' },
+  { cat: 'india', img: 'proofs/india-02.jpeg', title: '₹1.79M · one-product store', caption: 'One-product store, 25% RTO shown honestly.', context: 'Included deliberately — RTO is a real cost, not hidden.' },
+  { cat: 'india', img: 'proofs/india-05.jpeg', title: 'Live store, day one of training', caption: 'Training student\'s first live store dashboard.', context: 'First sales within a day of the store going live during training.' },
+  { cat: 'ads', img: 'proofs/ads-04.jpeg', title: '₹1.3Cr · 5,498 purchases', caption: 'Ad account scale, total conversion value.', context: 'Ads Manager, full campaign lifetime view.' },
+  { cat: 'ads', img: 'proofs/ads-02.jpeg', title: '₹12.7L spend → ₹1.19Cr revenue', caption: 'Amount spent vs conversion value, 9.36 average ROAS.', context: 'Spend-to-revenue table — the number that actually matters.' },
+  { cat: 'ads', img: 'proofs/ads-01.jpeg', title: '₹27.7L revenue · 11.97 avg ROAS', caption: 'Cost per purchase and ROAS table.', context: 'Multiple ad sets, blended average shown.' },
+  { cat: 'ads', img: 'proofs/ads-03.jpeg', title: '₹7.19L · 11.06 ROAS', caption: 'Ad campaign performance.', context: 'Single campaign breakdown.' },
+  { cat: 'intl', img: 'proofs/intl-03.jpeg', title: '$6,625 · +1505% YoY', caption: 'Last 30 days, up 1505% from a year ago.', context: 'International store, 130 transactions.' },
+  { cat: 'intl', img: 'proofs/intl-01.jpeg', title: '$539.82 · 18 orders', caption: 'Laptop screen, live dropshipping sales.', context: 'International student store, candid capture.' },
+  { cat: 'intl', img: 'proofs/intl-02.jpeg', title: '$1,252.53 · 2.85% CVR', caption: 'Overview dashboard, watermarked.', context: 'Watermarked directly by Chirag to prevent screenshot theft.' }
+];
+
+const proofFilters = [
+  { v: 'all', t: 'All' },
+  { v: 'testimonial', t: 'Student Results' },
+  { v: 'india', t: 'Store Revenue — India' },
+  { v: 'ads', t: 'Ad Performance' },
+  { v: 'intl', t: 'International' }
+];
+
+let activeFilter = 'all';
+
+function renderProofFilters() {
+  const wrap = document.getElementById('proofFilters');
+  wrap.innerHTML = proofFilters.map(f =>
+    '<button type="button" class="pill-btn' + (activeFilter === f.v ? ' active' : '') + '" onclick="setProofFilter(\'' + f.v + '\')">' + f.t + '</button>'
+  ).join('');
+}
+
+function setProofFilter(v) { activeFilter = v; renderProofFilters(); renderProofGrid(); }
+
+function renderProofGrid() {
+  const grid = document.getElementById('proofGrid');
+  const items = activeFilter === 'all' ? proofItems : proofItems.filter(p => p.cat === activeFilter);
+  grid.innerHTML = items.map((p, i) =>
+    '<div class="card proof-tile reveal in" tabindex="0" role="button" aria-label="' + p.title + '" onclick="openProof(' + proofItems.indexOf(p) + ')" onkeydown="if(event.key===\'Enter\')openProof(' + proofItems.indexOf(p) + ')">' +
+      '<div class="overflow-hidden"><img src="' + p.img + '" alt="' + p.title + '" class="w-full h-40 object-cover" /></div>' +
+      '<p class="mono text-[11px] text-[var(--muted)] p-3">' + p.title + '</p>' +
+    '</div>'
+  ).join('');
+}
+
+function openProof(i) {
+  const p = proofItems[i];
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.onclick = (e) => { if (e.target === overlay) closeProof(); };
+  overlay.innerHTML =
+    '<div class="card max-w-lg w-full overflow-hidden" role="dialog" aria-modal="true">' +
+      '<img src="' + p.img + '" alt="' + p.title + '" class="w-full max-h-[50vh] object-contain bg-black" />' +
+      '<div class="p-6">' +
+        '<h3 class="display text-xl font-bold mb-2">' + p.title + '</h3>' +
+        '<p class="text-[15px] text-[var(--muted)] mb-3 leading-relaxed">' + p.caption + '</p>' +
+        '<p class="text-xs text-[var(--faint)] mb-5">' + p.context + '</p>' +
+        '<button type="button" class="btn-ghost w-full py-3 text-sm" onclick="closeProof()">Close</button>' +
+      '</div>' +
+    '</div>';
+  document.getElementById('proofModal').appendChild(overlay);
+  document.addEventListener('keydown', escCloseProof);
+}
+function escCloseProof(e) { if (e.key === 'Escape') closeProof(); }
+function closeProof() {
+  document.getElementById('proofModal').innerHTML = '';
+  document.removeEventListener('keydown', escCloseProof);
+}
+
+/* ============ TIMELINE ============ */
+function toggleTl(headerEl) {
+  const item = headerEl.closest('.tl-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.tl-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+/* ============ COMPARISON RECOMMENDATION ============ */
+function applyRecommendedBadge() {
+  const rec = (state.stage) ? fcRecommendation().path : null;
+  document.getElementById('cmpConsult').classList.remove('cmp-recommended');
+  document.getElementById('cmpMentor').classList.remove('cmp-recommended');
+  document.querySelectorAll('.rec-badge').forEach(b => b.remove());
+  if (!rec) return;
+  const target = rec === 'mentorship' ? document.getElementById('cmpMentor') : document.getElementById('cmpConsult');
+  target.classList.add('cmp-recommended');
+  const badge = document.createElement('span');
+  badge.className = 'rec-badge mb-4';
+  badge.style.display = 'inline-flex';
+  badge.textContent = '✓ Based on your answers';
+  target.querySelector('p.text-xs, p.eyebrow')?.insertAdjacentElement('afterend', badge);
+}
+
+/* ============ APPLICATION WIZARD ============ */
+let wizIndex = 0;
+let wizSteps = [];
+
+function wizStepsFor(path) {
+  const steps = [];
+  if (!state.market) steps.push('market');
+  if (!state.stage) steps.push('experience');
+  steps.push('contact');
+  if (path === 'mentorship') { steps.push('budget'); steps.push('goal'); steps.push('struggle'); }
+  steps.push('review');
+  return steps;
+}
+
+function openWizard(path) {
+  if (path) state.path = path;
+  if (!state.path) state.path = 'consultation';
+  wizSteps = wizStepsFor(state.path);
+  wizIndex = 0;
+  document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+  applyRecommendedBadge();
+  renderWizard();
+}
+
+function renderDots() {
+  const dots = document.getElementById('wizDots');
+  dots.innerHTML = wizSteps.map((s, i) => {
+    let cls = 'step-dot';
+    if (i === wizIndex) cls += ' active';
+    else if (i < wizIndex) cls += ' done';
+    return '<span class="' + cls + '"></span>';
+  }).join('');
+}
+
+function wizNext() { wizIndex++; renderWizard(); }
+function wizBack() { wizIndex--; renderWizard(); }
+
+function renderWizard() {
+  renderDots();
+  const content = document.getElementById('wizContent');
+  const step = wizSteps[wizIndex];
+  let html = '<div class="fade-step">';
+
+  if (step === 'market') {
+    html += pathBadge() + '<h3 class="text-xl font-semibold mb-5">Which market are you focused on?</h3><div class="space-y-3">' +
+      optCard('market', 'India', '🇮🇳 India (COD)') + optCard('market', 'International', '🌍 International') + '</div>';
+    html += navButtons(false, false);
+  } else if (step === 'experience') {
+    html += pathBadge() + '<h3 class="text-xl font-semibold mb-5">Have you dropshipped before?</h3><div class="space-y-3">' +
+      optCard('stage', 'beginner', 'No, complete beginner') +
+      optCard('stage', 'tried', 'Tried it, no real success yet') +
+      optCard('stage', 'existing', 'Running a store now') +
+      optCard('stage', 'scaling', 'Scaling, want to go further') + '</div>';
+    html += navButtons(wizIndex > 0, false);
+  } else if (step === 'contact') {
+    html += pathBadge() + '<h3 class="text-xl font-semibold mb-5">How do I reach you?</h3><div class="space-y-4">' +
+      '<div><label class="label">Full name</label><input class="field" id="wf-name" value="' + esc(state.name) + '" placeholder="Your full name" /></div>' +
+      '<div><label class="label">Email address</label><input class="field" id="wf-email" type="email" value="' + esc(state.email) + '" placeholder="you@example.com" /></div>' +
+      '<div><label class="label">WhatsApp number</label><input class="field" id="wf-whatsapp" type="tel" value="' + esc(state.whatsapp) + '" placeholder="+91 XXXXX XXXXX" /></div>';
+    if (state.path === 'mentorship') {
+      html += '<div><label class="label">Current monthly income (optional)</label><input class="field" id="wf-income" value="' + esc(state.income) + '" placeholder="₹0 – ₹1,00,000+" /></div>';
+    }
+    html += '</div>';
+    html += navButtons(true, true, validateContact);
+  } else if (step === 'budget') {
+    html += pathBadge() + '<h3 class="text-xl font-semibold mb-5">What investment range feels realistic?</h3><div class="space-y-3">' +
+      optCard('budget', 'below25k', 'Below ₹25,000') +
+      optCard('budget', '25k', '₹25,000 – ₹50,000') +
+      optCard('budget', '50k', '₹50,000 – ₹1,00,000') +
+      optCard('budget', '100k', '₹1,00,000+') + '</div>' +
+      '<p class="text-xs text-[var(--faint)] mt-4">Exact pricing is discussed on WhatsApp based on your situation — this just helps me understand where you\'re starting from.</p>';
+    html += navButtons(true, false);
+  } else if (step === 'goal') {
+    html += pathBadge() + '<h3 class="text-xl font-semibold mb-5">Your 6-month goal</h3>' +
+      '<textarea class="field resize-none" id="wf-goal" rows="4" placeholder="Where do you want your store / income to be in 6 months?">' + esc(state.goal) + '</textarea>';
+    html += navButtons(true, true, validateGoal);
+  } else if (step === 'struggle') {
+    html += pathBadge() + '<h3 class="text-xl font-semibold mb-5">Biggest current struggle</h3>' +
+      '<textarea class="field resize-none" id="wf-struggle" rows="3" placeholder="Product research? Ads? Suppliers? COD/RTO? Payments? Be specific.">' + esc(state.struggle) + '</textarea>';
+    html += navButtons(true, true, validateStruggle);
+  } else if (step === 'review') {
+    html += pathBadge() +
+      '<h3 class="text-xl font-semibold mb-5">Quick review</h3>' +
+      '<div class="space-y-2 text-[15px] mb-6">' +
+        reviewRow('Market', state.market) +
+        reviewRow('Experience', state.stage) +
+        reviewRow('Name', state.name) +
+        reviewRow('Email', state.email) +
+        reviewRow('WhatsApp', state.whatsapp) +
+        (state.path === 'mentorship' ? reviewRow('Budget', state.budget) : '') +
+      '</div>' +
+      '<button type="button" class="btn-primary w-full py-4 text-base" id="wizSubmitBtn" onclick="submitWizard()">Submit &amp; continue on WhatsApp →</button>' +
+      '<p class="text-center text-xs text-[var(--faint)] mt-4">Your details stay private and are only used to review your application.</p>';
+    html += '<div class="flex justify-start mt-4"><button type="button" class="btn-ghost text-sm px-5 py-2.5" onclick="wizBack()">← Back</button></div>';
+  }
+
+  html += '</div>';
+  content.innerHTML = html;
+
+  // honeypot (invisible, always present once per wizard load)
+  if (!document.getElementById('wf-website')) {
+    const hp = document.createElement('input');
+    hp.type = 'text'; hp.id = 'wf-website'; hp.name = 'website'; hp.autocomplete = 'off'; hp.tabIndex = -1;
+    hp.style.position = 'absolute'; hp.style.left = '-9999px'; hp.style.opacity = '0';
+    content.appendChild(hp);
+  }
+}
+
+function pathBadge() {
+  const label = state.path === 'mentorship' ? 'Private Mentorship' : '₹2,499 Clarity Call';
+  return '<p class="mono text-xs text-[var(--gold)] mb-5 tracking-widest">APPLYING FOR: ' + label.toUpperCase() + '</p>';
+}
+
+function optCard(key, val, label) {
+  const selected = state[key] === val;
+  return '<button type="button" class="opt-card' + (selected ? ' selected' : '') + '" onclick="wizSetAndNext(\'' + key + '\',\'' + val + '\')"><span class="opt-num">✓</span><span>' + label + '</span></button>';
+}
+
+function wizSetAndNext(key, val) {
+  state[key] = val;
+  setTimeout(wizNext, 200);
+}
+
+function navButtons(showBack, showNext, validator) {
+  let html = '<div class="flex justify-between mt-6">';
+  html += showBack ? '<button type="button" class="btn-ghost text-sm px-5 py-2.5" onclick="wizBack()">← Back</button>' : '<span></span>';
+  if (showNext) {
+    html += '<button type="button" class="btn-primary text-sm px-6 py-2.5" onclick="wizValidateNext(' + (validator ? validator.name : 'null') + ')">Continue →</button>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function wizValidateNext(validatorFn) {
+  if (validatorFn && !validatorFn()) return;
+  wizNext();
+}
+
+function validateContact() {
+  state.name = document.getElementById('wf-name').value.trim();
+  state.email = document.getElementById('wf-email').value.trim();
+  state.whatsapp = document.getElementById('wf-whatsapp').value.trim();
+  if (state.path === 'mentorship') state.income = document.getElementById('wf-income').value.trim();
+  if (!state.name || !state.email || !state.whatsapp) { alert('Please fill your name, email and WhatsApp number to continue.'); return false; }
+  return true;
+}
+function validateGoal() {
+  state.goal = document.getElementById('wf-goal').value.trim();
+  return true;
+}
+function validateStruggle() {
+  state.struggle = document.getElementById('wf-struggle').value.trim();
+  return true;
+}
+
+function reviewRow(label, val) {
+  return '<div class="flex justify-between border-b border-[var(--line)] pb-2"><span class="text-[var(--faint)]">' + label + '</span><span>' + esc(val || '—') + '</span></div>';
+}
+
+function esc(s) {
+  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+}
+
+async function submitWizard() {
+  const struggleEl = document.getElementById('wf-struggle');
+  if (struggleEl) state.struggle = struggleEl.value.trim();
+  const websiteEl = document.getElementById('wf-website');
+  const honeypot = websiteEl ? websiteEl.value : '';
+
+  const btn = document.getElementById('wizSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  const payload = {
+    interested_in: state.path === 'mentorship' ? 'Mentorship' : 'Consultation',
+    market: state.market,
+    experience: state.stage,
+    name: state.name,
+    email: state.email,
+    whatsapp: state.whatsapp,
+    income: state.income,
+    budget: state.budget,
+    goal: state.goal,
+    struggle: state.struggle,
+    website: honeypot
+  };
+
+  try {
+    await fetch(SHEET_ENDPOINT, { method: 'POST', body: JSON.stringify(payload) });
+  } catch (e) { /* continue to WhatsApp even if logging fails */ }
+
+  const pathLabel = state.path === 'mentorship' ? 'private mentorship' : 'the ₹2,499 clarity call';
+  const msg = "Hi Chirag! I just applied for " + pathLabel + " on your site. I'm " + (state.name || '') +
+    ", focused on " + (state.market || 'dropshipping') + ". Looking forward to talking!";
+  const waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+  window.location.href = waUrl;
+}
+
+/* ============ INIT ============ */
+renderProofFilters();
+renderProofGrid();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
 </body>
