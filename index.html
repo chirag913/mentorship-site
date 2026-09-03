@@ -881,7 +881,9 @@ function renderWizard() {
         reviewRow('WhatsApp', state.whatsapp) +
         (state.path === 'mentorship' ? reviewRow('Budget', state.budget) : '') +
       '</div>' +
-      '<button type="button" class="btn-primary w-full py-4 text-base" id="wizSubmitBtn" onclick="submitWizard()">Submit  →</button>' +
+      '<button type="button" class="btn-primary w-full py-4 text-base" id="wizSubmitBtn" onclick="submitWizard()">' +
+        (state.path === 'mentorship' ? 'Submit &amp; continue on WhatsApp →' : 'Submit &amp; pay ₹2,499 →') +
+      '</button>' +
       '<p class="text-center text-xs text-[var(--faint)] mt-4">Your details stay private and are only used to review your application.</p>';
     html += '<div class="flex justify-start mt-4"><button type="button" class="btn-ghost text-sm px-5 py-2.5" onclick="wizBack()">← Back</button></div>';
   }
@@ -890,9 +892,11 @@ function renderWizard() {
   content.innerHTML = html;
 
   // honeypot (invisible, always present once per wizard load)
-  if (!document.getElementById('wf-website')) {
+  // Named deliberately unlike anything browsers autofill (e.g. NOT "website"/"url")
+  // so real visitors' autofill can never accidentally trip the bot filter.
+  if (!document.getElementById('wf-hp-token')) {
     const hp = document.createElement('input');
-    hp.type = 'text'; hp.id = 'wf-website'; hp.name = 'website'; hp.autocomplete = 'off'; hp.tabIndex = -1;
+    hp.type = 'text'; hp.id = 'wf-hp-token'; hp.name = 'hp_token_9421'; hp.autocomplete = 'off'; hp.tabIndex = -1;
     hp.style.position = 'absolute'; hp.style.left = '-9999px'; hp.style.opacity = '0';
     content.appendChild(hp);
   }
@@ -938,6 +942,7 @@ function validateContact() {
 }
 function validateGoal() {
   state.goal = document.getElementById('wf-goal').value.trim();
+  if (!state.goal) { alert('Quick one — tell me where you want to be in 6 months so I actually know how to help.'); return false; }
   return true;
 }
 function validateStruggle() {
@@ -956,8 +961,8 @@ function esc(s) {
 async function submitWizard() {
   const struggleEl = document.getElementById('wf-struggle');
   if (struggleEl) state.struggle = struggleEl.value.trim();
-  const websiteEl = document.getElementById('wf-website');
-  const honeypot = websiteEl ? websiteEl.value : '';
+  const hpEl = document.getElementById('wf-hp-token');
+  const honeypot = hpEl ? hpEl.value : '';
 
   const btn = document.getElementById('wizSubmitBtn');
   btn.disabled = true;
@@ -979,10 +984,16 @@ async function submitWizard() {
 
   try {
     await fetch(SHEET_ENDPOINT, { method: 'POST', body: JSON.stringify(payload) });
-  } catch (e) { /* continue to WhatsApp even if logging fails */ }
+  } catch (e) { /* continue even if logging fails, so a network hiccup never blocks the user */ }
 
-  const pathLabel = state.path === 'mentorship' ? 'private mentorship' : 'the ₹2,499 clarity call';
-  const msg = "Hi Chirag! I just applied for " + pathLabel + " on your site. I'm " + (state.name || '') +
+  if (state.path === 'consultation') {
+    // Consultation goes straight to payment.
+    window.location.href = 'https://rzp.io/rzp/fwSC52pF';
+    return;
+  }
+
+  // Mentorship continues on WhatsApp, as before.
+  const msg = "Hi Chirag! I just applied for private mentorship on your site. I'm " + (state.name || '') +
     ", focused on " + (state.market || 'dropshipping') + ". Looking forward to talking!";
   const waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
   window.location.href = waUrl;
