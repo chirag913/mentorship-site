@@ -94,12 +94,14 @@ details.faq p{font-size:14px;color:var(--muted);line-height:1.65;margin:10px 0 0
 footer{text-align:center;padding:30px 0;color:var(--muted);font-size:11px;letter-spacing:.05em}
 </style></head><body>
 
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <header class="top"><div class="wrap"><div class="brand">US Client Acquisition</div></div></header>
 
 <main><div class="wrap">
 
 <div class="hero">
-  <div class="eyebrow">60-Day Founding Cohort · Starts September 12</div>
+  <div class="eyebrow">60-Day Founding Cohort</div>
   <h1>Learn to land <em>US clients</em> — even starting from zero.</h1>
   <p>A live, weekly cohort where I teach you the exact automated system I use for my own agency and my clients: find leads, reach out, get on calls, and close.</p>
   <button class="cta" id="heroCTA" type="button">Check if you're a fit — 2 min →</button>
@@ -142,11 +144,12 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:11px;letter
     <p id="text"></p>
     <div id="paybox" class="paybox hidden">
       <div class="price">₹20,000</div>
-      <p>60-Day Founding Cohort · Weekly live calls · Starts September 12 · Limited to 20 people</p>
+      <p>60-Day Founding Cohort · Weekly live calls</p>
       <p class="note">Plus ~₹15,000/month in tools during the program (roughly ₹30,000 across the 60 days) — paid separately, not included in the cohort fee below.</p>
       <p class="note">What you get: a fully automated AI system that runs your outbound for you, plus the exact roadmap — how to find good-quality leads, how to approach them, how to get on a call, what to pitch, and how to close.</p>
       <label class="agree"><input type="checkbox" id="agreeTerms"><span>I understand this is a <strong>non-refundable</strong> program. You'll teach and help me build the system and roadmap — you do <strong>not</strong> guarantee any specific results, income, leads, or client outcomes.</span></label>
-      <a class="pay disabled" id="payLink" href="#" target="_blank" rel="noopener">Book your call →</a>
+      <p class="note" id="calendlyLocked" style="margin-top:16px">Check the box above to unlock the booking calendar.</p>
+      <div id="calendlyEmbed" class="hidden" style="min-width:280px;height:700px;margin-top:16px"></div>
       <p class="note">We'll talk it through on the call, and you'll complete the ₹20,000 cohort fee once we confirm it's the right fit.</p>
     </div>
     <button class="btn secondary restart" id="restart" type="button">Start again</button>
@@ -154,7 +157,7 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:11px;letter
 </div>
 
 <div class="section">
-  <div class="kicker">The 60 days · Starting September 12</div>
+  <div class="kicker">The 60 days</div>
   <h2>Week by week</h2>
   <div class="timeline">
     <div class="step"><h3>Week 1-2 — Pick your niche</h3><p>How to choose who to target, even with zero experience.</p></div>
@@ -184,7 +187,7 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:11px;letter
 <script>
 const CONFIG = {
   SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwXnYZlH87TSvO2tps2uyG48R8LxGaTOjjc0i9qbU3V6NlxbhLRBFjQ31EHkL8jvsM/exec",
-  CALENDLY_URL: "https://calendly.com/chiragsharmadm"
+  CALENDLY_URL: "https://calendly.com/chiragsharmadm?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=1d1410&text_color=f5eee7&primary_color=d0a570"
 };
 
 const qs=[
@@ -275,23 +278,42 @@ function revealResult(name,email,whatsapp){
     :"The cohort is designed for people ready to learn, build, reach prospects and implement. You may be better suited to join when you're ready for that commitment.";
   $("paybox").classList.toggle("hidden",!ok);
   if(ok){
-    const url=new URL(CONFIG.CALENDLY_URL);
-    if(name)url.searchParams.set("name",name);
-    if(email)url.searchParams.set("email",email);
-    $("payLink").href=url.toString();
     $("agreeTerms").checked=false;
-    $("payLink").classList.add("disabled");
+    $("calendlyLocked").classList.remove("hidden");
+    $("calendlyEmbed").classList.add("hidden");
+    $("calendlyEmbed").innerHTML="";
+    capturedName=name;capturedEmail=email;
   }
   scrollToWidget();
 }
 
-$("agreeTerms").onchange=()=>{$("payLink").classList.toggle("disabled",!$("agreeTerms").checked)};
-$("payLink").addEventListener("click",(e)=>{if(!$("agreeTerms").checked)e.preventDefault()});
+function initCalendlyWidget(name,email){
+  const container=$("calendlyEmbed");
+  container.innerHTML="";
+  if(window.Calendly){
+    window.Calendly.initInlineWidget({
+      url:CONFIG.CALENDLY_URL,
+      parentElement:container,
+      prefill:{name:name||"",email:email||""}
+    });
+  }else{
+    setTimeout(()=>initCalendlyWidget(name,email),300);
+  }
+}
+
+let capturedName="",capturedEmail="";
+$("agreeTerms").onchange=()=>{
+  const checked=$("agreeTerms").checked;
+  $("calendlyLocked").classList.toggle("hidden",checked);
+  $("calendlyEmbed").classList.toggle("hidden",!checked);
+  if(checked)initCalendlyWidget(capturedName,capturedEmail);
+};
 
 $("restart").onclick=()=>{
   i=0;a=[];pendingResult=null;
   $("cName").value="";$("cEmail").value="";$("cWhatsapp").value="";$("cWebsite").value="";
   $("captureSubmit").disabled=false;$("captureSubmit").textContent="See my result →";$("capture").classList.remove("submitting");
+  $("calendlyLocked").classList.remove("hidden");$("calendlyEmbed").classList.add("hidden");$("calendlyEmbed").innerHTML="";
   $("result").classList.add("hidden");$("quiz").classList.remove("hidden");
   render(false);scrollToWidget();
 };
