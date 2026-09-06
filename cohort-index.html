@@ -1,0 +1,120 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>US Client Acquisition — Founding Cohort</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+:root{--bg:#120d0a;--card:#1d1410;--text:#f5eee7;--muted:#aa9c92;--gold:#d0a570;--line:#3a2a21}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#352217,transparent 35%),var(--bg);color:var(--text);font-family:DM Sans,sans-serif}.wrap{width:min(760px,calc(100% - 32px));margin:auto}.top{padding:25px 0;border-bottom:1px solid var(--line)}.brand{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}main{padding:65px 0}.eyebrow{text-align:center;color:var(--gold);font-size:11px;letter-spacing:.2em;text-transform:uppercase}.hero{text-align:center}.hero h1{font:400 clamp(44px,7vw,70px)/1.02 'Playfair Display',serif;margin:18px 0}.hero em{color:var(--gold)}.intro{color:var(--muted);line-height:1.7;margin:0 auto 45px;max-width:620px}.progress{height:2px;background:#30231c;margin-bottom:25px}.bar{height:100%;background:var(--gold);width:0}.card{background:rgba(255,255,255,.035);border:1px solid var(--line);padding:32px}.qnum{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase}.question{font:400 29px/1.2 'Playfair Display',serif;margin:13px 0 24px}.options{display:grid;gap:10px}.opt input{display:none}.opt label{display:block;padding:16px;border:1px solid var(--line);cursor:pointer;color:#ddd1c8;font-size:14px}.opt label:hover,.opt input:checked+label{border-color:var(--gold);background:#2a1d15}.nav{display:flex;justify-content:space-between;margin-top:22px}.btn{padding:14px 22px;border:1px solid var(--gold);background:var(--gold);color:#170f0b;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px}.secondary{background:transparent;color:var(--text);border-color:var(--line)}.btn:disabled{opacity:.35}.hidden{display:none}.result{text-align:center}.result h2{font:400 48px/1.05 'Playfair Display',serif;margin:10px 0 15px}.result p{color:var(--muted);line-height:1.7}.paybox{border:1px solid #705333;background:#241910;padding:24px;margin-top:25px}.price{font:400 36px 'Playfair Display',serif}.pay{display:block;margin-top:18px;background:var(--gold);color:#170f0b;padding:15px;text-decoration:none;font-weight:700}.note{font-size:11px!important}.restart{margin-top:20px}
+.field{margin-bottom:14px;text-align:left}.field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.field input{width:100%;padding:14px;background:#170f0b;border:1px solid var(--line);color:var(--text);font-family:inherit;font-size:15px}.field input:focus{outline:none;border-color:var(--gold)}.honeypot{position:absolute;left:-9999px;opacity:0;height:0;width:0}.err{color:#e08a6b;font-size:12px;margin-top:-8px;margin-bottom:14px;display:none}.submitting{opacity:.6;pointer-events:none}
+</style></head><body>
+<header class="top"><div class="wrap"><div class="brand">US Client Acquisition — Founding Cohort</div></div></header>
+<main><div class="wrap">
+<div id="hero" class="hero"><div class="eyebrow">Private cohort application</div><h1>Is this <em>the right fit</em> for you?</h1><p class="intro">Answer 7 quick questions. We'll use your answers to see whether the live founding cohort matches where you are right now.</p></div>
+
+<div id="quiz"><div class="progress"><div class="bar" id="bar"></div></div><div class="card"><div class="qnum" id="qnum"></div><h2 class="question" id="question"></h2><div class="options" id="options"></div><div class="nav"><button class="btn secondary" id="back" type="button">Back</button><button class="btn" id="next" type="button">Continue</button></div></div></div>
+
+<div id="capture" class="card hidden">
+  <div class="qnum">Last step</div>
+  <h2 class="question">Where should we send your result?</h2>
+  <div class="field"><label for="cName">Name</label><input id="cName" type="text" autocomplete="name" required></div>
+  <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="cWhatsapp">WhatsApp number</label><input id="cWhatsapp" type="tel" autocomplete="tel" required placeholder="+91"></div>
+  <input class="honeypot" id="cWebsite" type="text" tabindex="-1" autocomplete="off">
+  <div class="err" id="captureErr">Please fill in all three fields.</div>
+  <div class="nav"><button class="btn secondary" id="captureBack" type="button">Back</button><button class="btn" id="captureSubmit" type="button">See my result →</button></div>
+</div>
+
+<div id="result" class="card result hidden"><div class="eyebrow">Your result</div><h2 id="title"></h2><p id="text"></p><div id="paybox" class="paybox hidden"><div class="price">₹20,000</div><p>Founding Cohort · Live implementation · Limited to 20 people</p><a class="pay" id="payLink" href="https://rzp.io/rzp/gQz7jbfM" target="_blank" rel="noopener">Join the Founding Cohort →</a><p class="note">You'll complete the ₹20,000 payment securely on Razorpay.</p></div><button class="btn secondary restart" id="restart" type="button">Start again</button></div>
+
+</div></main>
+<script>
+// ---------------------------------------------------------------
+// CONFIG — paste your deployed Apps Script Web App URL here.
+// See COHORT-SHEET-SETUP.md for how to get this URL.
+// ---------------------------------------------------------------
+const CONFIG = {
+  SCRIPT_URL: "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE",
+  PAY_LINK_BASE: "https://rzp.io/rzp/gQz7jbfM"
+};
+
+const qs=[
+["Where are you right now?",["I already sell a service and want better clients","I have a skill but no consistent client pipeline","I want to learn/build AI services I can sell","I'm only exploring the idea"]],
+["What would you most like to sell?",["Websites, landing pages or apps","AI automation, chatbots or voice agents","CRM, lead or internal business systems","I'm not sure yet"]],
+["Who do you want to sell to?",["US businesses","Indian businesses","Both, but I want to prioritize the US","I haven't decided"]],
+["What's your biggest problem?",["I don't know what to sell","I can build/deliver, but finding clients is hard","I get leads but struggle to close","I need to learn both the service and acquisition"]],
+["How willing are you to do outbound?",["Very — I'm ready to consistently reach prospects","Yes, if the system is structured and automated","I'd prefer inbound","I'm not willing to do outreach"]],
+["What do you want from a live cohort?",["A step-by-step system I can implement","Help building the AI service + selling system","Feedback on my offer, outreach and sales","Just recorded tutorials"]],
+["Are you prepared to invest ₹20,000 if it's the right fit?",["Yes — I'm ready to join","Yes, if the live format and curriculum fit","I need to think about it","No, not at this stage"]]
+];
+const qLabels=["current_status","wants_to_sell","target_market","biggest_problem","outbound_willingness","cohort_format_pref","investment_readiness"];
+let i=0,a=[],pendingResult=null;
+const $=x=>document.getElementById(x);
+
+function render(){let q=qs[i];$("qnum").textContent=`Question ${i+1} of ${qs.length}`;$("question").textContent=q[0];$("options").innerHTML=q[1].map((x,j)=>`<div class="opt"><input id="x${j}" name="ans" type="radio" value="${j}" ${a[i]===j?"checked":""}><label for="x${j}">${x}</label></div>`).join("");$("bar").style.width=(i/qs.length*100)+"%";$("back").disabled=i===0;$("next").textContent=i===qs.length-1?"Continue":"Continue"}
+$("next").onclick=()=>{let x=document.querySelector('input[name=ans]:checked');if(!x)return;a[i]=+x.value;if(i<qs.length-1){i++;render()}else showCapture()};
+$("back").onclick=()=>{if(i){i--;render()}};
+
+function score(){let s=a.reduce((s,x)=>s+([0,1,2].includes(x)?1:0),0);if(a[2]===0||a[2]===2)s++;if(a[4]===0||a[4]===1)s++;if(a[6]===0||a[6]===1)s+=2;return s}
+function computeResult(){let s=score();let ok=s>=7&&a[4]!==3&&a[6]!==3;return{score:s,ok}}
+
+function showCapture(){pendingResult=computeResult();$("quiz").classList.add("hidden");$("capture").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}
+$("captureBack").onclick=()=>{$("capture").classList.add("hidden");$("quiz").classList.remove("hidden");render()};
+
+$("captureSubmit").onclick=()=>{
+  const name=$("cName").value.trim(),email=$("cEmail").value.trim(),whatsapp=$("cWhatsapp").value.trim();
+  if(!name||!email||!whatsapp){$("captureErr").style.display="block";return}
+  $("captureErr").style.display="none";
+  $("captureSubmit").disabled=true;$("captureSubmit").textContent="Submitting...";$("capture").classList.add("submitting");
+
+  const payload={
+    website:$("cWebsite").value, // honeypot — real users leave this blank
+    name,email,whatsapp,
+    score:pendingResult.score,
+    qualified:pendingResult.ok?"Yes":"No"
+  };
+  qLabels.forEach((label,idx)=>{payload[label]=qs[idx][1][a[idx]]});
+
+  submitLead(payload).finally(()=>revealResult(name,email,whatsapp));
+};
+
+function submitLead(payload){
+  if(!CONFIG.SCRIPT_URL||CONFIG.SCRIPT_URL.indexOf("PASTE_YOUR")===0){
+    console.warn("CONFIG.SCRIPT_URL not set — lead was NOT sent to the sheet.");
+    return Promise.resolve();
+  }
+  // no-cors: Apps Script web apps don't return CORS headers for simple POST,
+  // so we fire-and-forget rather than read the response.
+  return fetch(CONFIG.SCRIPT_URL,{
+    method:"POST",
+    mode:"no-cors",
+    headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body:JSON.stringify(payload)
+  }).catch(err=>console.error("Lead submit failed:",err));
+}
+
+function revealResult(name,email,whatsapp){
+  const{ok}=pendingResult;
+  $("capture").classList.add("hidden");
+  $("result").classList.remove("hidden");
+  $("title").textContent=ok?"You look like a strong fit.":"You're not quite ready yet.";
+  $("text").textContent=ok
+    ?"Your answers match what the founding cohort is designed for. If you're ready to implement, you can secure your place below."
+    :"The cohort is designed for people ready to learn, build, reach prospects and implement. You may be better suited to join when you're ready for that commitment.";
+  $("paybox").classList.toggle("hidden",!ok);
+  if(ok){
+    const url=new URL(CONFIG.PAY_LINK_BASE);
+    if(email)url.searchParams.set("email",email);
+    if(whatsapp)url.searchParams.set("contact",whatsapp);
+    $("payLink").href=url.toString();
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+$("restart").onclick=()=>{
+  i=0;a=[];pendingResult=null;
+  $("cName").value="";$("cEmail").value="";$("cWhatsapp").value="";$("cWebsite").value="";
+  $("captureSubmit").disabled=false;$("captureSubmit").textContent="See my result →";$("capture").classList.remove("submitting");
+  $("result").classList.add("hidden");$("hero").classList.remove("hidden");$("quiz").classList.remove("hidden");
+  render();window.scrollTo(0,0)
+};
+render();
+</script></body></html>
