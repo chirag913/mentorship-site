@@ -1,95 +1,97 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>US Client Acquisition — 60-Day Founding Cohort</title>
 <style>
-:root{
-  --bg:#fbfbfd; --surface:#ffffff; --text:#1d1d1f; --muted:#6e6e73;
-  --accent:#0071e3; --accent-dark:#0058b0; --line:#d2d2d7; --radius:20px;
-  --shadow:0 2px 8px rgba(0,0,0,.04),0 12px 32px rgba(0,0,0,.06);
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+:root{--bg:#120d0a;--card:#1d1410;--text:#f5eee7;--muted:#aa9c92;--gold:#d0a570;--line:#3a2a21}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:radial-gradient(circle at 70% 0,#352217,transparent 35%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{width:min(720px,calc(100% - 32px));margin:auto}
-.top{position:sticky;top:0;z-index:10;padding:16px 0;background:rgba(251,251,253,.8);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
-.brand{font-size:14px;font-weight:600;letter-spacing:-.01em}
-main{padding:0 0 100px}
-.hero{text-align:center;padding:64px 0 40px}
-.eyebrow{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:12px}
-.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.08;font-weight:700;letter-spacing:-.02em;margin:0 0 18px}
-.hero p{color:var(--muted);font-size:18px;line-height:1.55;max-width:520px;margin:0 auto 28px}
-.cta{display:inline-block;background:var(--accent);color:#fff;font-size:17px;font-weight:600;padding:14px 30px;border-radius:980px;text-decoration:none;border:none;cursor:pointer;transition:background .15s ease,transform .1s ease}
-.cta:hover{background:var(--accent-dark)}
-.cta:active{transform:scale(.97)}
-.fineprint{color:var(--muted);font-size:13px;margin-top:14px}
+.top{position:sticky;top:0;z-index:10;padding:20px 0;background:rgba(18,13,10,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px}
+.brand img{width:26px;height:26px;border-radius:50%;object-fit:cover;object-position:center 15%;border:1px solid var(--gold)}
+main{padding:55px 0 90px}
+.hero{text-align:center;padding-bottom:36px}
+.avatar{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:center 15%;margin:0 auto 20px;border:2px solid var(--gold);display:block}
+.eyebrow{text-align:center;color:var(--gold);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font:400 clamp(36px,6vw,58px)/1.08 'Playfair Display',serif;margin:0 0 18px}
+.hero em{color:var(--gold);font-style:italic}
+.hero p{color:var(--muted);line-height:1.7;margin:0 auto 26px;max-width:560px;font-size:16px}
+.cta{display:inline-block;background:var(--gold);color:#170f0b;font-weight:700;font-size:15px;padding:15px 28px;text-decoration:none;border:none;cursor:pointer;letter-spacing:.01em}
+.cta:hover{filter:brightness(1.08)}
+.fineprint{color:var(--muted);font-size:12px;margin-top:14px;letter-spacing:.02em}
 
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 40px}
-.feature{background:var(--surface);border-radius:16px;padding:20px 16px;text-align:center;box-shadow:var(--shadow)}
-.feature .num{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-.feature h3{font-size:14px;font-weight:600;margin:0 0 4px}
-.feature p{font-size:13px;color:var(--muted);margin:0;line-height:1.4}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 32px}
+.feature{background:rgba(255,255,255,.03);border:1px solid var(--line);padding:20px 14px;text-align:center}
+.feature .num{width:26px;height:26px;border:1px solid var(--gold);color:var(--gold);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;border-radius:50%}
+.feature h3{font:400 15px 'Playfair Display',serif;margin:0 0 4px;color:var(--text)}
+.feature p{font-size:12px;color:var(--muted);margin:0;line-height:1.4}
 
-#interactive{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px 32px;margin-bottom:48px;scroll-margin-top:90px}
-.progress{height:4px;background:#e8e8ed;border-radius:2px;margin-bottom:28px;overflow:hidden}
-.bar{height:100%;background:var(--accent);width:0;border-radius:2px;transition:width .3s ease}
+.mentor{display:flex;gap:20px;align-items:center;background:rgba(255,255,255,.03);border:1px solid var(--line);padding:24px;margin-bottom:32px}
+.mentor img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 15%;flex-shrink:0;border:2px solid var(--gold)}
+.mentor .name{font:400 17px 'Playfair Display',serif;margin:0 0 5px;color:var(--gold)}
+.mentor p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}
+
+#interactive{background:rgba(255,255,255,.035);border:1px solid var(--line);padding:32px;margin-bottom:44px;scroll-margin-top:90px}
+.progress{height:2px;background:#30231c;margin-bottom:25px}
+.bar{height:100%;background:var(--gold);width:0;transition:width .3s ease}
 .panel{transition:opacity .2s ease,transform .2s ease}
 .panel.fade{opacity:0;transform:translateY(8px)}
-.qnum{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
-.question{font-size:24px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin:12px 0 22px}
+.qnum{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.question{font:400 26px/1.25 'Playfair Display',serif;margin:13px 0 24px}
 .options{display:grid;gap:10px}
 .opt input{display:none}
-.opt label{display:block;padding:15px 18px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;color:var(--text);font-size:15px;transition:border-color .12s ease,background .12s ease}
-.opt label:hover{border-color:#9d9da3}
-.opt input:checked+label{border-color:var(--accent);background:rgba(0,113,227,.06);font-weight:600}
-.nav{display:flex;justify-content:space-between;margin-top:26px}
-.btn{padding:13px 24px;border-radius:980px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit;border:none;transition:background .15s ease,opacity .15s ease}
-.btn.primary{background:var(--accent);color:#fff}
-.btn.primary:hover{background:var(--accent-dark)}
-.btn.secondary{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.opt label{display:block;padding:16px;border:1px solid var(--line);cursor:pointer;color:#ddd1c8;font-size:14px;transition:border-color .12s ease,background .12s ease}
+.opt label:hover{border-color:#5c4534}
+.opt input:checked+label{border-color:var(--gold);background:#2a1d15;font-weight:600}
+.nav{display:flex;justify-content:space-between;margin-top:24px}
+.btn{padding:14px 22px;border:1px solid var(--gold);background:var(--gold);color:#170f0b;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px}
+.btn.secondary{background:transparent;color:var(--text);border-color:var(--line)}
 .btn:disabled{opacity:.35;cursor:not-allowed}
 .hidden{display:none}
 
-.field{margin-bottom:16px;text-align:left}
-.field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
-.field input{width:100%;padding:13px 14px;background:#f5f5f7;border:1.5px solid transparent;border-radius:12px;color:var(--text);font-family:inherit;font-size:16px;transition:border-color .12s ease,background .12s ease}
-.field input:focus{outline:none;border-color:var(--accent);background:#fff}
+.field{margin-bottom:14px;text-align:left}
+.field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.field input{width:100%;padding:14px;background:#170f0b;border:1px solid var(--line);color:var(--text);font-family:inherit;font-size:15px}
+.field input:focus{outline:none;border-color:var(--gold)}
 .honeypot{position:absolute;left:-9999px;opacity:0;height:0;width:0}
-.err{color:#d70015;font-size:13px;margin-top:-8px;margin-bottom:14px;display:none}
+.err{color:#e08a6b;font-size:12px;margin-top:-8px;margin-bottom:14px;display:none}
 .submitting{opacity:.6;pointer-events:none}
 
 .result{text-align:center}
-.result h2{font-size:32px;font-weight:700;letter-spacing:-.01em;margin:8px 0 12px}
-.result>p{color:var(--muted);line-height:1.6;font-size:16px}
-.paybox{border-radius:16px;background:#f5f5f7;padding:24px;margin-top:24px;text-align:left}
-.price{font-size:32px;font-weight:700;letter-spacing:-.01em}
-.paybox>p{font-size:14px;color:var(--text);margin:6px 0}
-.note{font-size:13px!important;color:var(--muted)!important}
-.pay{display:block;margin-top:16px;background:var(--accent);color:#fff;padding:15px;border-radius:980px;text-decoration:none;font-weight:600;text-align:center;transition:background .15s ease,opacity .15s ease}
-.pay:hover{background:var(--accent-dark)}
+.result h2{font:400 42px/1.1 'Playfair Display',serif;margin:10px 0 15px}
+.result>p{color:var(--muted);line-height:1.7}
+.paybox{border:1px solid #705333;background:#241910;padding:24px;margin-top:25px;text-align:left}
+.price{font:400 34px 'Playfair Display',serif;color:var(--gold)}
+.paybox>p{font-size:14px;margin:6px 0}
+.note{font-size:11px!important;color:var(--muted)!important}
+.pay{display:block;margin-top:18px;background:var(--gold);color:#170f0b;padding:15px;text-decoration:none;font-weight:700;text-align:center}
+.pay:hover{filter:brightness(1.08)}
 .pay.disabled{opacity:.35;pointer-events:none;cursor:not-allowed}
-.agree{display:flex;align-items:flex-start;gap:10px;margin-top:16px;text-align:left;font-size:13px;line-height:1.5;color:var(--text);cursor:pointer}
+.agree{display:flex;align-items:flex-start;gap:10px;margin-top:16px;text-align:left;font-size:12px;line-height:1.6;color:#ddd1c8;cursor:pointer}
 .agree input{margin-top:3px;flex-shrink:0;width:auto}
 .restart{margin-top:20px}
 
 .section{margin:0 0 20px}
-.section h2{font-size:26px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px}
-.section .kicker{color:var(--accent);font-size:13px;font-weight:600;margin-bottom:6px}
+.section h2{font:400 28px 'Playfair Display',serif;margin:0 0 20px}
+.section .kicker{color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
 
 .timeline{position:relative;padding-left:28px}
-.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:1px;background:var(--line)}
 .step{position:relative;padding-bottom:22px}
 .step:last-child{padding-bottom:0}
-.step::before{content:"";position:absolute;left:-28px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
-.step h3{font-size:15px;font-weight:600;margin:0 0 3px}
+.step::before{content:"";position:absolute;left:-28px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--gold);border:3px solid var(--bg)}
+.step h3{font:400 16px 'Playfair Display',serif;margin:0 0 3px;color:var(--text)}
 .step p{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
 
 details.faq{border-bottom:1px solid var(--line);padding:16px 0}
 details.faq:first-of-type{border-top:1px solid var(--line)}
-details.faq summary{font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.faq summary{font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--text)}
 details.faq summary::-webkit-details-marker{display:none}
-details.faq summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:400;flex-shrink:0;margin-left:12px}
+details.faq summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:400;flex-shrink:0;margin-left:12px}
 details.faq[open] summary::after{content:"–"}
-details.faq p{font-size:14px;color:var(--muted);line-height:1.6;margin:10px 0 0}
+details.faq p{font-size:14px;color:var(--muted);line-height:1.65;margin:10px 0 0}
 
-footer{text-align:center;padding:30px 0;color:var(--muted);font-size:12px}
+footer{text-align:center;padding:30px 0;color:var(--muted);font-size:11px;letter-spacing:.05em}
 </style></head><body>
 
 <header class="top"><div class="wrap"><div class="brand">US Client Acquisition</div></div></header>
@@ -98,10 +100,11 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:12px}
 
 <div class="hero">
   <div class="eyebrow">60-Day Founding Cohort · Starts September 12</div>
-  <h1>Learn to land US clients — even starting from zero.</h1>
+  <h1>Learn to land <em>US clients</em> — even starting from zero.</h1>
   <p>A live, weekly cohort where I teach you the exact automated system I use for my own agency and my clients: find leads, reach out, get on calls, and close.</p>
   <button class="cta" id="heroCTA" type="button">Check if you're a fit — 2 min →</button>
   <div class="fineprint">₹20,000 cohort fee · ~₹15,000/month in tools · No experience required</div>
+  <div class="fineprint" style="margin-top:6px">Please only apply if you can comfortably afford both, without financial strain.</div>
 </div>
 
 <div class="features">
@@ -119,7 +122,7 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:12px}
       <h2 class="question" id="question"></h2>
       <div class="options" id="options"></div>
     </div>
-    <div class="nav"><button class="btn secondary" id="back" type="button">Back</button><button class="btn primary" id="next" type="button">Continue</button></div>
+    <div class="nav"><button class="btn secondary" id="back" type="button">Back</button><button class="btn" id="next" type="button">Continue</button></div>
   </div>
 
   <div id="capture" class="panel hidden">
@@ -130,7 +133,7 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:12px}
     <div class="field"><label for="cWhatsapp">WhatsApp number</label><input id="cWhatsapp" type="tel" autocomplete="tel" required placeholder="+91"></div>
     <input class="honeypot" id="cWebsite" type="text" tabindex="-1" autocomplete="off">
     <div class="err" id="captureErr">Please fill in all three fields.</div>
-    <div class="nav"><button class="btn secondary" id="captureBack" type="button">Back</button><button class="btn primary" id="captureSubmit" type="button">See my result →</button></div>
+    <div class="nav"><button class="btn secondary" id="captureBack" type="button">Back</button><button class="btn" id="captureSubmit" type="button">See my result →</button></div>
   </div>
 
   <div id="result" class="panel result hidden">
@@ -176,7 +179,7 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:12px}
 
 </div></main>
 
-<footer>© 2026 · Payments processed securely via Razorpay</footer>
+<footer>© 2026 Chirag Sharma</footer>
 
 <script>
 const CONFIG = {
