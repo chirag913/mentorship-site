@@ -1,75 +1,187 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>US Client Acquisition — 60-Day Founding Cohort</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
-:root{--bg:#120d0a;--card:#1d1410;--text:#f5eee7;--muted:#aa9c92;--gold:#d0a570;--line:#3a2a21}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#352217,transparent 35%),var(--bg);color:var(--text);font-family:DM Sans,sans-serif}.wrap{width:min(760px,calc(100% - 32px));margin:auto}.top{padding:25px 0;border-bottom:1px solid var(--line)}.brand{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}main{padding:65px 0}.eyebrow{text-align:center;color:var(--gold);font-size:11px;letter-spacing:.2em;text-transform:uppercase}.hero{text-align:center}.hero h1{font:400 clamp(44px,7vw,70px)/1.02 'Playfair Display',serif;margin:18px 0}.hero em{color:var(--gold)}.intro{color:var(--muted);line-height:1.7;margin:0 auto 45px;max-width:620px}.progress{height:2px;background:#30231c;margin-bottom:25px}.bar{height:100%;background:var(--gold);width:0}.card{background:rgba(255,255,255,.035);border:1px solid var(--line);padding:32px}.qnum{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase}.question{font:400 29px/1.2 'Playfair Display',serif;margin:13px 0 24px}.options{display:grid;gap:10px}.opt input{display:none}.opt label{display:block;padding:16px;border:1px solid var(--line);cursor:pointer;color:#ddd1c8;font-size:14px}.opt label:hover,.opt input:checked+label{border-color:var(--gold);background:#2a1d15}.nav{display:flex;justify-content:space-between;margin-top:22px}.btn{padding:14px 22px;border:1px solid var(--gold);background:var(--gold);color:#170f0b;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px}.secondary{background:transparent;color:var(--text);border-color:var(--line)}.btn:disabled{opacity:.35}.hidden{display:none}.result{text-align:center}.result h2{font:400 48px/1.05 'Playfair Display',serif;margin:10px 0 15px}.result p{color:var(--muted);line-height:1.7}.paybox{border:1px solid #705333;background:#241910;padding:24px;margin-top:25px}.price{font:400 36px 'Playfair Display',serif}.pay{display:block;margin-top:18px;background:var(--gold);color:#170f0b;padding:15px;text-decoration:none;font-weight:700}.note{font-size:11px!important}.restart{margin-top:20px}
-.field{margin-bottom:14px;text-align:left}.field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.field input{width:100%;padding:14px;background:#170f0b;border:1px solid var(--line);color:var(--text);font-family:inherit;font-size:15px}.field input:focus{outline:none;border-color:var(--gold)}.honeypot{position:absolute;left:-9999px;opacity:0;height:0;width:0}.err{color:#e08a6b;font-size:12px;margin-top:-8px;margin-bottom:14px;display:none}.submitting{opacity:.6;pointer-events:none}
-.agree{display:flex;align-items:flex-start;gap:10px;margin-top:18px;text-align:left;font-size:12px;line-height:1.6;color:#ddd1c8;cursor:pointer}.agree input{margin-top:3px;flex-shrink:0;width:auto}.pay.disabled{opacity:.35;pointer-events:none;cursor:not-allowed}
+:root{
+  --bg:#fbfbfd; --surface:#ffffff; --text:#1d1d1f; --muted:#6e6e73;
+  --accent:#0071e3; --accent-dark:#0058b0; --line:#d2d2d7; --radius:20px;
+  --shadow:0 2px 8px rgba(0,0,0,.04),0 12px 32px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{width:min(720px,calc(100% - 32px));margin:auto}
+.top{position:sticky;top:0;z-index:10;padding:16px 0;background:rgba(251,251,253,.8);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-size:14px;font-weight:600;letter-spacing:-.01em}
+main{padding:0 0 100px}
+.hero{text-align:center;padding:64px 0 40px}
+.eyebrow{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:12px}
+.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.08;font-weight:700;letter-spacing:-.02em;margin:0 0 18px}
+.hero p{color:var(--muted);font-size:18px;line-height:1.55;max-width:520px;margin:0 auto 28px}
+.cta{display:inline-block;background:var(--accent);color:#fff;font-size:17px;font-weight:600;padding:14px 30px;border-radius:980px;text-decoration:none;border:none;cursor:pointer;transition:background .15s ease,transform .1s ease}
+.cta:hover{background:var(--accent-dark)}
+.cta:active{transform:scale(.97)}
+.fineprint{color:var(--muted);font-size:13px;margin-top:14px}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 40px}
+.feature{background:var(--surface);border-radius:16px;padding:20px 16px;text-align:center;box-shadow:var(--shadow)}
+.feature .num{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.feature h3{font-size:14px;font-weight:600;margin:0 0 4px}
+.feature p{font-size:13px;color:var(--muted);margin:0;line-height:1.4}
+
+#interactive{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px 32px;margin-bottom:48px;scroll-margin-top:90px}
+.progress{height:4px;background:#e8e8ed;border-radius:2px;margin-bottom:28px;overflow:hidden}
+.bar{height:100%;background:var(--accent);width:0;border-radius:2px;transition:width .3s ease}
+.panel{transition:opacity .2s ease,transform .2s ease}
+.panel.fade{opacity:0;transform:translateY(8px)}
+.qnum{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+.question{font-size:24px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin:12px 0 22px}
+.options{display:grid;gap:10px}
+.opt input{display:none}
+.opt label{display:block;padding:15px 18px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;color:var(--text);font-size:15px;transition:border-color .12s ease,background .12s ease}
+.opt label:hover{border-color:#9d9da3}
+.opt input:checked+label{border-color:var(--accent);background:rgba(0,113,227,.06);font-weight:600}
+.nav{display:flex;justify-content:space-between;margin-top:26px}
+.btn{padding:13px 24px;border-radius:980px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit;border:none;transition:background .15s ease,opacity .15s ease}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-dark)}
+.btn.secondary{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.hidden{display:none}
+
+.field{margin-bottom:16px;text-align:left}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.field input{width:100%;padding:13px 14px;background:#f5f5f7;border:1.5px solid transparent;border-radius:12px;color:var(--text);font-family:inherit;font-size:16px;transition:border-color .12s ease,background .12s ease}
+.field input:focus{outline:none;border-color:var(--accent);background:#fff}
+.honeypot{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.err{color:#d70015;font-size:13px;margin-top:-8px;margin-bottom:14px;display:none}
+.submitting{opacity:.6;pointer-events:none}
+
+.result{text-align:center}
+.result h2{font-size:32px;font-weight:700;letter-spacing:-.01em;margin:8px 0 12px}
+.result>p{color:var(--muted);line-height:1.6;font-size:16px}
+.paybox{border-radius:16px;background:#f5f5f7;padding:24px;margin-top:24px;text-align:left}
+.price{font-size:32px;font-weight:700;letter-spacing:-.01em}
+.paybox>p{font-size:14px;color:var(--text);margin:6px 0}
+.note{font-size:13px!important;color:var(--muted)!important}
+.pay{display:block;margin-top:16px;background:var(--accent);color:#fff;padding:15px;border-radius:980px;text-decoration:none;font-weight:600;text-align:center;transition:background .15s ease,opacity .15s ease}
+.pay:hover{background:var(--accent-dark)}
+.pay.disabled{opacity:.35;pointer-events:none;cursor:not-allowed}
+.agree{display:flex;align-items:flex-start;gap:10px;margin-top:16px;text-align:left;font-size:13px;line-height:1.5;color:var(--text);cursor:pointer}
+.agree input{margin-top:3px;flex-shrink:0;width:auto}
+.restart{margin-top:20px}
+
+.section{margin:0 0 20px}
+.section h2{font-size:26px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px}
+.section .kicker{color:var(--accent);font-size:13px;font-weight:600;margin-bottom:6px}
+
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.step{position:relative;padding-bottom:22px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:-28px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
+.step h3{font-size:15px;font-weight:600;margin:0 0 3px}
+.step p{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
+
+details.faq{border-bottom:1px solid var(--line);padding:16px 0}
+details.faq:first-of-type{border-top:1px solid var(--line)}
+details.faq summary{font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:400;flex-shrink:0;margin-left:12px}
+details.faq[open] summary::after{content:"–"}
+details.faq p{font-size:14px;color:var(--muted);line-height:1.6;margin:10px 0 0}
+
+footer{text-align:center;padding:30px 0;color:var(--muted);font-size:12px}
 </style></head><body>
-<header class="top"><div class="wrap"><div class="brand">US Client Acquisition — 60-Day Founding Cohort</div></div></header>
+
+<header class="top"><div class="wrap"><div class="brand">US Client Acquisition</div></div></header>
+
 <main><div class="wrap">
-<div id="hero" class="hero"><div class="eyebrow">Private cohort application</div><h1>Is this <em>the right fit</em> for you?</h1><p class="intro">Answer 7 quick questions. We'll use your answers to see whether the live 60-day founding cohort matches where you are right now. Weekly live call sessions, starting September 12. Total investment: ₹20,000 cohort fee + ~₹15,000/month in tools (paid separately) for the duration.</p></div>
 
-<div class="card" style="margin-bottom:24px;text-align:left">
-  <div class="eyebrow" style="text-align:left">What this actually is</div>
-  <h2 class="question" style="font-size:26px">In plain English</h2>
-  <p style="color:var(--muted);line-height:1.8">US businesses pay well for services like websites, AI chatbots, automation, and lead systems — but most freelancers and small agencies never figure out how to consistently find and reach those businesses. This cohort teaches you how to build an automated system that finds them, reaches out, gets you on a call, and helps you close — plus the tools and outreach skills behind it.</p>
-  <p style="color:var(--muted);line-height:1.8;margin-top:14px"><strong style="color:var(--text)">New to this?</strong> Good — the 60 days are built to take you from zero. You don't need a skill, a service, or a single client to start.</p>
-  <p style="color:var(--muted);line-height:1.8;margin-top:10px"><strong style="color:var(--text)">Already have a skill or clients?</strong> You'll move faster through the early weeks and focus on building the acquisition system on top of what you already do.</p>
-  <p style="color:var(--muted);line-height:1.8;margin-top:10px"><strong style="color:var(--text)">This isn't theory.</strong> I run this exact system for my own agency, and for the clients I work with — you're learning the live process, not a recycled course.</p>
+<div class="hero">
+  <div class="eyebrow">60-Day Founding Cohort · Starts September 12</div>
+  <h1>Learn to land US clients — even starting from zero.</h1>
+  <p>A live, weekly cohort where I teach you the exact automated system I use for my own agency and my clients: find leads, reach out, get on calls, and close.</p>
+  <button class="cta" id="heroCTA" type="button">Check if you're a fit — 2 min →</button>
+  <div class="fineprint">₹20,000 cohort fee · ~₹15,000/month in tools · No experience required</div>
 </div>
 
-<div id="quiz"><div class="progress"><div class="bar" id="bar"></div></div><div class="card"><div class="qnum" id="qnum"></div><h2 class="question" id="question"></h2><div class="options" id="options"></div><div class="nav"><button class="btn secondary" id="back" type="button">Back</button><button class="btn" id="next" type="button">Continue</button></div></div></div>
-
-<div id="capture" class="card hidden">
-  <div class="qnum">Last step</div>
-  <h2 class="question">Where should we send your result?</h2>
-  <div class="field"><label for="cName">Name</label><input id="cName" type="text" autocomplete="name" required></div>
-  <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" autocomplete="email" required></div>
-  <div class="field"><label for="cWhatsapp">WhatsApp number</label><input id="cWhatsapp" type="tel" autocomplete="tel" required placeholder="+91"></div>
-  <input class="honeypot" id="cWebsite" type="text" tabindex="-1" autocomplete="off">
-  <div class="err" id="captureErr">Please fill in all three fields.</div>
-  <div class="nav"><button class="btn secondary" id="captureBack" type="button">Back</button><button class="btn" id="captureSubmit" type="button">See my result →</button></div>
+<div class="features">
+  <div class="feature"><div class="num">1</div><h3>Find leads</h3><p>Automated, verified sourcing</p></div>
+  <div class="feature"><div class="num">2</div><h3>Reach out</h3><p>Email + calling, AI-assisted</p></div>
+  <div class="feature"><div class="num">3</div><h3>Close</h3><p>Get on calls, sign clients</p></div>
 </div>
 
-<div id="result" class="card result hidden"><div class="eyebrow">Your result</div><h2 id="title"></h2><p id="text"></p><div id="paybox" class="paybox hidden"><div class="price">₹20,000</div><p>60-Day Founding Cohort · Weekly live calls · Starts September 12 · Limited to 20 people</p><p class="note">Plus ~₹15,000/month in tools during the program (roughly ₹30,000 across the 60 days) — paid separately, not included in the cohort fee below.</p><p class="note">What you get: a fully automated AI system that runs your outbound for you, plus the exact roadmap — how to find good-quality leads, how to approach them, how to get on a call, what to pitch, and how to close.</p><label class="agree"><input type="checkbox" id="agreeTerms"><span>I understand this is a <strong>non-refundable</strong> program. You'll teach and help me build the system and roadmap — you do <strong>not</strong> guarantee any specific results, income, leads, or client outcomes.</span></label><a class="pay disabled" id="payLink" href="https://rzp.io/rzp/gQz7jbfM" target="_blank" rel="noopener">Join the Founding Cohort →</a><p class="note">You'll complete the ₹20,000 cohort fee securely on Razorpay.</p></div><button class="btn secondary restart" id="restart" type="button">Start again</button></div>
+<div id="interactive">
+  <div class="progress"><div class="bar" id="bar"></div></div>
 
-<div class="card" style="margin:24px 0;text-align:left">
-  <div class="eyebrow" style="text-align:left">The 60 days · Starting September 12</div>
-  <h2 class="question" style="font-size:26px">Week by week</h2>
-  <div style="color:#ddd1c8;line-height:2">
-    <p><strong style="color:var(--gold)">Week 1-2 — Pick your niche.</strong> How to choose who to target, even with zero experience.</p>
-    <p><strong style="color:var(--gold)">Week 3 — Build your offer.</strong> What to actually sell and how to price it.</p>
-    <p><strong style="color:var(--gold)">Week 4 — Set up your infrastructure.</strong> Sending domains, warmup, the tool stack.</p>
-    <p><strong style="color:var(--gold)">Week 5 — Build your lead list.</strong> Finding real, verified leads.</p>
-    <p><strong style="color:var(--gold)">Week 6 — Cold email + AI automation.</strong> Sequences that convert, automated with AI.</p>
-    <p><strong style="color:var(--gold)">Week 7 — Cold calling layer.</strong> Scripts, objections, follow-up.</p>
-    <p><strong style="color:var(--gold)">Week 8 — Close &amp; deliver.</strong> Getting the signed client, and keeping them.</p>
+  <div id="quiz" class="panel">
+    <div id="qContent">
+      <div class="qnum" id="qnum"></div>
+      <h2 class="question" id="question"></h2>
+      <div class="options" id="options"></div>
+    </div>
+    <div class="nav"><button class="btn secondary" id="back" type="button">Back</button><button class="btn primary" id="next" type="button">Continue</button></div>
+  </div>
+
+  <div id="capture" class="panel hidden">
+    <div class="qnum">Last step</div>
+    <h2 class="question">Where should we send your result?</h2>
+    <div class="field"><label for="cName">Name</label><input id="cName" type="text" autocomplete="name" required></div>
+    <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="cWhatsapp">WhatsApp number</label><input id="cWhatsapp" type="tel" autocomplete="tel" required placeholder="+91"></div>
+    <input class="honeypot" id="cWebsite" type="text" tabindex="-1" autocomplete="off">
+    <div class="err" id="captureErr">Please fill in all three fields.</div>
+    <div class="nav"><button class="btn secondary" id="captureBack" type="button">Back</button><button class="btn primary" id="captureSubmit" type="button">See my result →</button></div>
+  </div>
+
+  <div id="result" class="panel result hidden">
+    <div class="eyebrow">Your result</div>
+    <h2 id="title"></h2>
+    <p id="text"></p>
+    <div id="paybox" class="paybox hidden">
+      <div class="price">₹20,000</div>
+      <p>60-Day Founding Cohort · Weekly live calls · Starts September 12 · Limited to 20 people</p>
+      <p class="note">Plus ~₹15,000/month in tools during the program (roughly ₹30,000 across the 60 days) — paid separately, not included in the cohort fee below.</p>
+      <p class="note">What you get: a fully automated AI system that runs your outbound for you, plus the exact roadmap — how to find good-quality leads, how to approach them, how to get on a call, what to pitch, and how to close.</p>
+      <label class="agree"><input type="checkbox" id="agreeTerms"><span>I understand this is a <strong>non-refundable</strong> program. You'll teach and help me build the system and roadmap — you do <strong>not</strong> guarantee any specific results, income, leads, or client outcomes.</span></label>
+      <a class="pay disabled" id="payLink" href="#" target="_blank" rel="noopener">Book your call →</a>
+      <p class="note">We'll talk it through on the call, and you'll complete the ₹20,000 cohort fee once we confirm it's the right fit.</p>
+    </div>
+    <button class="btn secondary restart" id="restart" type="button">Start again</button>
   </div>
 </div>
 
-<div class="card" style="margin-bottom:24px;text-align:left">
-  <div class="eyebrow" style="text-align:left">Before you start</div>
-  <h2 class="question" style="font-size:26px">Common questions</h2>
-  <div style="color:#ddd1c8;line-height:1.8">
-    <p><strong style="color:var(--text)">I have zero experience — can I really do this?</strong><br>Yes. The cohort is built to take you from scratch, in order — niche, offer, tools, outreach, closing. You don't need to know anything about this going in.</p>
-    <p style="margin-top:16px"><strong style="color:var(--text)">Do I need to know how to code?</strong><br>No. Everything runs on no-code tools — you're learning to use them, not build them.</p>
-    <p style="margin-top:16px"><strong style="color:var(--text)">What if I already have a skill or clients?</strong><br>You'll move through the early weeks faster and focus on the acquisition system itself.</p>
-    <p style="margin-top:16px"><strong style="color:var(--text)">Have you actually used this yourself?</strong><br>Yes — I run this exact system for my own agency right now, and for the clients I work with. This is the live process, not a recycled course.</p>
-    <p style="margin-top:16px"><strong style="color:var(--text)">Is this guaranteed to work?</strong><br>No — and we're upfront about that before you pay. We teach and help you build the system; results depend on you implementing it.</p>
+<div class="section">
+  <div class="kicker">The 60 days · Starting September 12</div>
+  <h2>Week by week</h2>
+  <div class="timeline">
+    <div class="step"><h3>Week 1-2 — Pick your niche</h3><p>How to choose who to target, even with zero experience.</p></div>
+    <div class="step"><h3>Week 3 — Build your offer</h3><p>What to actually sell and how to price it.</p></div>
+    <div class="step"><h3>Week 4 — Set up your infrastructure</h3><p>Sending domains, warmup, the tool stack.</p></div>
+    <div class="step"><h3>Week 5 — Build your lead list</h3><p>Finding real, verified leads.</p></div>
+    <div class="step"><h3>Week 6 — Cold email + AI automation</h3><p>Sequences that convert, automated with AI.</p></div>
+    <div class="step"><h3>Week 7 — Cold calling layer</h3><p>Scripts, objections, follow-up.</p></div>
+    <div class="step"><h3>Week 8 — Close &amp; deliver</h3><p>Getting the signed client, and keeping them.</p></div>
   </div>
+</div>
+
+<div class="section" style="margin-top:36px">
+  <div class="kicker">Before you start</div>
+  <h2>Common questions</h2>
+  <details class="faq"><summary>I have zero experience — can I really do this?</summary><p>Yes. The cohort is built to take you from scratch, in order — niche, offer, tools, outreach, closing. You don't need to know anything about this going in.</p></details>
+  <details class="faq"><summary>Do I need to know how to code?</summary><p>No. Everything runs on no-code tools — you're learning to use them, not build them.</p></details>
+  <details class="faq"><summary>What if I already have a skill or clients?</summary><p>You'll move through the early weeks faster and focus on the acquisition system itself.</p></details>
+  <details class="faq"><summary>Have you actually used this yourself?</summary><p>Yes — I run this exact system for my own agency right now, and for the clients I work with. This is the live process, not a recycled course.</p></details>
+  <details class="faq"><summary>Is this guaranteed to work?</summary><p>No — and we're upfront about that before you pay. We teach and help you build the system; results depend on you implementing it.</p></details>
 </div>
 
 </div></main>
+
+<footer>© 2026 · Payments processed securely via Razorpay</footer>
+
 <script>
-// ---------------------------------------------------------------
-// CONFIG — paste your deployed Apps Script Web App URL here.
-// See COHORT-SHEET-SETUP.md for how to get this URL.
-// ---------------------------------------------------------------
 const CONFIG = {
   SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwXnYZlH87TSvO2tps2uyG48R8LxGaTOjjc0i9qbU3V6NlxbhLRBFjQ31EHkL8jvsM/exec",
-  PAY_LINK_BASE: "https://rzp.io/rzp/gQz7jbfM"
+  CALENDLY_URL: "https://calendly.com/chiragsharmadm"
 };
 
 const qs=[
@@ -85,18 +197,41 @@ const qLabels=["current_status","wants_to_sell","target_market","biggest_problem
 let i=0,a=[],pendingResult=null;
 const $=x=>document.getElementById(x);
 
-function render(){let q=qs[i];$("qnum").textContent=`Question ${i+1} of ${qs.length}`;$("question").textContent=q[0];$("options").innerHTML=q[1].map((x,j)=>`<div class="opt"><input id="x${j}" name="ans" type="radio" value="${j}" ${a[i]===j?"checked":""}><label for="x${j}">${x}</label></div>`).join("");$("bar").style.width=(i/qs.length*100)+"%";$("back").disabled=i===0;$("next").textContent=i===qs.length-1?"Continue":"Continue"}
-$("next").onclick=()=>{let x=document.querySelector('input[name=ans]:checked');if(!x)return;a[i]=+x.value;if(i<qs.length-1){i++;render()}else showCapture()};
-$("back").onclick=()=>{if(i){i--;render()}};
+$("heroCTA").onclick=()=>$("interactive").scrollIntoView({behavior:"smooth",block:"start"});
+
+function render(animate){
+  const box=$("qContent");
+  const paint=()=>{
+    let q=qs[i];
+    $("qnum").textContent=`Question ${i+1} of ${qs.length}`;
+    $("question").textContent=q[0];
+    $("options").innerHTML=q[1].map((x,j)=>`<div class="opt"><input id="x${j}" name="ans" type="radio" value="${j}" ${a[i]===j?"checked":""}><label for="x${j}">${x}</label></div>`).join("");
+    $("bar").style.width=(i/qs.length*100)+"%";
+    $("back").disabled=i===0;
+    $("next").textContent=i===qs.length-1?"Continue":"Continue";
+    box.classList.remove("fade");
+  };
+  if(animate){box.classList.add("fade");setTimeout(paint,150)}else paint();
+}
+$("next").onclick=()=>{let x=document.querySelector('input[name=ans]:checked');if(!x)return;a[i]=+x.value;if(i<qs.length-1){i++;render(true)}else showCapture()};
+$("back").onclick=()=>{if(i){i--;render(true)}};
 
 function computeResult(){
-  const outboundOK = a[4] !== 3;              // willing to do at least one outbound channel
-  const investOK = a[6] === 0 || a[6] === 1;   // genuinely ready to invest today
+  const outboundOK = a[4] !== 3;
+  const investOK = a[6] === 0 || a[6] === 1;
   return { ok: outboundOK && investOK };
 }
 
-function showCapture(){pendingResult=computeResult();$("quiz").classList.add("hidden");$("capture").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}
-$("captureBack").onclick=()=>{$("capture").classList.add("hidden");$("quiz").classList.remove("hidden");render()};
+function scrollToWidget(){$("interactive").scrollIntoView({behavior:"smooth",block:"start"})}
+
+function showCapture(){
+  pendingResult=computeResult();
+  $("bar").style.width="100%";
+  $("quiz").classList.add("hidden");
+  $("capture").classList.remove("hidden");
+  scrollToWidget();
+}
+$("captureBack").onclick=()=>{$("capture").classList.add("hidden");$("quiz").classList.remove("hidden");render(false);scrollToWidget()};
 
 $("captureSubmit").onclick=()=>{
   const name=$("cName").value.trim(),email=$("cEmail").value.trim(),whatsapp=$("cWhatsapp").value.trim();
@@ -105,7 +240,7 @@ $("captureSubmit").onclick=()=>{
   $("captureSubmit").disabled=true;$("captureSubmit").textContent="Submitting...";$("capture").classList.add("submitting");
 
   const payload={
-    website:$("cWebsite").value, // honeypot — real users leave this blank
+    website:$("cWebsite").value,
     name,email,whatsapp,
     qualified:pendingResult.ok?"Yes":"No"
   };
@@ -119,8 +254,6 @@ function submitLead(payload){
     console.warn("CONFIG.SCRIPT_URL not set — lead was NOT sent to the sheet.");
     return Promise.resolve();
   }
-  // no-cors: Apps Script web apps don't return CORS headers for simple POST,
-  // so we fire-and-forget rather than read the response.
   return fetch(CONFIG.SCRIPT_URL,{
     method:"POST",
     mode:"no-cors",
@@ -139,14 +272,14 @@ function revealResult(name,email,whatsapp){
     :"The cohort is designed for people ready to learn, build, reach prospects and implement. You may be better suited to join when you're ready for that commitment.";
   $("paybox").classList.toggle("hidden",!ok);
   if(ok){
-    const url=new URL(CONFIG.PAY_LINK_BASE);
+    const url=new URL(CONFIG.CALENDLY_URL);
+    if(name)url.searchParams.set("name",name);
     if(email)url.searchParams.set("email",email);
-    if(whatsapp)url.searchParams.set("contact",whatsapp);
     $("payLink").href=url.toString();
     $("agreeTerms").checked=false;
     $("payLink").classList.add("disabled");
   }
-  window.scrollTo({top:0,behavior:"smooth"});
+  scrollToWidget();
 }
 
 $("agreeTerms").onchange=()=>{$("payLink").classList.toggle("disabled",!$("agreeTerms").checked)};
@@ -156,8 +289,8 @@ $("restart").onclick=()=>{
   i=0;a=[];pendingResult=null;
   $("cName").value="";$("cEmail").value="";$("cWhatsapp").value="";$("cWebsite").value="";
   $("captureSubmit").disabled=false;$("captureSubmit").textContent="See my result →";$("capture").classList.remove("submitting");
-  $("result").classList.add("hidden");$("hero").classList.remove("hidden");$("quiz").classList.remove("hidden");
-  render();window.scrollTo(0,0)
+  $("result").classList.add("hidden");$("quiz").classList.remove("hidden");
+  render(false);scrollToWidget();
 };
-render();
+render(false);
 </script></body></html>
