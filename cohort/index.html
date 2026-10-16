@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>US Client Acquisition: 90-Day 1:1 Mentorship</title>
+<title>US Client Acquisition: 1:1 Mentorship from ₹25,000</title>
+<meta name="description" content="Land your first US client with 1:1 mentorship from Chirag Sharma. Three tiers — Start ₹25,000, Build ₹50,000, Full ₹1,00,000 — based on how far you want to go.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
@@ -585,7 +586,97 @@ footer{
   height:29px
 }
 
+.tiers{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:0 0 14px
+}
+
+.tier{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  padding:22px 18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px
+}
+
+.tier.featured{
+  border-color:var(--gold);
+  background:#3f2c1d
+}
+
+.tier .tname{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase
+}
+
+.tier .tprice{
+  font:400 30px 'Playfair Display',serif;
+  color:var(--text);
+  line-height:1
+}
+
+.tier .tweeks{
+  font-size:12px;
+  color:var(--muted)
+}
+
+.tier p{
+  font-size:13px;
+  line-height:1.55;
+  margin:0;
+  color:#ddd1c8
+}
+
+.tier .tfit{
+  margin-top:auto;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+  font-size:12px;
+  color:var(--muted)
+}
+
+.tiers-cta{
+  text-align:center;
+  margin:18px 0 40px
+}
+
+.tiers-cta .fineprint{
+  margin-top:10px
+}
+
+.tier-tag{
+  display:inline-block;
+  font:600 10px/1 'Inter',sans-serif;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  padding:4px 7px;
+  margin-left:8px;
+  vertical-align:middle
+}
+
+.alt-tiers{
+  margin-top:14px;
+  font-size:12px;
+  color:var(--muted);
+  text-align:center
+}
+
+.alt-tiers a{
+  color:var(--gold)
+}
+
 @media(max-width:600px){
+  .tiers{
+    grid-template-columns:1fr
+  }
+
   .features{
     grid-template-columns:1fr
   }
@@ -631,7 +722,7 @@ footer{
 
 <div class="hero">
 
-  <div class="eyebrow">90-Day 1:1 Mentorship</div>
+  <div class="eyebrow">1:1 Mentorship · Three ways to start</div>
 
   <h1>
     Land your first <em>US client</em>,
@@ -645,15 +736,15 @@ footer{
   </p>
 
   <button class="cta" id="heroCTA" type="button">
-    Check if you're a fit (2 min) →
+    Find your tier (2 min) →
   </button>
 
   <div class="fineprint">
-    ₹1,00,000 one-time · ~₹15,000/month in tools · No experience required
+    From ₹25,000 · Three tiers based on how far you want to go · No experience required
   </div>
 
   <div class="fineprint" style="margin-top:6px">
-    Only apply if you can comfortably afford both.
+    Pick the tier you can comfortably afford.
     I don't want you stretching yourself thin for this.
   </div>
 
@@ -680,6 +771,60 @@ footer{
   </div>
 
 </div>
+
+<!-- TIERS -->
+<div class="section" id="tiers">
+
+  <div class="kicker">
+    Three ways to work with me
+  </div>
+
+  <h2>
+    Go as far as your budget allows
+  </h2>
+
+  <div class="tiers">
+
+    <div class="tier">
+      <div class="tname">Start</div>
+      <div class="tprice">₹25,000</div>
+      <div class="tweeks">Weeks 1–5 · 1:1 with me</div>
+      <p>Pick your niche and build your offer: who you're going after, what you're selling and what to charge for it.</p>
+      <p>No paid tools needed yet.</p>
+      <div class="tfit">For you if you're starting from zero or unsure what to sell.</div>
+    </div>
+
+    <div class="tier">
+      <div class="tname">Build</div>
+      <div class="tprice">₹50,000</div>
+      <div class="tweeks">Weeks 1–9 · 1:1 with me</div>
+      <p>Everything in Start, plus your sending infrastructure (domains, warmup, tools connected) and a real, verified lead list.</p>
+      <p>Tools from week 6: ~₹15,000/month, paid separately.</p>
+      <div class="tfit">For you if you want the system set up and ready to send.</div>
+    </div>
+
+    <div class="tier featured">
+      <div class="tname">Full</div>
+      <div class="tprice">₹1,00,000</div>
+      <div class="tweeks">All 13 weeks · 1:1 with me</div>
+      <p>Everything in Build, plus cold email with AI personalisation, the cold calling layer, and getting your first client signed and delivered.</p>
+      <p>Tools from week 6: ~₹15,000/month, paid separately.</p>
+      <div class="tfit">For you if you want the whole system, all the way to a signed client.</div>
+    </div>
+
+  </div>
+
+  <div class="tiers-cta">
+    <button class="cta" type="button" onclick="document.getElementById('interactive').scrollIntoView({behavior:'smooth',block:'start'})">
+      Not sure which? Find your tier (2 min) →
+    </button>
+    <div class="fineprint">
+      Below ₹25,000 right now? Take the quiz anyway, and I'll suggest a next step.
+    </div>
+  </div>
+
+</div>
+
 
 <div id="interactive">
 
@@ -807,24 +952,22 @@ footer{
     <!-- PAYMENT BOX -->
     <div id="paybox" class="paybox hidden">
 
-      <div class="price">
+      <div class="price" id="payPrice">
         ₹1,00,000
       </div>
 
-      <p>
-        90-Day 1:1 Mentorship · Personal calls with me
+      <p id="payName">
+        Full · All 13 weeks · Personal calls with me
       </p>
 
-      <p class="note">
-        Plus ~₹15,000/month in tools during the program
-        (roughly ₹45,000 across the 90 days), paid separately,
+      <p class="note" id="payTools">
+        Plus ~₹15,000/month in tools from week 6, paid separately,
         not part of the mentorship fee.
       </p>
 
-      <p class="note">
-        What you actually get: an automated system that handles
-        your outbound for you, and I'll personally walk you through
-        finding good leads, reaching out, booking the call, and closing it.
+      <p class="note" id="payWhat">
+        What you get: niche, offer, infrastructure, lead list, cold email,
+        cold calling and closing, with me 1:1 the whole way.
       </p>
 
 
@@ -853,7 +996,7 @@ footer{
         target="_blank"
         rel="noopener noreferrer">
 
-        Join Now →
+        <span id="joinLabel">Join Now →</span>
 
       </a>
 
@@ -861,8 +1004,8 @@ footer{
         class="note"
         style="margin-top:12px;text-align:center">
 
-        By clicking Join Now, you acknowledge the terms above
-        and proceed to payment.
+        <span id="joinNote">By clicking Join Now, you acknowledge the terms above
+        and proceed to payment.</span>
 
       </p>
 
@@ -882,6 +1025,11 @@ footer{
       </p>
 
     </div>
+
+
+    <p class="alt-tiers hidden" id="altTiers">
+      Want a different tier? <a href="#tiers">See all three</a> — any of them is open to you.
+    </p>
 
 
     <!-- NOT-A-FIT: keep the conversation going instead of a dead end -->
@@ -924,11 +1072,11 @@ footer{
 <div class="section">
 
   <div class="kicker">
-    The 90 days
+    The full 13 weeks
   </div>
 
   <h2>
-    Week by week
+    Week by week, and where each tier stops
   </h2>
 
   <div class="timeline">
@@ -942,7 +1090,7 @@ footer{
     </div>
 
     <div class="step">
-      <h3>Week 4-5: Build your offer</h3>
+      <h3>Week 4-5: Build your offer<span class="tier-tag">Start ends</span></h3>
       <p>
         What you're actually selling, and what to charge for it.
       </p>
@@ -957,7 +1105,7 @@ footer{
     </div>
 
     <div class="step">
-      <h3>Week 8-9: Build your lead list</h3>
+      <h3>Week 8-9: Build your lead list<span class="tier-tag">Build ends</span></h3>
       <p>
         Real leads, verified, not a list you bought off someone.
       </p>
@@ -980,7 +1128,7 @@ footer{
     </div>
 
     <div class="step">
-      <h3>Week 13: Close &amp; deliver</h3>
+      <h3>Week 13: Close &amp; deliver<span class="tier-tag">Full ends</span></h3>
       <p>
         Getting the client signed. Then actually keeping them happy.
       </p>
@@ -1004,6 +1152,30 @@ footer{
   </h2>
 
   <details class="faq">
+      <summary>
+        Which tier should I pick?
+      </summary>
+      <p>
+        Take the 2-minute quiz above and it'll recommend one.
+        Rule of thumb: Start if you don't know what you'd sell yet,
+        Build if you want the system set up and ready to send,
+        Full if you want me with you all the way to a signed client.
+        Pick what you can comfortably afford.
+      </p>
+    </details>
+
+    <details class="faq">
+      <summary>
+        What do the tools cost?
+      </summary>
+      <p>
+        Start doesn't need any paid tools. Build and Full need about
+        ₹15,000/month in tools from week 6 onwards (sending domains,
+        warmup, lead data), paid separately, not part of the mentorship fee.
+      </p>
+    </details>
+
+    <details class="faq">
     <summary>
       I have zero experience, can I really do this?
     </summary>
@@ -1084,7 +1256,39 @@ const CONFIG = {
     "https://script.google.com/macros/s/AKfycbwXnYZlH87TSvO2tps2uyG48R8LxGaTOjjc0i9qbU3V6NlxbhLRBFjQ31EHkL8jvsM/exec",
 
   RAZORPAY_URL:
-    "https://rzp.io/rzp/A1wMtqv0"
+    "https://rzp.io/rzp/A1wMtqv0",
+
+  WHATSAPP:
+    "918447355977",
+
+  // Paste a Razorpay link into "pay" to let that tier pay directly.
+  // Tiers without a link send people to WhatsApp for their payment link.
+  TIERS: {
+    full: {
+      name: "Full",
+      price: "₹1,00,000",
+      line: "Full · All 13 weeks · Personal calls with me",
+      tools: "Plus ~₹15,000/month in tools from week 6, paid separately, not part of the mentorship fee.",
+      what: "What you get: niche, offer, infrastructure, lead list, cold email, cold calling and closing, with me 1:1 the whole way.",
+      pay: "https://rzp.io/rzp/A1wMtqv0"
+    },
+    build: {
+      name: "Build",
+      price: "₹50,000",
+      line: "Build · Weeks 1–9 · Personal calls with me",
+      tools: "Plus ~₹15,000/month in tools from week 6, paid separately, not part of the mentorship fee.",
+      what: "What you get: niche, offer, sending infrastructure and a verified lead list, with me 1:1.",
+      pay: ""
+    },
+    start: {
+      name: "Start",
+      price: "₹25,000",
+      line: "Start · Weeks 1–5 · Personal calls with me",
+      tools: "No paid tools needed for these weeks.",
+      what: "What you get: your niche, your offer and your pricing, worked out 1:1 with me.",
+      pay: ""
+    }
+  }
 
 };
 
@@ -1152,12 +1356,12 @@ const qs = [
   ],
 
   [
-    "Do you have ₹50,000 – ₹1,00,000 available to invest in your business over the next 90 days?",
+    "How much can you comfortably invest in mentorship right now?",
     [
-      "Yes, that's available right now",
-      "Yes, but it would take some planning",
-      "I have less than that right now",
-      "No, that's out of reach for me"
+      "₹1,00,000: I want the full system",
+      "Around ₹50,000",
+      "Around ₹25,000",
+      "Less than ₹25,000 right now"
     ]
   ]
 
@@ -1294,12 +1498,12 @@ function computeResult(){
   const outboundOK =
     a[4] !== 3;
 
-  const investOK =
-    a[6] === 0 ||
-    a[6] === 1;
+  const tier =
+    ["full","build","start",null][a[6]];
 
   return {
-    ok: outboundOK && investOK
+    ok: outboundOK && !!tier,
+    tier: outboundOK ? tier : null
   };
 
 }
@@ -1461,8 +1665,11 @@ function revealResult(
   whatsapp
 ){
 
-  const {ok} =
+  const {ok, tier} =
     pendingResult;
+
+  const T =
+    ok ? CONFIG.TIERS[tier] : null;
 
 
   $("capture").classList.add("hidden");
@@ -1472,14 +1679,14 @@ function revealResult(
 
   $("title").textContent =
     ok
-      ? "You look like a strong fit."
+      ? T.name + " looks like your fit."
       : "Let's talk it through first.";
 
 
   $("text").textContent =
     ok
-      ? "Sounds like you're in the right place. You're ready to take the next step."
-      : "The full 90-day program might not be the right starting point for you yet — but there's likely still a way I can help, whether that's a smaller first step or a plan to get you ready.";
+      ? "Based on your answers and budget, " + T.name + " (" + T.price + ") is the right place to start."
+      : "Based on your answers, none of the three tiers is the right starting point yet — but there's likely still a way I can help, whether that's a smaller first step or a plan to get you ready.";
 
 
   $("paybox").classList.toggle(
@@ -1490,6 +1697,11 @@ function revealResult(
   $("talkbox").classList.toggle(
     "hidden",
     ok
+  );
+
+  $("altTiers").classList.toggle(
+    "hidden",
+    !ok
   );
 
   if(!ok){
@@ -1513,8 +1725,32 @@ function revealResult(
       "disabled"
     );
 
-    $("joinNow").href =
-      CONFIG.RAZORPAY_URL;
+    $("payPrice").textContent = T.price;
+    $("payName").textContent = T.line;
+    $("payTools").textContent = T.tools;
+    $("payWhat").textContent = T.what;
+
+    if(T.pay){
+
+      $("joinNow").href = T.pay;
+      $("joinLabel").textContent = "Join " + T.name + " →";
+      $("joinNote").textContent =
+        "By clicking Join, you acknowledge the terms above and proceed to payment.";
+
+    }else{
+
+      const msg =
+        "Hi Chirag, I'm " + (name || "") +
+        ". The quiz recommended the " + T.name + " tier (" + T.price +
+        ") and I'd like to join. Please send me the payment link.";
+
+      $("joinNow").href =
+        "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
+      $("joinLabel").textContent = "Get your " + T.name + " payment link on WhatsApp →";
+      $("joinNote").textContent =
+        "I'll send your payment link personally on WhatsApp.";
+
+    }
 
   }
 
