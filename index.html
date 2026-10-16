@@ -257,13 +257,12 @@ ul, ol { padding: 0; list-style: none; }
   .hero-figure img { object-position: 50% 35%; }
 }
 @media (min-width: 960px) {
-  .hero-grid { grid-template-columns: 7fr 5fr; grid-template-areas: "copy fig" "stats fig"; column-gap: clamp(48px, 6vw, 96px); row-gap: 56px; align-items: start; }
+  .hero-grid { grid-template-columns: 6fr 5fr; grid-template-areas: "copy fig" "stats stats"; column-gap: clamp(48px, 6vw, 96px); row-gap: clamp(56px, 6vw, 88px); align-items: center; }
   .hero-copy { padding-top: clamp(8px, 2vw, 32px); }
-  .creds { grid-template-columns: repeat(4, 1fr); align-self: end; gap: 0 20px; }
+  .creds { grid-template-columns: repeat(4, 1fr); gap: 0 32px; }
   .creds .cred:nth-child(n+3) { margin-top: 0; }
-  .hero-figure { display: flex; flex-direction: column; align-self: stretch; }
-  .hero-figure .frame { aspect-ratio: auto; flex: 1; min-height: 560px; }
-  .hero-figure img { object-position: 58% 45%; }
+  .hero-figure .frame { aspect-ratio: 4 / 5; }
+  .hero-figure img { object-position: 50% 50%; }
 }
 /* =========================================================
    TESTIMONIALS
