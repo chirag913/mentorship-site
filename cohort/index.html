@@ -414,7 +414,7 @@ ul, ol { padding: 0; list-style: none; }
         <button type="button" class="btn btn--primary" id="heroCTA" data-goquiz>Find your tier (2 min) <span class="arr" aria-hidden="true">→</span></button>
         <a class="btn btn--quiet" href="#tiers">See the three tiers</a>
       </div>
-      <div class="hero-meta reveal d2"><span>From ₹25,000</span><span>Instalments available</span><span>No experience required</span><span>No coding</span></div>
+      <div class="hero-meta reveal d2"><span>From ₹25,000</span><span>EMI available</span><span>No experience required</span><span>No coding</span></div>
     </div>
 
     <figure class="hero-figure reveal d1">
@@ -556,7 +556,7 @@ ul, ol { padding: 0; list-style: none; }
         <span class="label label--accent">Already tried? Skip ahead</span>
         <h3 id="sp-title">First Client Sprint</h3>
         <p class="sp-pitch">For people who've already experimented and have a niche or an offer. We skip the slow weeks and go straight to getting replies, calls and a client — 6 weeks, 1:1.</p>
-        <div class="sp-price"><b>₹30,000</b><span>or 2 × ₹15,000</span></div>
+        <div class="sp-price"><b>₹30,000</b><span>EMI available at checkout</span></div>
         <p class="sp-allin">≈ ₹50,000 all-in, including about six weeks of tools.</p>
         <button type="button" class="btn btn--primary" data-goquiz>Check if the Sprint fits <span class="arr" aria-hidden="true">→</span></button>
       </div>
@@ -700,8 +700,8 @@ ul, ol { padding: 0; list-style: none; }
     <div class="faq reveal">
       <details open><summary>Which tier should I pick?<span class="pm" aria-hidden="true"></span></summary><p>Take the fit check and it'll recommend one. Rule of thumb: Start if you don't know what you'd sell yet, Build if you want the system set up and ready to send, Full if you want me with you all the way to a signed client. Already experimented? The First Client Sprint skips straight to outreach. Pick what you can comfortably afford.</p></details>
       <details><summary>What do the tools cost?<span class="pm" aria-hidden="true"></span></summary><p>Start doesn't need any paid tools. Once outreach starts, it's about ₹12–13k a month: Instantly (~₹5k), Apollo (~₹4–5k), Claude Code (~₹2k) and a workspace mailbox (~₹1k), plus ₹1–2k one-time for domains. Paid separately — not part of the mentorship fee. That's why every tier shows an all-in number.</p></details>
-      <details><summary>I've already tried this. Do I have to start from week 1?<span class="pm" aria-hidden="true"></span></summary><p>No. The First Client Sprint is built for you: 6 weeks, starting from the niche and offer you already have, going straight to infrastructure, outreach, calling and closing. ₹30,000, or 2 × ₹15,000.</p></details>
-      <details><summary>Can I pay in instalments?<span class="pm" aria-hidden="true"></span></summary><p>Yes. The Sprint can be paid as 2 × ₹15,000. For Build or Full, message me on WhatsApp and we'll set up a split that works.</p></details>
+      <details><summary>I've already tried this. Do I have to start from week 1?<span class="pm" aria-hidden="true"></span></summary><p>No. The First Client Sprint is built for you: 6 weeks, starting from the niche and offer you already have, going straight to infrastructure, outreach, calling and closing. ₹30,000, with EMI available at checkout.</p></details>
+      <details><summary>Can I pay in EMI?<span class="pm" aria-hidden="true"></span></summary><p>Yes. Razorpay checkout shows EMI options for eligible cards and banks — choose EMI when you pay. If yours isn't eligible, message me on WhatsApp and we'll work something out.</p></details>
       <details><summary>I have zero experience. Can I really do this?<span class="pm" aria-hidden="true"></span></summary><p>Yes. I built this to start from scratch: niche, offer, tools, outreach, closing, in that order. If you've never done any of this, you're exactly who it's for.</p></details>
       <details><summary>Do I need to know how to code?<span class="pm" aria-hidden="true"></span></summary><p>No. It's all no-code tools. You're learning to use them, not build them from scratch.</p></details>
       <details><summary>What if I already have a skill or clients?<span class="pm" aria-hidden="true"></span></summary><p>You'll fly through the first couple of weeks and spend most of your time on the acquisition side.</p></details>
@@ -785,11 +785,10 @@ const CONFIG = {
     sprint: {
       name: "First Client Sprint",
       price: "₹30,000",
-      line: "First Client Sprint · 6 weeks · or 2 × ₹15,000",
+      line: "First Client Sprint · 6 weeks · EMI available at checkout",
       tools: "Plus ~₹12–13k/month in tools and ₹1–2k one-time for domains (≈ ₹50,000 all-in), paid separately.",
       what: "What you get: your niche and offer sharpened, infrastructure and lead list set up, cold email live, calling and closing, with me 1:1.",
-      pay: "",
-      payNote: "Pay in full or as 2 × ₹15,000 — I'll send your link personally on WhatsApp."
+      pay: "https://razorpay.com/payment-link/plink_Tof4YzrllUwc39"
     }
   }
 };
@@ -996,10 +995,10 @@ function revealResult(name) {
     $("payWhat").textContent = T.what;
     if (T.pay) {
       $("joinNow").href = T.pay;
-      $("joinLabel").textContent = "Join " + T.name + " →";
+      $("joinLabel").textContent = "Join " + (tier === "sprint" ? "the Sprint" : T.name) + " →";
       $("joinNote").textContent = "By clicking Join, you acknowledge the terms above and proceed to payment.";
     } else {
-      const msg = "Hi Chirag, I'm " + (name || "") + ". The quiz recommended " + (tier === "sprint" ? "the First Client Sprint" : "the " + T.name + " tier") + " (" + T.price + ") and I'd like to join. Please send me the payment link" + (tier === "sprint" ? " (full or 2 × ₹15,000)." : ".");
+      const msg = "Hi Chirag, I'm " + (name || "") + ". The quiz recommended " + (tier === "sprint" ? "the First Client Sprint" : "the " + T.name + " tier") + " (" + T.price + ") and I'd like to join. Please send me the payment link" + ".";
       $("joinNow").href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
       $("joinLabel").textContent = (tier === "sprint" ? "Get your Sprint" : "Get your " + T.name) + " payment link on WhatsApp →";
       $("joinNote").textContent = T.payNote || "I'll send your payment link personally on WhatsApp.";
