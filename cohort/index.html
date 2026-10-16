@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://chiragsharma.co/cohort/" />
 <meta property="og:title" content="US Client Acquisition — 1:1 Mentorship with Chirag Sharma" />
-<meta property="og:description" content="Find leads, reach out, close. The system I use in my own agency, taught 1:1. From ₹25,000." />
+<meta property="og:description" content="Find leads, reach out, close. The system I use in my own agency, taught 1:1. From ₹25,000, with a 6-week First Client Sprint for people who have already started." />
 <meta property="og:image" content="https://chiragsharma.co/img/og.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <script>document.documentElement.classList.add('js');</script>
@@ -30,7 +30,8 @@
   "offers": [
     { "@type": "Offer", "name": "Start", "price": "25000", "priceCurrency": "INR" },
     { "@type": "Offer", "name": "Build", "price": "50000", "priceCurrency": "INR" },
-    { "@type": "Offer", "name": "Full", "price": "100000", "priceCurrency": "INR" }
+    { "@type": "Offer", "name": "Full", "price": "100000", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "First Client Sprint", "price": "30000", "priceCurrency": "INR" }
   ]
 }
 </script>
@@ -232,11 +233,23 @@ ul, ol { padding: 0; list-style: none; }
 .tier dt { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .tier--full dt { color: var(--on-night-faint); }
 .tier dd { font-size: 15px; line-height: 1.5; }
+.tier dd .allin { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; letter-spacing: -.01em; margin-right: 4px; }
 .tier .cta-area { margin-top: auto; }
 .tier--full .btn--primary { background: var(--on-night); color: var(--night); }
 .tier--full .btn--primary:hover { background: var(--accent-night); }
 .badge { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: var(--r-pill); border: 1px solid var(--night-line-strong); color: var(--on-night-muted); white-space: nowrap; }
 @media (min-width: 1000px) { .tiers { grid-template-columns: 1fr 1fr 1.1fr; } }
+.sprint { margin-top: 20px; border: 1px solid var(--ink); border-radius: var(--r-lg); padding: clamp(24px, 3.5vw, 44px); display: grid; gap: clamp(28px, 4vw, 64px); background: var(--paper); }
+.sprint h3 { font-family: var(--serif); font-size: clamp(2rem, 1.5rem + 1.6vw, 2.8rem); letter-spacing: -.02em; line-height: 1; margin: 14px 0 12px; }
+.sp-pitch { font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 30em; }
+.sp-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 24px 0 4px; }
+.sp-price b { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 2rem + 2vw, 3.4rem); letter-spacing: -.03em; line-height: 1; }
+.sp-price span { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; color: var(--accent); }
+.sp-allin { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+.sp-weeks { border-top: 1px solid var(--ink); align-self: center; }
+.sp-weeks li { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+.sp-weeks .wk { font-family: var(--mono); font-size: 12px; color: var(--accent); padding-top: 2px; }
+@media (min-width: 1000px) { .sprint { grid-template-columns: 5fr 6fr; } }
 .tiers-foot { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; color: var(--muted); font-size: 15px; }
 
 /* =========================================================
@@ -401,7 +414,7 @@ ul, ol { padding: 0; list-style: none; }
         <button type="button" class="btn btn--primary" id="heroCTA" data-goquiz>Find your tier (2 min) <span class="arr" aria-hidden="true">→</span></button>
         <a class="btn btn--quiet" href="#tiers">See the three tiers</a>
       </div>
-      <div class="hero-meta reveal d2"><span>From ₹25,000</span><span>No experience required</span><span>No coding</span></div>
+      <div class="hero-meta reveal d2"><span>From ₹25,000</span><span>Instalments available</span><span>No experience required</span><span>No coding</span></div>
     </div>
 
     <figure class="hero-figure reveal d1">
@@ -449,7 +462,7 @@ ul, ol { padding: 0; list-style: none; }
         <div class="track-row" role="listitem"><div class="bar bar--build"><b>Build</b><span><i>Wk 1–9 · </i>₹50,000</span></div></div>
         <div class="track-row" role="listitem"><div class="bar bar--full"><b>Full</b><span><i>Wk 1–13 · </i>₹1,00,000</span></div></div>
       </div>
-      <p class="track-note">Paid tools only come in from week 6, when we set up your sending infrastructure — so Start needs none.</p>
+      <p class="track-note">Paid tools (about ₹12–13k a month) only come in from week 6, when we set up your sending infrastructure — so Start needs none.</p>
     </div>
   </div>
 </section>
@@ -490,7 +503,7 @@ ul, ol { padding: 0; list-style: none; }
 <section class="section" id="tiers" aria-labelledby="tiers-title">
   <div class="wrap">
     <div class="section-head">
-      <span class="label label--accent reveal">Three ways to work with me</span>
+      <span class="label label--accent reveal">Four ways to work with me</span>
       <h2 id="tiers-title" class="h2 reveal">Go as far as your budget allows.</h2>
       <p class="lead reveal">Every tier is 1:1 with me. The difference is how far along the system we go together. Pick what you can comfortably afford — I don't want you stretching yourself thin for this.</p>
     </div>
@@ -504,6 +517,7 @@ ul, ol { padding: 0; list-style: none; }
         <dl>
           <div><dt>We build</dt><dd>Your niche, your offer and your pricing</dd></div>
           <div><dt>Tools</dt><dd>No paid tools needed</dd></div>
+          <div><dt>All-in</dt><dd><b class="allin">₹25,000</b></dd></div>
           <div><dt>For you if</dt><dd>You're starting from zero or unsure what to sell</dd></div>
         </dl>
         <div class="cta-area"><button type="button" class="btn btn--line btn--block" data-goquiz>Check if Start fits <span class="arr" aria-hidden="true">→</span></button></div>
@@ -516,7 +530,8 @@ ul, ol { padding: 0; list-style: none; }
         <p class="tprice">₹50,000</p>
         <dl>
           <div><dt>We build</dt><dd>Everything in Start, plus sending infrastructure and a verified lead list</dd></div>
-          <div><dt>Tools</dt><dd>~₹15,000/month from week 6, paid separately</dd></div>
+          <div><dt>Tools</dt><dd>~₹12–13k/month from week 6, plus ₹1–2k one-time for domains</dd></div>
+          <div><dt>All-in</dt><dd><b class="allin">≈ ₹65,000</b> including tools</dd></div>
           <div><dt>For you if</dt><dd>You want the machine built, then run it yourself</dd></div>
         </dl>
         <div class="cta-area"><button type="button" class="btn btn--line btn--block" data-goquiz>Check if Build fits <span class="arr" aria-hidden="true">→</span></button></div>
@@ -529,12 +544,31 @@ ul, ol { padding: 0; list-style: none; }
         <p class="tprice">₹1,00,000</p>
         <dl>
           <div><dt>We build</dt><dd>Everything in Build, plus cold email with AI personalisation, the calling layer, and closing and delivering your first client</dd></div>
-          <div><dt>Tools</dt><dd>~₹15,000/month from week 6, paid separately</dd></div>
+          <div><dt>Tools</dt><dd>~₹12–13k/month from week 6, plus ₹1–2k one-time for domains</dd></div>
+          <div><dt>All-in</dt><dd><b class="allin">≈ ₹1,27,000</b> including tools</dd></div>
           <div><dt>For you if</dt><dd>You want me alongside you until the first deal is done</dd></div>
         </dl>
         <div class="cta-area"><button type="button" class="btn btn--primary btn--block" data-goquiz>Check if Full fits <span class="arr" aria-hidden="true">→</span></button></div>
       </article>
     </div>
+    <article class="sprint reveal" id="sprint" aria-labelledby="sp-title">
+      <div class="sp-a">
+        <span class="label label--accent">Already tried? Skip ahead</span>
+        <h3 id="sp-title">First Client Sprint</h3>
+        <p class="sp-pitch">For people who've already experimented and have a niche or an offer. We skip the slow weeks and go straight to getting replies, calls and a client — 6 weeks, 1:1.</p>
+        <div class="sp-price"><b>₹30,000</b><span>or 2 × ₹15,000</span></div>
+        <p class="sp-allin">≈ ₹50,000 all-in, including about six weeks of tools.</p>
+        <button type="button" class="btn btn--primary" data-goquiz>Check if the Sprint fits <span class="arr" aria-hidden="true">→</span></button>
+      </div>
+      <ol class="sp-weeks">
+        <li><span class="wk">Week 1</span><span>I review and sharpen the niche and offer you already have</span></li>
+        <li><span class="wk">Week 2</span><span>Domains, mailboxes and tools set up; your lead list pulled</span></li>
+        <li><span class="wk">Weeks 3–4</span><span>Cold email live with AI personalisation — I review your replies</span></li>
+        <li><span class="wk">Week 5</span><span>Calling: scripts and objections, on your real conversations</span></li>
+        <li><span class="wk">Week 6</span><span>Closing: we work through your live deals together</span></li>
+      </ol>
+    </article>
+
     <div class="tiers-foot reveal"><span>Below ₹25,000 right now?</span><button type="button" class="btn btn--quiet" data-goquiz>Take the fit check anyway — I'll suggest a next step</button></div>
   </div>
 </section>
@@ -664,8 +698,10 @@ ul, ol { padding: 0; list-style: none; }
       <p class="muted reveal">Something else? <a class="tlink" href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20have%20a%20question%20about%20the%20mentorship." target="_blank" rel="noopener">Ask me on WhatsApp</a>.</p>
     </div>
     <div class="faq reveal">
-      <details open><summary>Which tier should I pick?<span class="pm" aria-hidden="true"></span></summary><p>Take the fit check and it'll recommend one. Rule of thumb: Start if you don't know what you'd sell yet, Build if you want the system set up and ready to send, Full if you want me with you all the way to a signed client. Pick what you can comfortably afford.</p></details>
-      <details><summary>What do the tools cost?<span class="pm" aria-hidden="true"></span></summary><p>Start doesn't need any paid tools. Build and Full need about ₹15,000/month in tools from week 6 onwards (sending domains, warmup, lead data), paid separately — not part of the mentorship fee.</p></details>
+      <details open><summary>Which tier should I pick?<span class="pm" aria-hidden="true"></span></summary><p>Take the fit check and it'll recommend one. Rule of thumb: Start if you don't know what you'd sell yet, Build if you want the system set up and ready to send, Full if you want me with you all the way to a signed client. Already experimented? The First Client Sprint skips straight to outreach. Pick what you can comfortably afford.</p></details>
+      <details><summary>What do the tools cost?<span class="pm" aria-hidden="true"></span></summary><p>Start doesn't need any paid tools. Once outreach starts, it's about ₹12–13k a month: Instantly (~₹5k), Apollo (~₹4–5k), Claude Code (~₹2k) and a workspace mailbox (~₹1k), plus ₹1–2k one-time for domains. Paid separately — not part of the mentorship fee. That's why every tier shows an all-in number.</p></details>
+      <details><summary>I've already tried this. Do I have to start from week 1?<span class="pm" aria-hidden="true"></span></summary><p>No. The First Client Sprint is built for you: 6 weeks, starting from the niche and offer you already have, going straight to infrastructure, outreach, calling and closing. ₹30,000, or 2 × ₹15,000.</p></details>
+      <details><summary>Can I pay in instalments?<span class="pm" aria-hidden="true"></span></summary><p>Yes. The Sprint can be paid as 2 × ₹15,000. For Build or Full, message me on WhatsApp and we'll set up a split that works.</p></details>
       <details><summary>I have zero experience. Can I really do this?<span class="pm" aria-hidden="true"></span></summary><p>Yes. I built this to start from scratch: niche, offer, tools, outreach, closing, in that order. If you've never done any of this, you're exactly who it's for.</p></details>
       <details><summary>Do I need to know how to code?<span class="pm" aria-hidden="true"></span></summary><p>No. It's all no-code tools. You're learning to use them, not build them from scratch.</p></details>
       <details><summary>What if I already have a skill or clients?<span class="pm" aria-hidden="true"></span></summary><p>You'll fly through the first couple of weeks and spend most of your time on the acquisition side.</p></details>
@@ -726,7 +762,7 @@ const CONFIG = {
       name: "Full",
       price: "₹1,00,000",
       line: "Full · All 13 weeks · Personal calls with me",
-      tools: "Plus ~₹15,000/month in tools from week 6, paid separately, not part of the mentorship fee.",
+      tools: "Plus ~₹12–13k/month in tools from week 6 and ₹1–2k one-time for domains (≈ ₹1,27,000 all-in), paid separately.",
       what: "What you get: niche, offer, infrastructure, lead list, cold email, cold calling and closing, with me 1:1 the whole way.",
       pay: "https://rzp.io/rzp/A1wMtqv0"
     },
@@ -734,9 +770,9 @@ const CONFIG = {
       name: "Build",
       price: "₹50,000",
       line: "Build · Weeks 1–9 · Personal calls with me",
-      tools: "Plus ~₹15,000/month in tools from week 6, paid separately, not part of the mentorship fee.",
+      tools: "Plus ~₹12–13k/month in tools from week 6 and ₹1–2k one-time for domains (≈ ₹65,000 all-in), paid separately.",
       what: "What you get: niche, offer, sending infrastructure and a verified lead list, with me 1:1.",
-      pay: ""
+      pay: "https://razorpay.com/payment-link/plink_Toeyrowumd79Kb"
     },
     start: {
       name: "Start",
@@ -744,7 +780,16 @@ const CONFIG = {
       line: "Start · Weeks 1–5 · Personal calls with me",
       tools: "No paid tools needed for these weeks.",
       what: "What you get: your niche, your offer and your pricing, worked out 1:1 with me.",
-      pay: ""
+      pay: "https://razorpay.com/payment-link/plink_ToezHokJisZC0O"
+    },
+    sprint: {
+      name: "First Client Sprint",
+      price: "₹30,000",
+      line: "First Client Sprint · 6 weeks · or 2 × ₹15,000",
+      tools: "Plus ~₹12–13k/month in tools and ₹1–2k one-time for domains (≈ ₹50,000 all-in), paid separately.",
+      what: "What you get: your niche and offer sharpened, infrastructure and lead list set up, cold email live, calling and closing, with me 1:1.",
+      pay: "",
+      payNote: "Pay in full or as 2 × ₹15,000 — I'll send your link personally on WhatsApp."
     }
   }
 };
@@ -787,9 +832,10 @@ const qs = [
     "Just recorded tutorials"
   ]],
   ["How much can you comfortably invest in mentorship right now?", [
-    "₹1,00,000: I want the full system",
-    "Around ₹50,000",
-    "Around ₹25,000",
+    "₹1,00,000 or more",
+    "₹50,000 – ₹1,00,000",
+    "₹30,000 – ₹50,000",
+    "₹25,000 – ₹30,000",
     "Less than ₹25,000 right now"
   ]]
 ];
@@ -860,7 +906,9 @@ $("back").onclick = () => { if (i) { i--; render(true); } };
 
 function computeResult() {
   const outboundOK = a[4] !== 3;
-  const tier = ["full", "build", "start", null][a[6]];
+  // Already sells or has a skill, or is stuck on finding/closing clients → ready for the Sprint
+  const experienced = a[0] === 0 || a[0] === 1 || a[3] === 1 || a[3] === 2;
+  const tier = ["full", "build", experienced ? "sprint" : "start", "start", null][a[6]];
   return { ok: outboundOK && !!tier, tier: outboundOK ? tier : null };
 }
 
@@ -926,7 +974,7 @@ function revealResult(name) {
   $("result").classList.remove("hidden");
   $("qnum").textContent = "Done";
 
-  $("title").textContent = ok ? T.name + " looks like your fit." : "Let's talk it through first.";
+  $("title").textContent = ok ? (tier === "sprint" ? "The First Client Sprint" : T.name) + " looks like your fit." : "Let's talk it through first.";
   $("text").textContent = ok
     ? "Based on your answers and budget, " + T.name + " (" + T.price + ") is the right place to start."
     : "Based on your answers, none of the three tiers is the right starting point yet — but there's likely still a way I can help, whether that's a smaller first step or a plan to get you ready.";
@@ -951,10 +999,10 @@ function revealResult(name) {
       $("joinLabel").textContent = "Join " + T.name + " →";
       $("joinNote").textContent = "By clicking Join, you acknowledge the terms above and proceed to payment.";
     } else {
-      const msg = "Hi Chirag, I'm " + (name || "") + ". The quiz recommended the " + T.name + " tier (" + T.price + ") and I'd like to join. Please send me the payment link.";
+      const msg = "Hi Chirag, I'm " + (name || "") + ". The quiz recommended " + (tier === "sprint" ? "the First Client Sprint" : "the " + T.name + " tier") + " (" + T.price + ") and I'd like to join. Please send me the payment link" + (tier === "sprint" ? " (full or 2 × ₹15,000)." : ".");
       $("joinNow").href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
-      $("joinLabel").textContent = "Get your " + T.name + " payment link on WhatsApp →";
-      $("joinNote").textContent = "I'll send your payment link personally on WhatsApp.";
+      $("joinLabel").textContent = (tier === "sprint" ? "Get your Sprint" : "Get your " + T.name) + " payment link on WhatsApp →";
+      $("joinNote").textContent = T.payNote || "I'll send your payment link personally on WhatsApp.";
     }
   }
   scrollToWidget();
