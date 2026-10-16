@@ -1,1265 +1,723 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>US Client Acquisition — 1:1 Mentorship with Chirag Sharma</title>
+<meta name="description" content="Land your first US client with 1:1 mentorship from Chirag Sharma. Learn the system he uses in his own agency. Three tiers — Start ₹25,000, Build ₹50,000, Full ₹1,00,000." />
+<link rel="canonical" href="https://chiragsharma.co/cohort/" />
+<meta name="theme-color" content="#F2EDE4" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chiragsharma.co/cohort/" />
+<meta property="og:title" content="US Client Acquisition — 1:1 Mentorship with Chirag Sharma" />
+<meta property="og:description" content="Find leads, reach out, close. The system I use in my own agency, taught 1:1. From ₹25,000." />
+<meta property="og:image" content="https://chiragsharma.co/img/og.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script>document.documentElement.classList.add('js');</script>
 
-<title>US Client Acquisition: 1:1 Mentorship from ₹25,000</title>
-<meta name="description" content="Land your first US client with 1:1 mentorship from Chirag Sharma. Three tiers — Start ₹25,000, Build ₹50,000, Full ₹1,00,000 — based on how far you want to go.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../img/chirag-hero-1100.webp" imagesrcset="../img/chirag-hero-720.webp 720w, ../img/chirag-hero-1100.webp 1100w" imagesizes="40vw" media="(min-width: 960px)" />
+<link rel="preload" as="image" href="../img/chirag-hero-m-900.webp" imagesrcset="../img/chirag-hero-m-600.webp 600w, ../img/chirag-hero-m-900.webp 900w" imagesizes="100vw" media="(max-width: 959px)" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "US Client Acquisition — 1:1 Mentorship",
+  "provider": { "@type": "Person", "name": "Chirag Sharma", "url": "https://chiragsharma.co/" },
+  "offers": [
+    { "@type": "Offer", "name": "Start", "price": "25000", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Build", "price": "50000", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Full", "price": "100000", "priceCurrency": "INR" }
+  ]
+}
+</script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
-
-:root{
-  --bg:#2a1c13;
-  --card:#3d2b1d;
-  --text:#f5eee7;
-  --muted:#aa9c92;
-  --gold:#d0a570;
-  --line:#5a4230
-}
-
-*{
-  box-sizing:border-box
-}
-
-body{
-  margin:0;
-  background:radial-gradient(circle at 70% 0,#5c3a1f,transparent 35%),var(--bg);
-  color:var(--text);
-  font-family:'DM Sans',sans-serif;
-  -webkit-font-smoothing:antialiased
-}
-
-.wrap{
-  width:min(720px,calc(100% - 32px));
-  margin:auto
-}
-
-.top{
-  position:sticky;
-  top:0;
-  z-index:10;
-  padding:20px 0;
-  background:rgba(18,13,10,.85);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line)
-}
-
-.brand{
-  font-size:11px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:var(--gold);
-  display:flex;
-  align-items:center;
-  gap:10px
-}
-
-.brand img{
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  object-fit:cover;
-  object-position:center 15%;
-  border:1px solid var(--gold)
-}
-
-main{
-  padding:55px 0 90px
-}
-
-.hero{
-  text-align:center;
-  padding-bottom:36px
-}
-
-.avatar{
-  width:92px;
-  height:92px;
-  border-radius:50%;
-  object-fit:cover;
-  object-position:center 15%;
-  margin:0 auto 20px;
-  border:2px solid var(--gold);
-  display:block
-}
-
-.eyebrow{
-  text-align:center;
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  margin-bottom:12px
-}
-
-.hero h1{
-  font:400 clamp(36px,6vw,58px)/1.08 'Playfair Display',serif;
-  margin:0 0 18px
-}
-
-.hero em{
-  color:var(--gold);
-  font-style:italic
-}
-
-.hero p{
-  color:var(--muted);
-  line-height:1.7;
-  margin:0 auto 26px;
-  max-width:560px;
-  font-size:16px
-}
-
-.cta{
-  display:inline-block;
-  background:var(--gold);
-  color:#170f0b;
-  font-weight:700;
-  font-size:15px;
-  padding:15px 28px;
-  text-decoration:none;
-  border:none;
-  cursor:pointer;
-  letter-spacing:.01em
-}
-
-.cta:hover{
-  filter:brightness(1.08)
-}
-
-.fineprint{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:14px;
-  letter-spacing:.02em
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin:0 0 32px
-}
-
-.feature{
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  padding:20px 14px;
-  text-align:center
-}
-
-.feature .num{
-  width:26px;
-  height:26px;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  font-weight:700;
-  font-size:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 12px;
-  border-radius:50%
-}
-
-.feature h3{
-  font:400 15px 'Playfair Display',serif;
-  margin:0 0 4px;
-  color:var(--text)
-}
-
-.feature p{
-  font-size:12px;
-  color:var(--muted);
-  margin:0;
-  line-height:1.4
-}
-
-.mentor{
-  display:flex;
-  gap:20px;
-  align-items:center;
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  padding:24px;
-  margin-bottom:32px
-}
-
-.mentor img{
-  width:72px;
-  height:72px;
-  border-radius:50%;
-  object-fit:cover;
-  object-position:center 15%;
-  flex-shrink:0;
-  border:2px solid var(--gold)
-}
-
-.mentor .name{
-  font:400 17px 'Playfair Display',serif;
-  margin:0 0 5px;
-  color:var(--gold)
-}
-
-.mentor p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
-  margin:0
-}
-
-#interactive{
-  background:rgba(255,255,255,.035);
-  border:1px solid var(--line);
-  padding:32px;
-  margin-bottom:44px;
-  scroll-margin-top:90px
-}
-
-.progress{
-  height:2px;
-  background:#4a3527;
-  margin-bottom:25px
-}
-
-.bar{
-  height:100%;
-  background:var(--gold);
-  width:0;
-  transition:width .3s ease
-}
-
-.panel{
-  transition:opacity .2s ease,transform .2s ease
-}
-
-.panel.fade{
-  opacity:0;
-  transform:translateY(8px)
-}
-
-.qnum{
-  color:var(--gold);
-  font-size:10px;
-  letter-spacing:.18em;
-  text-transform:uppercase
-}
-
-.question{
-  font:400 26px/1.25 'Playfair Display',serif;
-  margin:13px 0 24px
-}
-
-.options{
-  display:grid;
-  gap:10px
-}
-
-.opt input{
-  display:none
-}
-
-.opt label{
-  display:block;
-  padding:16px;
-  border:1px solid var(--line);
-  cursor:pointer;
-  color:#ddd1c8;
-  font-size:14px;
-  transition:border-color .12s ease,background .12s ease
-}
-
-.opt label:hover{
-  border-color:#7a5a3f
-}
-
-.opt input:checked+label{
-  border-color:var(--gold);
-  background:#4a3524;
-  font-weight:600
-}
-
-.nav{
-  display:flex;
-  justify-content:space-between;
-  margin-top:24px
-}
-
-.btn{
-  padding:14px 22px;
-  border:1px solid var(--gold);
-  background:var(--gold);
-  color:#170f0b;
-  font-weight:700;
-  cursor:pointer;
-  font-family:inherit;
-  font-size:14px
-}
-
-.btn.secondary{
-  background:transparent;
-  color:var(--text);
-  border-color:var(--line)
-}
-
-.btn:disabled{
-  opacity:.35;
-  cursor:not-allowed
-}
-
-.hidden{
-  display:none
-}
-
-.field{
-  margin-bottom:14px;
-  text-align:left
-}
-
-.field label{
-  display:block;
-  font-size:11px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:6px
-}
-
-.field input{
-  width:100%;
-  padding:14px;
-  background:var(--bg);
-  border:1px solid var(--line);
-  color:var(--text);
-  font-family:inherit;
-  font-size:15px
-}
-
-.field input:focus{
-  outline:none;
-  border-color:var(--gold)
-}
-
-.honeypot{
-  position:absolute;
-  left:-9999px;
-  opacity:0;
-  height:0
-}
-
-.err{
-  color:#e08a6b;
-  font-size:12px;
-  margin-top:-8px;
-  margin-bottom:14px;
-  display:none
-}
-
-.submitting{
-  opacity:.6;
-  pointer-events:none
-}
-
-.result{
-  text-align:center
-}
-
-.result h2{
-  font:400 42px/1.1 'Playfair Display',serif;
-  margin:10px 0 15px
-}
-
-.result>p{
-  color:var(--muted);
-  line-height:1.7
-}
-
-.paybox{
-  border:1px solid #8a6a48;
-  background:#3f2c1d;
-  padding:24px;
-  margin-top:25px;
-  text-align:left
-}
-
-.price{
-  font:400 34px 'Playfair Display',serif;
-  color:var(--gold)
-}
-
-.paybox>p{
-  font-size:14px;
-  margin:6px 0
-}
-
-.note{
-  font-size:11px!important;
-  color:var(--muted)!important
-}
-
-.pay{
-  display:block;
-  margin-top:18px;
-  background:var(--gold);
-  color:#170f0b;
-  padding:15px;
-  text-decoration:none;
-  font-weight:700;
-  text-align:center;
-  transition:filter .15s ease,opacity .15s ease
-}
-
-.pay:hover{
-  filter:brightness(1.08)
-}
-
-.pay.disabled{
-  opacity:.35;
-  pointer-events:none;
-  cursor:not-allowed
-}
-
-.agree{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  margin-top:16px;
-  text-align:left;
-  font-size:12px;
-  line-height:1.6;
-  color:#ddd1c8;
-  cursor:pointer
-}
-
-.agree input{
-  margin-top:3px;
-  flex-shrink:0;
-  width:auto
-}
-
-.restart{
-  margin-top:20px
-}
-
-.section{
-  margin:0 0 20px
-}
-
-.section h2{
-  font:400 28px 'Playfair Display',serif;
-  margin:0 0 20px
-}
-
-.section .kicker{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  margin-bottom:8px
-}
-
-.timeline{
-  position:relative;
-  padding-left:28px
-}
-
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:9px;
-  top:6px;
-  bottom:6px;
-  width:1px;
-  background:var(--line)
-}
-
-.step{
-  position:relative;
-  padding-bottom:22px
-}
-
-.step:last-child{
-  padding-bottom:0
-}
-
-.step::before{
-  content:"";
-  position:absolute;
-  left:-28px;
-  top:4px;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background:var(--gold);
-  border:3px solid var(--bg)
-}
-
-.step h3{
-  font:400 16px 'Playfair Display',serif;
-  margin:0 0 3px;
-  color:var(--text)
-}
-
-.step p{
-  font-size:14px;
-  color:var(--muted);
-  margin:0;
-  line-height:1.5
-}
-
-details.faq{
-  border-bottom:1px solid var(--line);
-  padding:16px 0
-}
-
-details.faq:first-of-type{
-  border-top:1px solid var(--line)
-}
-
-details.faq summary{
-  font-size:15px;
-  font-weight:600;
-  cursor:pointer;
-  list-style:none;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  color:var(--text)
-}
-
-details.faq summary::-webkit-details-marker{
-  display:none
-}
-
-details.faq summary::after{
-  content:"+";
-  color:var(--gold);
-  font-size:20px;
-  font-weight:400;
-  flex-shrink:0;
-  margin-left:12px
-}
-
-details.faq[open] summary::after{
-  content:"–"
-}
-
-details.faq p{
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.65;
-  margin:10px 0 0
-}
-
-footer{
-  text-align:center;
-  padding:30px 0;
-  color:var(--muted);
-  font-size:11px;
-  letter-spacing:.05em
-}
-
-.wa-float{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:#25d366;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 14px rgba(0,0,0,.35);
-  z-index:100;
-  transition:transform .15s ease
-}
-
-.wa-float:hover{
-  transform:scale(1.08)
-}
-
-.wa-float svg{
-  width:29px;
-  height:29px
-}
-
-.tiers{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin:0 0 14px
-}
-
-.tier{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  padding:22px 18px;
-  display:flex;
-  flex-direction:column;
-  gap:10px
-}
-
-.tier.featured{
-  border-color:var(--gold);
-  background:#3f2c1d
-}
-
-.tier .tname{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase
-}
-
-.tier .tprice{
-  font:400 30px 'Playfair Display',serif;
-  color:var(--text);
-  line-height:1
-}
-
-.tier .tweeks{
-  font-size:12px;
-  color:var(--muted)
-}
-
-.tier p{
-  font-size:13px;
-  line-height:1.55;
-  margin:0;
-  color:#ddd1c8
-}
-
-.tier .tfit{
-  margin-top:auto;
-  padding-top:10px;
-  border-top:1px solid var(--line);
-  font-size:12px;
-  color:var(--muted)
-}
-
-.tiers-cta{
-  text-align:center;
-  margin:18px 0 40px
-}
-
-.tiers-cta .fineprint{
-  margin-top:10px
-}
-
-.tier-tag{
-  display:inline-block;
-  font:600 10px/1 'Inter',sans-serif;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--gold);
-  border:1px solid var(--gold);
-  padding:4px 7px;
-  margin-left:8px;
-  vertical-align:middle
-}
-
-.alt-tiers{
-  margin-top:14px;
-  font-size:12px;
-  color:var(--muted);
-  text-align:center
-}
-
-.alt-tiers a{
-  color:var(--gold)
-}
-
-@media(max-width:600px){
-  .tiers{
-    grid-template-columns:1fr
-  }
-
-  .features{
-    grid-template-columns:1fr
-  }
-
-  #interactive{
-    padding:24px 18px
-  }
-
-  .result h2{
-    font-size:34px
-  }
-
-  .mentor{
-    align-items:flex-start
-  }
+/* =========================================================
+   TOKENS — shared with the homepage design system
+   ========================================================= */
+:root {
+  --paper: #F2EDE4; --paper-2: #E9E2D5; --paper-3: #FBF8F2;
+  --ink: #16130F; --ink-2: #2E2922; --muted: #6B6255; --faint: #978C7C;
+  --line: rgba(22,19,15,.14); --line-strong: rgba(22,19,15,.28);
+  --accent: #8C2F25;
+  --night: #13110E; --night-2: #1C1915; --on-night: #EFE8DC; --on-night-muted: #A69B8A; --on-night-faint: #736958;
+  --night-line: rgba(239,232,220,.12); --night-line-strong: rgba(239,232,220,.24); --accent-night: #E2997A;
+  --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --t-display: clamp(2.5rem, 1.3rem + 4.2vw, 5rem);
+  --t-h2: clamp(2.1rem, 1.3rem + 3.2vw, 4rem);
+  --t-lead: clamp(1.08rem, 1rem + .35vw, 1.28rem);
+  --section: clamp(88px, 11vw, 160px);
+  --gutter: clamp(16px, 4vw, 40px);
+  --max: 1240px;
+  --r-sm: 6px; --r-md: 12px; --r-lg: 20px; --r-pill: 999px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+h1, h2, h3, h4 { font-weight: 400; }
+ul, ol { padding: 0; list-style: none; }
+[hidden], .hidden { display: none !important; }
+::selection { background: rgba(140,47,37,.18); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.on-night :focus-visible { outline-color: var(--accent-night); }
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: var(--r-sm); z-index: 200; }
+.skip:focus { top: 12px; }
+
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: var(--section) 0; }
+.section--alt { background: var(--paper-2); }
+.on-night { background: var(--night); color: var(--on-night); }
+
+.display { font-family: var(--serif); font-size: var(--t-display); line-height: .98; letter-spacing: -.025em; }
+.h2 { font-family: var(--serif); font-size: var(--t-h2); line-height: 1.02; letter-spacing: -.02em; }
+.it { font-style: italic; }
+.accent { color: var(--accent); }
+.on-night .accent { color: var(--accent-night); }
+.muted { color: var(--muted); }
+.lead { font-size: var(--t-lead); line-height: 1.55; color: var(--ink-2); }
+.on-night .lead { color: var(--on-night-muted); }
+.label { font-family: var(--mono); font-size: .72rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.on-night .label { color: var(--on-night-faint); }
+.label--accent { color: var(--accent); }
+.on-night .label--accent { color: var(--accent-night); }
+.section-head { display: grid; align-content: start; gap: 24px; margin-bottom: clamp(48px, 6vw, 88px); max-width: 860px; }
+.section-head .label { display: flex; align-items: center; gap: 12px; }
+.section-head .label::before { content: ''; width: 28px; height: 1px; background: currentColor; opacity: .6; }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: var(--r-pill); font-size: 15px; font-weight: 500; text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .15s var(--ease), opacity .2s; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+.btn:active { transform: scale(.98); }
+.btn .arr { transition: transform .2s var(--ease); }
+.btn:hover .arr { transform: translateX(3px); }
+.btn--primary { background: var(--ink); color: var(--paper); }
+.btn--primary:hover { background: var(--accent); }
+.btn--line { background: transparent; border-color: var(--line-strong); color: var(--ink); }
+.btn--line:hover { border-color: var(--ink); }
+.btn--quiet { min-height: 44px; padding: 0 4px; background: none; border: none; color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
+.btn--quiet:hover { text-decoration-color: currentColor; }
+.btn--sm { min-height: 42px; padding: 0 18px; font-size: 14px; }
+.btn--block { width: 100%; white-space: normal; text-align: center; padding-top: 12px; padding-bottom: 12px; }
+.btn:disabled, .btn.disabled { opacity: .4; cursor: not-allowed; pointer-events: none; }
+.on-night .btn--primary { background: var(--on-night); color: var(--night); }
+.on-night .btn--primary:hover { background: var(--accent-night); }
+.on-night .btn--quiet { color: var(--on-night-muted); text-decoration-color: var(--night-line-strong); }
+.tlink { text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px; }
+.tlink:hover { text-decoration-color: currentColor; }
+
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal.d1 { transition-delay: .08s; } .js .reveal.d2 { transition-delay: .16s; }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav { position: sticky; top: 0; z-index: 60; background: rgba(242,237,228,.86); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s; }
+.nav.scrolled { border-bottom-color: var(--line); }
+.nav .wrap { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brandline { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.wordmark { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--serif); font-size: 22px; text-decoration: none; white-space: nowrap; }
+.wordmark span { color: var(--accent); }
+.program { display: none; }
+.nav-links { display: none; gap: 28px; font-size: 14px; color: var(--ink-2); }
+.nav-links a { text-decoration: none; }
+.nav-links a:hover { color: var(--accent); }
+@media (min-width: 700px) { .program { display: inline; } }
+@media (min-width: 1000px) { .nav-links { display: flex; } }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero { padding: clamp(24px, 4vw, 56px) 0 clamp(72px, 9vw, 120px); }
+.hero-grid { display: grid; gap: 36px; grid-template-areas: "copy" "fig" "steps"; }
+.hero-copy { grid-area: copy; }
+.hero-figure { grid-area: fig; margin: 0; }
+.hero-steps { grid-area: steps; }
+.hero-copy .label { display: block; margin-bottom: clamp(20px, 2.6vw, 32px); }
+.hero h1 { margin-bottom: clamp(20px, 2.6vw, 32px); }
+.hero h1 .it { display: block; color: var(--accent); }
+.hero .lead { max-width: 32em; margin-bottom: clamp(28px, 3vw, 36px); }
+.hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.hero-meta span { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; padding: 7px 12px; border: 1px solid var(--line-strong); border-radius: var(--r-pill); color: var(--ink-2); }
+.hero-figure .frame { aspect-ratio: 5 / 4; overflow: hidden; border-radius: var(--r-sm); background: var(--paper-2); }
+.hero-figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.hero-figure figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; }
+.hero-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 16px; }
+.hero-steps li { border-top: 1px solid var(--ink); padding-top: 14px; }
+.hero-steps .n { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+.hero-steps b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem); letter-spacing: -.02em; line-height: 1.05; margin: 6px 0 4px; }
+.hero-steps .s { display: block; font-size: 13px; color: var(--muted); line-height: 1.4; }
+@media (max-width: 959px) { .hero-ctas .btn--primary { flex: 1 1 100%; } }
+@media (min-width: 600px) and (max-width: 959px) { .hero-figure .frame { aspect-ratio: 16 / 10; } .hero-figure img { object-position: 50% 35%; } }
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: 7fr 5fr; grid-template-areas: "copy fig" "steps fig"; column-gap: clamp(48px, 6vw, 96px); row-gap: 56px; align-items: start; }
+  .hero-copy { padding-top: clamp(8px, 2vw, 32px); }
+  .hero-steps { align-self: end; gap: 0 20px; }
+  .hero-figure { display: flex; flex-direction: column; align-self: stretch; }
+  .hero-figure .frame { aspect-ratio: auto; flex: 1; min-height: 540px; }
+  .hero-figure img { object-position: 58% 45%; }
+}
+
+/* =========================================================
+   13-WEEK TRACK
+   ========================================================= */
+.track-weeks, .track-row, .track-stages { display: grid; grid-template-columns: repeat(13, 1fr); gap: 4px; }
+.track-weeks { margin-bottom: 18px; }
+.track-weeks span { font-family: var(--mono); font-size: 11px; color: var(--on-night-faint); text-align: center; padding-bottom: 8px; border-bottom: 1px solid var(--night-line); }
+.track-stages { margin-bottom: 28px; }
+.stage { border-top: 2px solid var(--accent-night); padding: 12px 10px 0 0; }
+.stage .wk { font-family: var(--mono); font-size: 11px; color: var(--accent-night); letter-spacing: .06em; }
+.stage h3 { font-family: var(--serif); font-size: clamp(1.05rem, .9rem + .5vw, 1.35rem); line-height: 1.15; letter-spacing: -.01em; margin: 6px 0; }
+.stage p { font-size: 13.5px; line-height: 1.5; color: var(--on-night-muted); }
+.track-rows { display: grid; gap: 10px; }
+.track-row { align-items: center; }
+.bar { height: 44px; border-radius: var(--r-pill); display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 18px; font-size: 14px; }
+.bar b { font-family: var(--serif); font-weight: 400; font-size: 1.15rem; letter-spacing: -.01em; }
+.bar span i { font-style: normal; }
+.bar span { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; opacity: .85; white-space: nowrap; }
+.bar--start { grid-column: 1 / span 5; background: var(--night-2); border: 1px solid var(--night-line-strong); }
+.bar--build { grid-column: 1 / span 9; background: #2B2620; border: 1px solid var(--night-line-strong); }
+.bar--full { grid-column: 1 / span 13; background: var(--on-night); color: var(--night); }
+.track-note { margin-top: 24px; font-size: 14px; color: var(--on-night-muted); }
+@media (max-width: 899px) {
+  .track-weeks { display: none; }
+  .track-stages { grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--night-line-strong); }
+  .stage { grid-column: auto !important; border-top: none; border-bottom: 1px solid var(--night-line); padding: 16px 0; display: grid; grid-template-columns: 84px 1fr; gap: 2px 14px; }
+  .stage .wk { grid-row: span 2; padding-top: 4px; }
+  .stage h3 { margin: 0; }
+  .bar { grid-column: 1 / -1 !important; height: 42px; padding: 0 14px; position: relative; overflow: hidden; background: var(--night-2); }
+  .bar::before { content: ''; position: absolute; inset: 0 auto 0 0; width: var(--cover); background: rgba(239,232,220,.16); border-right: 2px solid var(--accent-night); }
+  .bar--full { background: var(--on-night); }
+  .bar--full::before { display: none; }
+  .bar span i { display: none; }
+  .bar--start { --cover: 38%; }
+  .bar--build { --cover: 69%; }
+  .bar b, .bar span { position: relative; }
+  .bar b { font-size: 1rem; }
+}
+
+/* =========================================================
+   TIERS
+   ========================================================= */
+.tiers { display: grid; gap: 20px; align-items: stretch; }
+.tier { border: 1px solid var(--line-strong); background: var(--paper-3); border-radius: var(--r-lg); padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; }
+.tier--full { background: var(--night); color: var(--on-night); border-color: var(--night); }
+.tier-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 30px; }
+@media (min-width: 1000px) { .tier .sub { min-height: 3.2em; } }
+.tier--full .label--accent { color: var(--accent-night); }
+.tier h3 { font-family: var(--serif); font-size: clamp(2rem, 1.6rem + 1.2vw, 2.6rem); letter-spacing: -.02em; line-height: 1; margin: 14px 0 6px; }
+.tier .sub { font-size: 14px; color: var(--muted); }
+.tier--full .sub { color: var(--on-night-muted); }
+.tier .tprice { font-family: var(--serif); font-size: clamp(2.6rem, 2rem + 2vw, 3.6rem); letter-spacing: -.03em; line-height: 1; margin: 24px 0; padding-top: 20px; border-top: 1px solid var(--line); }
+.tier--full .tprice { border-top-color: var(--night-line-strong); }
+.tier dl { border-top: 1px solid var(--line); margin: 0 0 28px; }
+.tier--full dl { border-top-color: var(--night-line-strong); }
+.tier dl > div { padding: 14px 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.tier--full dl > div { border-bottom-color: var(--night-line); }
+.tier dt { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.tier--full dt { color: var(--on-night-faint); }
+.tier dd { font-size: 15px; line-height: 1.5; }
+.tier .cta-area { margin-top: auto; }
+.tier--full .btn--primary { background: var(--on-night); color: var(--night); }
+.tier--full .btn--primary:hover { background: var(--accent-night); }
+.badge { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: var(--r-pill); border: 1px solid var(--night-line-strong); color: var(--on-night-muted); white-space: nowrap; }
+@media (min-width: 1000px) { .tiers { grid-template-columns: 1fr 1fr 1.1fr; } }
+.tiers-foot { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; color: var(--muted); font-size: 15px; }
+
+/* =========================================================
+   STUDENTS
+   ========================================================= */
+.voices { display: grid; border-top: 1px solid var(--ink); }
+.voice { margin: 0; padding: clamp(28px, 3.5vw, 44px) 0; border-bottom: 1px solid var(--line); display: grid; gap: 20px; align-content: start; }
+.voice .tag { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.voice blockquote { font-family: var(--serif); font-size: clamp(1.3rem, 1.1rem + .75vw, 1.75rem); line-height: 1.28; letter-spacing: -.012em; text-wrap: pretty; }
+.voice figcaption { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.voice .mono-av { width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--paper); display: inline-flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; letter-spacing: .02em; flex-shrink: 0; }
+.voice .who b { display: block; font-weight: 500; font-size: 15px; }
+.voice .who span { font-size: 13px; color: var(--muted); }
+@media (min-width: 860px) {
+  .voices { grid-template-columns: 1fr 1fr; column-gap: clamp(48px, 6vw, 96px); }
+  .voice:nth-child(odd) { padding-right: 0; }
+}
+
+/* =========================================================
+   WHY ME
+   ========================================================= */
+.why-grid { display: grid; gap: clamp(40px, 5vw, 80px); align-items: start; }
+.why-grid blockquote { font-family: var(--serif); font-size: clamp(1.6rem, 1.15rem + 1.8vw, 2.7rem); line-height: 1.18; letter-spacing: -.02em; }
+.why-grid blockquote em { color: var(--accent); }
+.why-by { display: flex; align-items: center; gap: 12px; margin-top: 24px; font-size: 14px; color: var(--muted); }
+.why-by img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.points { border-top: 1px solid var(--ink); }
+.points li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.points .n { font-family: var(--mono); font-size: 12px; color: var(--accent); padding-top: 5px; }
+.points b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.3rem; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 4px; }
+.points .s { font-size: 15px; color: var(--ink-2); line-height: 1.5; }
+@media (min-width: 900px) { .why-grid { grid-template-columns: 6fr 5fr; } }
+
+/* =========================================================
+   FIT + QUIZ
+   ========================================================= */
+.fit-grid { display: grid; gap: clamp(48px, 6vw, 80px); align-items: start; }
+.fitlist h3 { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
+.fitlist + .fitlist { margin-top: 44px; }
+.fitlist li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+.fitlist .mk { font-family: var(--mono); font-size: 14px; }
+.fitlist--no .mk { color: var(--accent); }
+@media (min-width: 1000px) { .fit-grid { grid-template-columns: 5fr 6fr; } .quizcard { position: sticky; top: 96px; } }
+
+.quizcard { background: var(--paper-3); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(24px, 3.5vw, 40px); }
+.quiz-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; }
+.progress { height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; margin-bottom: 28px; }
+.progress i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .4s var(--ease); }
+.q-title { font-family: var(--serif); font-size: clamp(1.45rem, 1.2rem + .8vw, 1.9rem); line-height: 1.15; letter-spacing: -.01em; margin-bottom: 20px; }
+.opts { display: grid; gap: 10px; }
+.opt { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; text-align: left; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 16px; cursor: pointer; font-size: 15.5px; line-height: 1.35; transition: border-color .18s, background .18s; color: var(--ink); }
+.opt:hover { border-color: var(--ink); }
+.opt .k { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-strong); display: inline-flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.opt.selected { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.opt.selected .k { border-color: var(--paper); color: var(--paper); }
+.qnav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 22px; }
+.step-in { animation: stepIn .35s var(--ease); }
+@keyframes stepIn { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+.fields { display: grid; gap: 16px; }
+.fld label { display: block; font-size: 13.5px; color: var(--muted); margin-bottom: 8px; }
+.input { width: 100%; min-height: 52px; background: var(--paper); border: 1px solid var(--line-strong); border-radius: var(--r-md); padding: 14px 16px; font: inherit; font-size: 16px; color: var(--ink); transition: border-color .2s, box-shadow .2s; }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(140,47,37,.14); }
+.input[aria-invalid="true"] { border-color: var(--accent); }
+.err { font-size: 13.5px; color: var(--accent); margin-top: 12px; }
+.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* result */
+.result-title { font-family: var(--serif); font-size: clamp(1.9rem, 1.5rem + 1.4vw, 2.6rem); line-height: 1.05; letter-spacing: -.02em; margin: 12px 0; }
+.result-text { color: var(--ink-2); font-size: 16px; line-height: 1.55; }
+.paybox { margin-top: 24px; background: var(--night); color: var(--on-night); border-radius: var(--r-lg); padding: clamp(22px, 3vw, 32px); }
+.paybox .label--accent { color: var(--accent-night); }
+.pay-price { font-family: var(--serif); font-size: clamp(2.6rem, 2rem + 2vw, 3.4rem); letter-spacing: -.03em; line-height: 1; margin: 10px 0 8px; }
+.pay-line { font-size: 15px; }
+.pay-notes { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--night-line-strong); display: grid; gap: 8px; font-size: 13.5px; color: var(--on-night-muted); line-height: 1.5; }
+.agree { display: flex; align-items: flex-start; gap: 12px; margin: 20px 0; font-size: 13.5px; line-height: 1.55; color: var(--on-night); cursor: pointer; }
+.agree input { margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--accent-night); }
+.paybox .btn--primary { background: var(--on-night); color: var(--night); }
+.paybox .btn--primary:hover { background: var(--accent-night); }
+.pay-fine { margin-top: 12px; text-align: center; font-size: 12.5px; color: var(--on-night-faint); }
+.pay-fine a { color: var(--on-night-muted); }
+.talkbox { margin-top: 24px; border: 1px solid var(--line-strong); border-radius: var(--r-lg); padding: clamp(22px, 3vw, 32px); background: var(--paper); }
+.talkbox p { font-size: 15.5px; color: var(--ink-2); margin-bottom: 18px; line-height: 1.55; }
+.result-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; margin-top: 18px; font-size: 14px; color: var(--muted); }
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq-grid { display: grid; gap: 48px; }
+@media (min-width: 1000px) { .faq-grid { grid-template-columns: 4fr 7fr; } }
+.faq { border-top: 1px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 24px; align-items: center; padding: 22px 0; font-family: var(--serif); font-size: clamp(1.15rem, 1.05rem + .4vw, 1.4rem); line-height: 1.3; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq .pm { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line-strong); position: relative; }
+.faq .pm::before, .faq .pm::after { content: ''; position: absolute; left: 50%; top: 50%; width: 10px; height: 1px; background: currentColor; transform: translate(-50%,-50%); }
+.faq .pm::after { transform: translate(-50%,-50%) rotate(90deg); transition: transform .25s var(--ease); }
+.faq details[open] .pm::after { transform: translate(-50%,-50%) rotate(0); }
+.faq details p { padding: 0 48px 24px 0; color: var(--ink-2); font-size: 16px; line-height: 1.65; }
+
+/* =========================================================
+   CLOSING, FOOTER, STICKY
+   ========================================================= */
+.closing { font-family: var(--serif); font-size: clamp(2.4rem, 1.4rem + 4vw, 5rem); line-height: 1; letter-spacing: -.025em; max-width: 14em; margin-top: 22px; }
+.closing .it { color: var(--accent-night); display: block; }
+.closing-ctas { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin-top: 40px; }
+.footer { background: var(--night); color: var(--on-night-faint); border-top: 1px solid var(--night-line); padding: 32px 0 110px; font-size: 13.5px; }
+.footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; }
+.footer a { color: var(--on-night-muted); text-decoration: none; display: inline-flex; min-height: 44px; align-items: center; }
+.footer a:hover { color: var(--on-night); }
+.footer nav { display: flex; flex-wrap: wrap; gap: 0 24px; }
+@media (min-width: 900px) { .footer { padding-bottom: 32px; } }
+
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(242,237,228,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--line); display: flex; gap: 10px; align-items: center; transform: translateY(110%); transition: transform .35s var(--ease); }
+.sticky.show { transform: none; }
+.sticky img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.sticky .btn { flex: 1; min-height: 48px; }
+.wa-mini { width: 48px; height: 48px; flex-shrink: 0; border-radius: 50%; border: 1px solid var(--line-strong); display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+@media (min-width: 900px) { .sticky { display: none; } }
+.wa-float { position: fixed; right: 24px; bottom: 24px; z-index: 65; display: none; align-items: center; gap: 10px; padding: 0 18px 0 14px; height: 48px; border-radius: var(--r-pill); background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; box-shadow: 0 10px 30px -10px rgba(22,19,15,.45); transition: transform .2s var(--ease), background .2s, opacity .3s; }
+.wa-float:hover { background: var(--accent); transform: translateY(-2px); }
+.wa-float.hide { opacity: 0; pointer-events: none; }
+@media (min-width: 900px) { .wa-float { display: inline-flex; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .js .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
 
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<a
-  class="wa-float"
-  href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20have%20a%20question%20about%20the%20mentorship."
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Chat on WhatsApp">
-
-  <svg viewBox="0 0 32 32" fill="#fff">
-    <path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.35.62 4.55 1.7 6.46L4 29l7.73-1.65a11.9 11.9 0 0 0 4.28.79h.01c6.63 0 12.01-5.38 12.01-12.01C28.03 8.38 22.65 3 16.01 3zm7.02 17.02c-.3.85-1.5 1.56-2.45 1.76-.65.14-1.5.25-4.36-.93-3.65-1.51-6-5.2-6.18-5.44-.18-.24-1.47-1.96-1.47-3.74 0-1.78.93-2.65 1.26-3.02.33-.37.72-.46.96-.46h.7c.22 0 .52-.08.82.62.3.72 1.02 2.5 1.11 2.68.09.18.15.4.03.64-.12.24-.18.4-.36.62-.18.21-.38.47-.54.63-.18.18-.37.38-.16.75.21.37.93 1.55 2 2.5 1.38 1.23 2.53 1.61 2.9 1.79.37.18.59.15.8-.09.22-.24.93-1.09 1.17-1.47.24-.37.49-.31.82-.19.34.12 2.14 1.01 2.5 1.2.37.18.61.28.7.43.09.15.09.85-.21 1.7z"/>
-  </svg>
-
-</a>
-
-<header class="top">
+<header class="nav" id="nav">
   <div class="wrap">
-    <div class="brand">US Client Acquisition</div>
+    <div class="brandline">
+      <a href="../" class="wordmark" aria-label="Chirag Sharma — home">Chirag Sharma<span>.</span></a>
+      <span class="label program">US Client Acquisition</span>
+    </div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">The 13 weeks</a>
+      <a href="#students">Students</a>
+      <a href="#tiers">Tiers</a>
+      <a href="#fit">Fit check</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button type="button" class="btn btn--primary btn--sm" data-goquiz>Find your tier <span class="arr" aria-hidden="true">→</span></button>
   </div>
 </header>
 
-<main>
-<div class="wrap">
+<main id="main">
 
-<div class="hero">
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="label reveal">1:1 mentorship · US client acquisition</span>
+      <h1 id="hero-title" class="display reveal d1">Land your first US client. <span class="it">Even if you're starting from zero.</span></h1>
+      <p class="lead reveal d2">I'll personally walk you through the exact system I use in my own agency, one on one: how I find leads, reach out, get people on calls, and close them. No groups, no theory, no fluff.</p>
+      <div class="hero-ctas reveal d2">
+        <button type="button" class="btn btn--primary" id="heroCTA" data-goquiz>Find your tier (2 min) <span class="arr" aria-hidden="true">→</span></button>
+        <a class="btn btn--quiet" href="#tiers">See the three tiers</a>
+      </div>
+      <div class="hero-meta reveal d2"><span>From ₹25,000</span><span>No experience required</span><span>No coding</span></div>
+    </div>
 
-  <div class="eyebrow">1:1 Mentorship · Three ways to start</div>
+    <figure class="hero-figure reveal d1">
+      <div class="frame">
+        <picture>
+          <source media="(max-width: 959px)" srcset="../img/chirag-hero-m-600.webp 600w, ../img/chirag-hero-m-900.webp 900w" sizes="100vw" width="900" height="720" />
+          <img src="../img/chirag-hero-1100.webp" srcset="../img/chirag-hero-720.webp 720w, ../img/chirag-hero-1100.webp 1100w" sizes="(min-width: 960px) 40vw, 100vw" width="1100" height="1375" alt="Chirag Sharma at his desk with a laptop, in his workspace" fetchpriority="high" />
+        </picture>
+      </div>
+      <figcaption><span class="label">Chirag Sharma</span><span class="label">Runs this in his agency</span></figcaption>
+    </figure>
 
-  <h1>
-    Land your first <em>US client</em>,
-    even if you're starting from zero.
-  </h1>
-
-  <p>
-    I'll personally walk you through the exact system I use
-    in my own agency, one on one: how I find leads, reach out,
-    get people on calls, and close them. No groups, no theory, no fluff.
-  </p>
-
-  <button class="cta" id="heroCTA" type="button">
-    Find your tier (2 min) →
-  </button>
-
-  <div class="fineprint">
-    From ₹25,000 · Three tiers based on how far you want to go · No experience required
+    <ol class="hero-steps reveal d2" aria-label="The system">
+      <li><span class="n">01</span><b>Find leads</b><span class="s">Real, verified leads, not a scraped list</span></li>
+      <li><span class="n">02</span><b>Reach out</b><span class="s">Email and calls, with AI doing the busywork</span></li>
+      <li><span class="n">03</span><b>Close</b><span class="s">Get on the call, sign the client</span></li>
+    </ol>
   </div>
+</section>
 
-  <div class="fineprint" style="margin-top:6px">
-    Pick the tier you can comfortably afford.
-    I don't want you stretching yourself thin for this.
+<!-- 13 WEEKS -->
+<section class="section on-night" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label label--accent reveal">The 13 weeks</span>
+      <h2 id="how-title" class="h2 reveal">One system, in order. <span class="it accent">Each tier takes you further along it.</span></h2>
+      <p class="lead reveal">Niche, offer, tools, outreach, closing — in that order. You pick how far we go together.</p>
+    </div>
+
+    <div class="track reveal">
+      <div class="track-weeks" aria-hidden="true">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+      </div>
+      <ol class="track-stages">
+        <li class="stage" style="grid-column: 1 / span 3"><span class="wk">Wk 1–3</span><h3>Pick your niche</h3><p>Exactly who you're going after.</p></li>
+        <li class="stage" style="grid-column: 4 / span 2"><span class="wk">Wk 4–5</span><h3>Build your offer</h3><p>What you sell, and what to charge.</p></li>
+        <li class="stage" style="grid-column: 6 / span 2"><span class="wk">Wk 6–7</span><h3>Infrastructure</h3><p>Domains, warmup, tools connected.</p></li>
+        <li class="stage" style="grid-column: 8 / span 2"><span class="wk">Wk 8–9</span><h3>Lead list</h3><p>Real leads, verified.</p></li>
+        <li class="stage" style="grid-column: 10 / span 2"><span class="wk">Wk 10–11</span><h3>Cold email + AI</h3><p>Sequences that get replies, personalised automatically.</p></li>
+        <li class="stage" style="grid-column: 12 / span 1"><span class="wk">Wk 12</span><h3>Calling</h3><p>Scripts, objections, follow-up.</p></li>
+        <li class="stage" style="grid-column: 13 / span 1"><span class="wk">Wk 13</span><h3>Close</h3><p>Sign it. Deliver it.</p></li>
+      </ol>
+      <div class="track-rows" role="list" aria-label="What each tier covers">
+        <div class="track-row" role="listitem"><div class="bar bar--start"><b>Start</b><span><i>Wk 1–5 · </i>₹25,000</span></div></div>
+        <div class="track-row" role="listitem"><div class="bar bar--build"><b>Build</b><span><i>Wk 1–9 · </i>₹50,000</span></div></div>
+        <div class="track-row" role="listitem"><div class="bar bar--full"><b>Full</b><span><i>Wk 1–13 · </i>₹1,00,000</span></div></div>
+      </div>
+      <p class="track-note">Paid tools only come in from week 6, when we set up your sending infrastructure — so Start needs none.</p>
+    </div>
   </div>
+</section>
 
-</div>
-
-<div class="features">
-
-  <div class="feature">
-    <div class="num">1</div>
-    <h3>Find leads</h3>
-    <p>Real, verified leads, not a scraped list</p>
+<!-- STUDENTS -->
+<section class="section section--alt" id="students" aria-labelledby="students-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label label--accent reveal">Students</span>
+      <h2 id="students-title" class="h2 reveal">What working together <span class="it accent">actually changes.</span></h2>
+    </div>
+    <div class="voices">
+      <figure class="voice reveal">
+        <span class="tag">The offer</span>
+        <blockquote>“I knew how to build AI automations, but finding US clients was the hard part. Chirag helped me improve my offer, target the right businesses, and build a more structured client acquisition process.”</blockquote>
+        <figcaption><span class="mono-av" aria-hidden="true">AM</span><span class="who"><b>Aditya Mehra</b><span>AI Automation Agency</span></span></figcaption>
+      </figure>
+      <figure class="voice reveal d1">
+        <span class="tag">Cold calling</span>
+        <blockquote>“I was nervous about cold calling US business owners. Practicing with the calling tool helped me rehearse conversations, handle objections, and approach calls with much more confidence.”</blockquote>
+        <figcaption><span class="mono-av" aria-hidden="true">RM</span><span class="who"><b>Rohan Malhotra</b><span>Cold Calling &amp; Sales</span></span></figcaption>
+      </figure>
+      <figure class="voice reveal">
+        <span class="tag">Clarity</span>
+        <blockquote>“I was constantly switching between niches and AI business ideas. The 1:1 mentorship gave me clarity on what to sell, who to target, and what steps to take instead of wasting time guessing.”</blockquote>
+        <figcaption><span class="mono-av" aria-hidden="true">KB</span><span class="who"><b>Kunal Bansal</b><span>1:1 Mentorship</span></span></figcaption>
+      </figure>
+      <figure class="voice reveal d1">
+        <span class="tag">Sales conversations</span>
+        <blockquote>“I struggled to turn outreach into actual sales conversations. The feedback on my messaging, offer, and objection handling helped me approach US prospects more strategically and communicate my value better.”</blockquote>
+        <figcaption><span class="mono-av" aria-hidden="true">SV</span><span class="who"><b>Siddharth Verma</b><span>US Client Acquisition</span></span></figcaption>
+      </figure>
+    </div>
   </div>
-
-  <div class="feature">
-    <div class="num">2</div>
-    <h3>Reach out</h3>
-    <p>Email and calls, with AI doing the busywork</p>
-  </div>
-
-  <div class="feature">
-    <div class="num">3</div>
-    <h3>Close</h3>
-    <p>Get on the call, sign the client</p>
-  </div>
-
-</div>
+</section>
 
 <!-- TIERS -->
-<div class="section" id="tiers">
+<section class="section" id="tiers" aria-labelledby="tiers-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label label--accent reveal">Three ways to work with me</span>
+      <h2 id="tiers-title" class="h2 reveal">Go as far as your budget allows.</h2>
+      <p class="lead reveal">Every tier is 1:1 with me. The difference is how far along the system we go together. Pick what you can comfortably afford — I don't want you stretching yourself thin for this.</p>
+    </div>
 
-  <div class="kicker">
-    Three ways to work with me
+    <div class="tiers">
+      <article class="tier reveal" aria-labelledby="t-start">
+        <div class="tier-top"><span class="label label--accent">Weeks 1–5</span></div>
+        <h3 id="t-start">Start</h3>
+        <p class="sub">Know exactly who you're selling to, and what.</p>
+        <p class="tprice">₹25,000</p>
+        <dl>
+          <div><dt>We build</dt><dd>Your niche, your offer and your pricing</dd></div>
+          <div><dt>Tools</dt><dd>No paid tools needed</dd></div>
+          <div><dt>For you if</dt><dd>You're starting from zero or unsure what to sell</dd></div>
+        </dl>
+        <div class="cta-area"><button type="button" class="btn btn--line btn--block" data-goquiz>Check if Start fits <span class="arr" aria-hidden="true">→</span></button></div>
+      </article>
+
+      <article class="tier reveal d1" aria-labelledby="t-build">
+        <div class="tier-top"><span class="label label--accent">Weeks 1–9</span></div>
+        <h3 id="t-build">Build</h3>
+        <p class="sub">Your system set up and ready to send.</p>
+        <p class="tprice">₹50,000</p>
+        <dl>
+          <div><dt>We build</dt><dd>Everything in Start, plus sending infrastructure and a verified lead list</dd></div>
+          <div><dt>Tools</dt><dd>~₹15,000/month from week 6, paid separately</dd></div>
+          <div><dt>For you if</dt><dd>You want the machine built, then run it yourself</dd></div>
+        </dl>
+        <div class="cta-area"><button type="button" class="btn btn--line btn--block" data-goquiz>Check if Build fits <span class="arr" aria-hidden="true">→</span></button></div>
+      </article>
+
+      <article class="tier tier--full reveal d2" aria-labelledby="t-full">
+        <div class="tier-top"><span class="label label--accent">All 13 weeks</span><span class="badge">The whole system</span></div>
+        <h3 id="t-full">Full</h3>
+        <p class="sub">All the way to a signed client.</p>
+        <p class="tprice">₹1,00,000</p>
+        <dl>
+          <div><dt>We build</dt><dd>Everything in Build, plus cold email with AI personalisation, the calling layer, and closing and delivering your first client</dd></div>
+          <div><dt>Tools</dt><dd>~₹15,000/month from week 6, paid separately</dd></div>
+          <div><dt>For you if</dt><dd>You want me alongside you until the first deal is done</dd></div>
+        </dl>
+        <div class="cta-area"><button type="button" class="btn btn--primary btn--block" data-goquiz>Check if Full fits <span class="arr" aria-hidden="true">→</span></button></div>
+      </article>
+    </div>
+    <div class="tiers-foot reveal"><span>Below ₹25,000 right now?</span><button type="button" class="btn btn--quiet" data-goquiz>Take the fit check anyway — I'll suggest a next step</button></div>
   </div>
+</section>
 
-  <h2>
-    Go as far as your budget allows
-  </h2>
-
-  <div class="tiers">
-
-    <div class="tier">
-      <div class="tname">Start</div>
-      <div class="tprice">₹25,000</div>
-      <div class="tweeks">Weeks 1–5 · 1:1 with me</div>
-      <p>Pick your niche and build your offer: who you're going after, what you're selling and what to charge for it.</p>
-      <p>No paid tools needed yet.</p>
-      <div class="tfit">For you if you're starting from zero or unsure what to sell.</div>
+<!-- WHY ME -->
+<section class="section section--alt" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label label--accent reveal">Why learn it from me</span>
+      <h2 id="why-title" class="h2 reveal">Not a course I put together and never tested.</h2>
     </div>
-
-    <div class="tier">
-      <div class="tname">Build</div>
-      <div class="tprice">₹50,000</div>
-      <div class="tweeks">Weeks 1–9 · 1:1 with me</div>
-      <p>Everything in Start, plus your sending infrastructure (domains, warmup, tools connected) and a real, verified lead list.</p>
-      <p>Tools from week 6: ~₹15,000/month, paid separately.</p>
-      <div class="tfit">For you if you want the system set up and ready to send.</div>
-    </div>
-
-    <div class="tier featured">
-      <div class="tname">Full</div>
-      <div class="tprice">₹1,00,000</div>
-      <div class="tweeks">All 13 weeks · 1:1 with me</div>
-      <p>Everything in Build, plus cold email with AI personalisation, the cold calling layer, and getting your first client signed and delivered.</p>
-      <p>Tools from week 6: ~₹15,000/month, paid separately.</p>
-      <div class="tfit">For you if you want the whole system, all the way to a signed client.</div>
-    </div>
-
-  </div>
-
-  <div class="tiers-cta">
-    <button class="cta" type="button" onclick="document.getElementById('interactive').scrollIntoView({behavior:'smooth',block:'start'})">
-      Not sure which? Find your tier (2 min) →
-    </button>
-    <div class="fineprint">
-      Below ₹25,000 right now? Take the quiz anyway, and I'll suggest a next step.
+    <div class="why-grid">
+      <figure class="reveal">
+        <blockquote>“I use this exact system in my own agency right now, for actual clients. <em>You're learning what I run, not what I read about.</em>”</blockquote>
+        <figcaption class="why-by"><img src="../img/chirag-avatar.webp" alt="" width="44" height="44" loading="lazy" />Chirag Sharma</figcaption>
+      </figure>
+      <ol class="points reveal d1">
+        <li><span class="n">01</span><span><b>1:1, not a group</b><span class="s">Your niche, your offer, your outreach — reviewed directly by me.</span></span></li>
+        <li><span class="n">02</span><span><b>Built from zero, in order</b><span class="s">Niche, offer, tools, outreach, closing. If you've never done any of this, you're exactly who it's for.</span></span></li>
+        <li><span class="n">03</span><span><b>No-code tools</b><span class="s">You're learning to use them, not build them from scratch.</span></span></li>
+        <li><span class="n">04</span><span><b>Honest about the outcome</b><span class="s">I teach the system and help you build it. No guaranteed results — what you do with it is on you.</span></span></li>
+      </ol>
     </div>
   </div>
+</section>
 
-</div>
-
-
-<div id="interactive">
-
-  <div class="progress">
-    <div class="bar" id="bar"></div>
-  </div>
-
-  <!-- QUIZ -->
-  <div id="quiz" class="panel">
-
-    <div id="qContent">
-
-      <div class="qnum" id="qnum"></div>
-
-      <h2 class="question" id="question"></h2>
-
-      <div class="options" id="options"></div>
-
+<!-- FIT + QUIZ -->
+<section class="section" id="fit" aria-labelledby="fit-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label label--accent reveal">Fit check</span>
+      <h2 id="fit-title" class="h2 reveal">Seven questions. <span class="it muted">I'll tell you which tier fits.</span></h2>
     </div>
-
-    <div class="nav">
-
-      <button
-        class="btn secondary"
-        id="back"
-        type="button">
-        Back
-      </button>
-
-      <button
-        class="btn"
-        id="next"
-        type="button">
-        Continue
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- CONTACT CAPTURE -->
-  <div id="capture" class="panel hidden">
-
-    <div class="qnum">
-      Last step
-    </div>
-
-    <h2 class="question">
-      Where should we send your result?
-    </h2>
-
-    <div class="field">
-      <label for="cName">Name</label>
-      <input
-        id="cName"
-        type="text"
-        autocomplete="name"
-        required>
-    </div>
-
-    <div class="field">
-      <label for="cEmail">Email</label>
-      <input
-        id="cEmail"
-        type="email"
-        autocomplete="email"
-        required>
-    </div>
-
-    <div class="field">
-      <label for="cWhatsapp">WhatsApp number</label>
-      <input
-        id="cWhatsapp"
-        type="tel"
-        autocomplete="tel"
-        required
-        placeholder="+91">
-    </div>
-
-    <input
-      class="honeypot"
-      id="cWebsite"
-      type="text"
-      tabindex="-1"
-      autocomplete="off">
-
-    <div class="err" id="captureErr">
-      Please fill in all three fields.
-    </div>
-
-    <div class="nav">
-
-      <button
-        class="btn secondary"
-        id="captureBack"
-        type="button">
-        Back
-      </button>
-
-      <button
-        class="btn"
-        id="captureSubmit"
-        type="button">
-        See my result →
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- RESULT -->
-  <div id="result" class="panel result hidden">
-
-    <div class="eyebrow">
-      Your result
-    </div>
-
-    <h2 id="title"></h2>
-
-    <p id="text"></p>
-
-
-    <!-- PAYMENT BOX -->
-    <div id="paybox" class="paybox hidden">
-
-      <div class="price" id="payPrice">
-        ₹1,00,000
+    <div class="fit-grid">
+      <div>
+        <div class="fitlist reveal">
+          <h3>This is for you if</h3>
+          <ul>
+            <li><span class="mk" aria-hidden="true">✓</span>You have a skill — or want to learn an AI service — and need a reliable way to get clients.</li>
+            <li><span class="mk" aria-hidden="true">✓</span>You're willing to do outreach: cold email, calling, or both.</li>
+            <li><span class="mk" aria-hidden="true">✓</span>You want 1:1 guidance on your actual niche, offer and pipeline.</li>
+          </ul>
+        </div>
+        <div class="fitlist fitlist--no reveal">
+          <h3>This isn't for you if</h3>
+          <ul>
+            <li><span class="mk" aria-hidden="true">×</span>You want inbound only, with no outreach at all.</li>
+            <li><span class="mk" aria-hidden="true">×</span>You want a guaranteed number of clients or income.</li>
+            <li><span class="mk" aria-hidden="true">×</span>You'd have to stretch yourself thin to afford a tier.</li>
+          </ul>
+        </div>
       </div>
 
-      <p id="payName">
-        Full · All 13 weeks · Personal calls with me
-      </p>
+      <div class="quizcard reveal d1" id="interactive" aria-labelledby="quiz-label">
+        <div class="quiz-top"><span class="label label--accent" id="quiz-label">Fit check</span><span class="label" id="qnum" aria-live="polite"></span></div>
+        <div class="progress" aria-hidden="true"><i id="bar"></i></div>
 
-      <p class="note" id="payTools">
-        Plus ~₹15,000/month in tools from week 6, paid separately,
-        not part of the mentorship fee.
-      </p>
+        <!-- QUIZ -->
+        <div id="quiz">
+          <div id="qContent">
+            <h3 class="q-title" id="question"></h3>
+            <div class="opts" id="options" role="radiogroup" aria-labelledby="question"></div>
+          </div>
+          <div class="qnav">
+            <button class="btn btn--quiet" id="back" type="button">← Back</button>
+            <button class="btn btn--primary btn--sm" id="next" type="button">Continue <span class="arr" aria-hidden="true">→</span></button>
+          </div>
+        </div>
 
-      <p class="note" id="payWhat">
-        What you get: niche, offer, infrastructure, lead list, cold email,
-        cold calling and closing, with me 1:1 the whole way.
-      </p>
+        <!-- CONTACT CAPTURE -->
+        <div id="capture" class="hidden">
+          <h3 class="q-title">Where should I send your result?</h3>
+          <div class="fields">
+            <div class="fld"><label for="cName">Name</label><input class="input" id="cName" type="text" autocomplete="name" required></div>
+            <div class="fld"><label for="cEmail">Email</label><input class="input" id="cEmail" type="email" autocomplete="email" required></div>
+            <div class="fld"><label for="cWhatsapp">WhatsApp number</label><input class="input" id="cWhatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="+91"></div>
+            <input class="honeypot" id="cWebsite" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          </div>
+          <p class="err hidden" id="captureErr" role="alert">Please fill in all three fields.</p>
+          <div class="qnav">
+            <button class="btn btn--quiet" id="captureBack" type="button">← Back</button>
+            <button class="btn btn--primary btn--sm" id="captureSubmit" type="button">See my result →</button>
+          </div>
+        </div>
 
+        <!-- RESULT -->
+        <div id="result" class="hidden" aria-live="polite">
+          <span class="label label--accent">Your result</span>
+          <h3 class="result-title" id="title"></h3>
+          <p class="result-text" id="text"></p>
 
-      <label class="agree">
+          <div id="paybox" class="paybox hidden">
+            <span class="label label--accent">Recommended tier</span>
+            <p class="pay-price" id="payPrice"></p>
+            <p class="pay-line" id="payName"></p>
+            <div class="pay-notes"><p id="payWhat"></p><p id="payTools"></p></div>
+            <label class="agree">
+              <input type="checkbox" id="agreeTerms">
+              <span>I understand this is a <strong>non-refundable</strong> program. You'll teach and help me build the system and roadmap. You do <strong>not</strong> guarantee any specific results, income, leads, or client outcomes.</span>
+            </label>
+            <a id="joinNow" class="btn btn--primary btn--block disabled" aria-disabled="true" href="https://rzp.io/rzp/A1wMtqv0" target="_blank" rel="noopener noreferrer"><span id="joinLabel">Join Now →</span></a>
+            <p class="pay-fine" id="joinNote">By clicking Join, you acknowledge the terms above and proceed to payment.</p>
+            <p class="pay-fine">Want to talk it through first? <a href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20saw%20the%20mentorship%20page%20and%20wanted%20to%20talk%20before%20I%20pay." target="_blank" rel="noopener noreferrer">Message me on WhatsApp</a></p>
+          </div>
 
-        <input
-          type="checkbox"
-          id="agreeTerms">
+          <div id="talkbox" class="talkbox hidden">
+            <p>Message me on WhatsApp and we'll schedule a quick call to work out the right next step for where you are right now.</p>
+            <a id="talkNow" class="btn btn--primary btn--block" href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20took%20the%20quiz%20on%20your%20cohort%20page%20and%20would%20like%20to%20schedule%20a%20call." target="_blank" rel="noopener noreferrer">Message me on WhatsApp to schedule a call →</a>
+          </div>
 
-        <span>
-          I understand this is a
-          <strong>non-refundable</strong> program.
-          You'll teach and help me build the system and roadmap.
-          You do <strong>not</strong> guarantee any specific results,
-          income, leads, or client outcomes.
-        </span>
-
-      </label>
-
-
-      <!-- RAZORPAY -->
-      <a
-        id="joinNow"
-        class="pay disabled"
-        href="https://rzp.io/rzp/A1wMtqv0"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        <span id="joinLabel">Join Now →</span>
-
-      </a>
-
-      <p
-        class="note"
-        style="margin-top:12px;text-align:center">
-
-        <span id="joinNote">By clicking Join Now, you acknowledge the terms above
-        and proceed to payment.</span>
-
-      </p>
-
-      <p
-        class="note"
-        style="margin-top:10px;text-align:center">
-
-        Want to talk it through first?
-        <a
-          href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20saw%20the%20mentorship%20page%20and%20wanted%20to%20talk%20before%20I%20pay."
-          target="_blank"
-          rel="noopener noreferrer"
-          style="color:var(--gold);text-decoration:underline">
-          Message me on WhatsApp
-        </a>
-
-      </p>
-
+          <div class="result-foot">
+            <span id="altTiers" class="hidden">Want a different tier? <a class="tlink" href="#tiers">See all three</a></span>
+            <button class="btn btn--quiet" id="restart" type="button">Start again</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-    <p class="alt-tiers hidden" id="altTiers">
-      Want a different tier? <a href="#tiers">See all three</a> — any of them is open to you.
-    </p>
-
-
-    <!-- NOT-A-FIT: keep the conversation going instead of a dead end -->
-    <div id="talkbox" class="paybox hidden">
-
-      <p>
-        Message me on WhatsApp and we'll schedule a quick call to work out
-        the right next step for where you are right now.
-      </p>
-
-      <a
-        id="talkNow"
-        class="pay"
-        href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20took%20the%20quiz%20on%20your%20cohort%20page%20and%20would%20like%20to%20schedule%20a%20call."
-        target="_blank"
-        rel="noopener noreferrer">
-
-        Message me on WhatsApp to schedule a call →
-
-      </a>
-
-    </div>
-
-
-    <button
-      class="btn secondary restart"
-      id="restart"
-      type="button">
-
-      Start again
-
-    </button>
-
   </div>
-
-</div>
-
-
-<!-- TIMELINE -->
-<div class="section">
-
-  <div class="kicker">
-    The full 13 weeks
-  </div>
-
-  <h2>
-    Week by week, and where each tier stops
-  </h2>
-
-  <div class="timeline">
-
-    <div class="step">
-      <h3>Week 1-3: Pick your niche</h3>
-      <p>
-        We'll figure out exactly who you're going after.
-        Matters more than people think, even if you've never done this before.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Week 4-5: Build your offer<span class="tier-tag">Start ends</span></h3>
-      <p>
-        What you're actually selling, and what to charge for it.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Week 6-7: Set up your infrastructure</h3>
-      <p>
-        The boring-but-necessary part: sending domains, warmup,
-        getting your tools talking to each other.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Week 8-9: Build your lead list<span class="tier-tag">Build ends</span></h3>
-      <p>
-        Real leads, verified, not a list you bought off someone.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Week 10-11: Cold email + AI automation</h3>
-      <p>
-        Sequences that actually get replies, and automating
-        the personalization so you're not doing it by hand.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Week 12: Cold calling layer</h3>
-      <p>
-        Scripts, handling objections, following up without
-        being annoying about it.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Week 13: Close &amp; deliver<span class="tier-tag">Full ends</span></h3>
-      <p>
-        Getting the client signed. Then actually keeping them happy.
-      </p>
-    </div>
-
-  </div>
-</div>
-
+</section>
 
 <!-- FAQ -->
-<div
-  class="section"
-  style="margin-top:36px">
-
-  <div class="kicker">
-    Before you start
+<section class="section section--alt" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div class="section-head" style="margin-bottom:0">
+      <span class="label label--accent reveal">Before you start</span>
+      <h2 id="faq-title" class="h2 reveal">Common questions.</h2>
+      <p class="muted reveal">Something else? <a class="tlink" href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20have%20a%20question%20about%20the%20mentorship." target="_blank" rel="noopener">Ask me on WhatsApp</a>.</p>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Which tier should I pick?<span class="pm" aria-hidden="true"></span></summary><p>Take the fit check and it'll recommend one. Rule of thumb: Start if you don't know what you'd sell yet, Build if you want the system set up and ready to send, Full if you want me with you all the way to a signed client. Pick what you can comfortably afford.</p></details>
+      <details><summary>What do the tools cost?<span class="pm" aria-hidden="true"></span></summary><p>Start doesn't need any paid tools. Build and Full need about ₹15,000/month in tools from week 6 onwards (sending domains, warmup, lead data), paid separately — not part of the mentorship fee.</p></details>
+      <details><summary>I have zero experience. Can I really do this?<span class="pm" aria-hidden="true"></span></summary><p>Yes. I built this to start from scratch: niche, offer, tools, outreach, closing, in that order. If you've never done any of this, you're exactly who it's for.</p></details>
+      <details><summary>Do I need to know how to code?<span class="pm" aria-hidden="true"></span></summary><p>No. It's all no-code tools. You're learning to use them, not build them from scratch.</p></details>
+      <details><summary>What if I already have a skill or clients?<span class="pm" aria-hidden="true"></span></summary><p>You'll fly through the first couple of weeks and spend most of your time on the acquisition side.</p></details>
+      <details><summary>Have you actually used this yourself?<span class="pm" aria-hidden="true"></span></summary><p>Yes — I use this exact system in my own agency right now, and for actual clients. It's not a course I put together and never tested.</p></details>
+      <details><summary>Is this guaranteed to work?<span class="pm" aria-hidden="true"></span></summary><p>No, and I won't pretend otherwise. I'll teach you the system and help you build it. What you do with it after that is on you.</p></details>
+    </div>
   </div>
+</section>
 
-  <h2>
-    Common questions
-  </h2>
+<!-- CLOSING -->
+<section class="section on-night" aria-labelledby="close-title">
+  <div class="wrap">
+    <span class="label label--accent reveal">Next step</span>
+    <h2 id="close-title" class="closing reveal">Your first US client starts with a niche. <span class="it">Let's pick yours.</span></h2>
+    <div class="closing-ctas reveal">
+      <button type="button" class="btn btn--primary" data-goquiz>Find your tier (2 min) <span class="arr" aria-hidden="true">→</span></button>
+      <a class="btn btn--quiet" href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20have%20a%20question%20about%20the%20mentorship." target="_blank" rel="noopener">Or ask me on WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-  <details class="faq">
-      <summary>
-        Which tier should I pick?
-      </summary>
-      <p>
-        Take the 2-minute quiz above and it'll recommend one.
-        Rule of thumb: Start if you don't know what you'd sell yet,
-        Build if you want the system set up and ready to send,
-        Full if you want me with you all the way to a signed client.
-        Pick what you can comfortably afford.
-      </p>
-    </details>
-
-    <details class="faq">
-      <summary>
-        What do the tools cost?
-      </summary>
-      <p>
-        Start doesn't need any paid tools. Build and Full need about
-        ₹15,000/month in tools from week 6 onwards (sending domains,
-        warmup, lead data), paid separately, not part of the mentorship fee.
-      </p>
-    </details>
-
-    <details class="faq">
-    <summary>
-      I have zero experience, can I really do this?
-    </summary>
-
-    <p>
-      Yes. I built this to start from scratch:
-      niche, offer, tools, outreach, closing, in that order.
-      If you've never done any of this, you're exactly who it's for.
-    </p>
-  </details>
-
-
-  <details class="faq">
-    <summary>
-      Do I need to know how to code?
-    </summary>
-
-    <p>
-      No. It's all no-code tools.
-      You're learning to use them, not build them from scratch.
-    </p>
-  </details>
-
-
-  <details class="faq">
-    <summary>
-      What if I already have a skill or clients?
-    </summary>
-
-    <p>
-      You'll fly through the first couple weeks and spend
-      most of your time on the acquisition side.
-    </p>
-  </details>
-
-
-  <details class="faq">
-    <summary>
-      Have you actually used this yourself?
-    </summary>
-
-    <p>
-      Yeah, I use this exact system in my own agency right now,
-      and for actual clients. It's not a course I put together
-      and never tested.
-    </p>
-  </details>
-
-
-  <details class="faq">
-    <summary>
-      Is this guaranteed to work?
-    </summary>
-
-    <p>
-      No, and I won't pretend otherwise.
-      I'll teach you the system and help you build it.
-      What you do with it after that is on you.
-    </p>
-  </details>
-
-</div>
-
-</div>
 </main>
 
-
-<footer>
-  US CLIENT ACQUISITION 2026 © Unit of Chirag Digital Private Limited
+<footer class="footer">
+  <div class="wrap">
+    <p>US Client Acquisition © 2026 · Unit of Chirag Digital Private Limited</p>
+    <nav aria-label="Footer">
+      <a href="../">chiragsharma.co</a>
+      <a href="https://youtube.com/chiragsharma" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/thechirag13" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
 </footer>
 
+<a href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20have%20a%20question%20about%20the%20mentorship." target="_blank" rel="noopener noreferrer" class="wa-float" id="waFloat" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.35.62 4.55 1.7 6.46L4 29l7.73-1.65a11.9 11.9 0 0 0 4.28.79h.01c6.63 0 12.01-5.38 12.01-12.01C28.03 8.38 22.65 3 16.01 3zm7.02 17.02c-.3.85-1.5 1.56-2.45 1.76-.65.14-1.5.25-4.36-.93-3.65-1.51-6-5.2-6.18-5.44-.18-.24-1.47-1.96-1.47-3.74 0-1.78.93-2.65 1.26-3.02.33-.37.72-.46.96-.46h.7c.22 0 .52-.08.82.62.3.72 1.02 2.5 1.11 2.68.09.18.15.4.03.64-.12.24-.18.4-.36.62-.18.21-.38.47-.54.63-.18.18-.37.38-.16.75.21.37.93 1.55 2 2.5 1.38 1.23 2.53 1.61 2.9 1.79.37.18.59.15.8-.09.22-.24.93-1.09 1.17-1.47.24-.37.49-.31.82-.19.34.12 2.14 1.01 2.5 1.2.37.18.61.28.7.43.09.15.09.85-.21 1.7z"/></svg>
+  Ask on WhatsApp
+</a>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <img src="../img/chirag-avatar.webp" alt="" width="40" height="40" loading="lazy" />
+  <button type="button" class="btn btn--primary" data-goquiz tabindex="-1">Find your tier <span class="arr" aria-hidden="true">→</span></button>
+  <a class="wa-mini" href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20have%20a%20question%20about%20the%20mentorship." target="_blank" rel="noopener" aria-label="Ask on WhatsApp" tabindex="-1">
+    <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.35.62 4.55 1.7 6.46L4 29l7.73-1.65a11.9 11.9 0 0 0 4.28.79h.01c6.63 0 12.01-5.38 12.01-12.01C28.03 8.38 22.65 3 16.01 3zm7.02 17.02c-.3.85-1.5 1.56-2.45 1.76-.65.14-1.5.25-4.36-.93-3.65-1.51-6-5.2-6.18-5.44-.18-.24-1.47-1.96-1.47-3.74 0-1.78.93-2.65 1.26-3.02.33-.37.72-.46.96-.46h.7c.22 0 .52-.08.82.62.3.72 1.02 2.5 1.11 2.68.09.18.15.4.03.64-.12.24-.18.4-.36.62-.18.21-.38.47-.54.63-.18.18-.37.38-.16.75.21.37.93 1.55 2 2.5 1.38 1.23 2.53 1.61 2.9 1.79.37.18.59.15.8-.09.22-.24.93-1.09 1.17-1.47.24-.37.49-.31.82-.19.34.12 2.14 1.01 2.5 1.2.37.18.61.28.7.43.09.15.09.85-.21 1.7z"/></svg>
+  </a>
+</div>
 
 <script>
-
 const CONFIG = {
-
-  SCRIPT_URL:
-    "https://script.google.com/macros/s/AKfycbwXnYZlH87TSvO2tps2uyG48R8LxGaTOjjc0i9qbU3V6NlxbhLRBFjQ31EHkL8jvsM/exec",
-
-  RAZORPAY_URL:
-    "https://rzp.io/rzp/A1wMtqv0",
-
-  WHATSAPP:
-    "918447355977",
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwXnYZlH87TSvO2tps2uyG48R8LxGaTOjjc0i9qbU3V6NlxbhLRBFjQ31EHkL8jvsM/exec",
+  RAZORPAY_URL: "https://rzp.io/rzp/A1wMtqv0",
+  WHATSAPP: "918447355977",
 
   // Paste a Razorpay link into "pay" to let that tier pay directly.
   // Tiers without a link send people to WhatsApp for their payment link.
@@ -1289,84 +747,52 @@ const CONFIG = {
       pay: ""
     }
   }
-
 };
 
-
 const qs = [
-
-  [
-    "Where are you right now?",
-    [
-      "I already sell a service and want better clients",
-      "I have a skill but no consistent client pipeline",
-      "I want to learn/build AI services I can sell",
-      "I'm only exploring the idea"
-    ]
-  ],
-
-  [
-    "What would you most like to sell?",
-    [
-      "Websites, landing pages or apps",
-      "AI automation, chatbots or voice agents",
-      "CRM, lead or internal business systems",
-      "I'm not sure yet"
-    ]
-  ],
-
-  [
-    "Who do you want to sell to?",
-    [
-      "US businesses",
-      "Indian businesses",
-      "Both, but I want to prioritize the US",
-      "I haven't decided"
-    ]
-  ],
-
-  [
-    "What's your biggest problem?",
-    [
-      "I don't know what to sell",
-      "I can build/deliver, but finding clients is hard",
-      "I get leads but struggle to close",
-      "I need to learn both the service and acquisition"
-    ]
-  ],
-
-  [
-    "Which do you already do, or are willing to learn?",
-    [
-      "Cold email and cold calling: I'll do both",
-      "Cold email only: I'd rather not call",
-      "Cold calling only: email doesn't interest me",
-      "Neither: I want inbound only, no outreach"
-    ]
-  ],
-
-  [
-    "What do you want most from working with me 1:1?",
-    [
-      "A step-by-step system I can implement",
-      "Help building the AI service + selling system",
-      "Feedback on my offer, outreach and sales",
-      "Just recorded tutorials"
-    ]
-  ],
-
-  [
-    "How much can you comfortably invest in mentorship right now?",
-    [
-      "₹1,00,000: I want the full system",
-      "Around ₹50,000",
-      "Around ₹25,000",
-      "Less than ₹25,000 right now"
-    ]
-  ]
-
+  ["Where are you right now?", [
+    "I already sell a service and want better clients",
+    "I have a skill but no consistent client pipeline",
+    "I want to learn/build AI services I can sell",
+    "I'm only exploring the idea"
+  ]],
+  ["What would you most like to sell?", [
+    "Websites, landing pages or apps",
+    "AI automation, chatbots or voice agents",
+    "CRM, lead or internal business systems",
+    "I'm not sure yet"
+  ]],
+  ["Who do you want to sell to?", [
+    "US businesses",
+    "Indian businesses",
+    "Both, but I want to prioritize the US",
+    "I haven't decided"
+  ]],
+  ["What's your biggest problem?", [
+    "I don't know what to sell",
+    "I can build/deliver, but finding clients is hard",
+    "I get leads but struggle to close",
+    "I need to learn both the service and acquisition"
+  ]],
+  ["Which do you already do, or are willing to learn?", [
+    "Cold email and cold calling: I'll do both",
+    "Cold email only: I'd rather not call",
+    "Cold calling only: email doesn't interest me",
+    "Neither: I want inbound only, no outreach"
+  ]],
+  ["What do you want most from working with me 1:1?", [
+    "A step-by-step system I can implement",
+    "Help building the AI service + selling system",
+    "Feedback on my offer, outreach and sales",
+    "Just recorded tutorials"
+  ]],
+  ["How much can you comfortably invest in mentorship right now?", [
+    "₹1,00,000: I want the full system",
+    "Around ₹50,000",
+    "Around ₹25,000",
+    "Less than ₹25,000 right now"
+  ]]
 ];
-
 
 const qLabels = [
   "current_status",
@@ -1378,457 +804,215 @@ const qLabels = [
   "investment_readiness"
 ];
 
-
 let i = 0;
 let a = [];
 let pendingResult = null;
 
+const $ = x => document.getElementById(x);
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const $ = x =>
-  document.getElementById(x);
-
-
-$("heroCTA").onclick = () =>
-  $("interactive").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
-
-function render(animate){
-
-  const box = $("qContent");
-
-  const paint = () => {
-
-    let q = qs[i];
-
-    $("qnum").textContent =
-      `Question ${i+1} of ${qs.length}`;
-
-    $("question").textContent =
-      q[0];
-
-    $("options").innerHTML =
-      q[1].map((x,j) => `
-        <div class="opt">
-
-          <input
-            id="x${j}"
-            name="ans"
-            type="radio"
-            value="${j}"
-            ${a[i]===j ? "checked" : ""}>
-
-          <label for="x${j}">
-            ${x}
-          </label>
-
-        </div>
-      `).join("");
-
-    $("bar").style.width =
-      (i / qs.length * 100) + "%";
-
-    $("back").disabled =
-      i === 0;
-
-    $("next").textContent =
-      "Continue";
-
-    box.classList.remove("fade");
-
-  };
-
-
-  if(animate){
-
-    box.classList.add("fade");
-
-    setTimeout(paint,150);
-
-  }else{
-
-    paint();
-
-  }
-
+function scrollToWidget() {
+  $("interactive").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
 }
 
-
-$("next").onclick = () => {
-
-  let x =
-    document.querySelector('input[name=ans]:checked');
-
-  if(!x) return;
-
-  a[i] = +x.value;
-
-  if(i < qs.length - 1){
-
-    i++;
-
-    render(true);
-
-  }else{
-
-    showCapture();
-
-  }
-
-};
-
-
-$("back").onclick = () => {
-
-  if(i){
-
-    i--;
-
-    render(true);
-
-  }
-
-};
-
-
-function computeResult(){
-
-  const outboundOK =
-    a[4] !== 3;
-
-  const tier =
-    ["full","build","start",null][a[6]];
-
-  return {
-    ok: outboundOK && !!tier,
-    tier: outboundOK ? tier : null
-  };
-
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-
-function scrollToWidget(){
-
-  $("interactive").scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-
+/* ---------- quiz ---------- */
+function render(animate) {
+  const q = qs[i];
+  $("qnum").textContent = "Question " + (i + 1) + " of " + qs.length;
+  $("question").textContent = q[0];
+  $("options").innerHTML = q[1].map((x, j) =>
+    '<button type="button" role="radio" class="opt' + (a[i] === j ? ' selected' : '') + '" aria-checked="' + (a[i] === j) + '" data-opt="' + j + '"><span class="k">' + (j + 1) + '</span><span>' + esc(x) + '</span></button>'
+  ).join("");
+  $("bar").style.width = (i / qs.length * 100) + "%";
+  $("back").style.visibility = i === 0 ? "hidden" : "visible";
+  $("next").disabled = a[i] === undefined;
+  if (animate) {
+    $("qContent").classList.remove("step-in");
+    void $("qContent").offsetWidth;
+    $("qContent").classList.add("step-in");
+  }
 }
 
+$("options").addEventListener("click", e => {
+  const b = e.target.closest("[data-opt]");
+  if (!b) return;
+  a[i] = +b.dataset.opt;
+  document.querySelectorAll("#options .opt").forEach(o => { const on = o === b; o.classList.toggle("selected", on); o.setAttribute("aria-checked", on); });
+  $("next").disabled = false;
+  // advance after a short beat, like the homepage fit check
+  setTimeout(goNext, 220);
+});
 
-function showCapture(){
+let advancing = false;
+function goNext() {
+  if (a[i] === undefined || advancing) return;
+  advancing = true;
+  setTimeout(() => { advancing = false; }, 250);
+  if (i < qs.length - 1) { i++; render(true); const f = document.querySelector("#options .opt"); if (f) f.focus({ preventScroll: true }); }
+  else showCapture();
+}
+$("next").onclick = goNext;
+$("back").onclick = () => { if (i) { i--; render(true); } };
 
-  pendingResult =
-    computeResult();
+function computeResult() {
+  const outboundOK = a[4] !== 3;
+  const tier = ["full", "build", "start", null][a[6]];
+  return { ok: outboundOK && !!tier, tier: outboundOK ? tier : null };
+}
 
-  $("bar").style.width =
-    "100%";
-
+function showCapture() {
+  pendingResult = computeResult();
+  $("bar").style.width = "100%";
+  $("qnum").textContent = "Last step";
   $("quiz").classList.add("hidden");
-
   $("capture").classList.remove("hidden");
-
-  scrollToWidget();
-
+  $("cName").focus({ preventScroll: true });
 }
-
 
 $("captureBack").onclick = () => {
-
   $("capture").classList.add("hidden");
-
   $("quiz").classList.remove("hidden");
-
   render(false);
-
-  scrollToWidget();
-
 };
 
-
 $("captureSubmit").onclick = () => {
+  const name = $("cName").value.trim();
+  const email = $("cEmail").value.trim();
+  const whatsapp = $("cWhatsapp").value.trim();
 
-  const name =
-    $("cName").value.trim();
+  [["cName", name], ["cEmail", email], ["cWhatsapp", whatsapp]].forEach(([id, v]) => {
+    if (v) $(id).removeAttribute("aria-invalid"); else $(id).setAttribute("aria-invalid", "true");
+  });
+  if (!name || !email || !whatsapp) { $("captureErr").classList.remove("hidden"); return; }
+  $("captureErr").classList.add("hidden");
 
-  const email =
-    $("cEmail").value.trim();
-
-  const whatsapp =
-    $("cWhatsapp").value.trim();
-
-
-  if(!name || !email || !whatsapp){
-
-    $("captureErr").style.display =
-      "block";
-
-    return;
-
-  }
-
-
-  $("captureErr").style.display =
-    "none";
-
-  $("captureSubmit").disabled =
-    true;
-
-  $("captureSubmit").textContent =
-    "Submitting...";
-
-  $("capture").classList.add("submitting");
-
+  $("captureSubmit").disabled = true;
+  $("captureSubmit").textContent = "Submitting…";
 
   const payload = {
-
-    website:
-      $("cWebsite").value,
-
+    website: $("cWebsite").value,
     name,
     email,
     whatsapp,
-
-    qualified:
-      pendingResult.ok
-        ? "Yes"
-        : "No"
-
+    qualified: pendingResult.ok ? "Yes" : "No"
   };
+  qLabels.forEach((label, idx) => { payload[label] = qs[idx][1][a[idx]]; });
 
-
-  qLabels.forEach((label,idx) => {
-
-    payload[label] =
-      qs[idx][1][a[idx]];
-
-  });
-
-
-  submitLead(payload)
-    .finally(() =>
-      revealResult(
-        name,
-        email,
-        whatsapp
-      )
-    );
-
+  submitLead(payload).finally(() => revealResult(name));
 };
 
-
-function submitLead(payload){
-
-  if(
-    !CONFIG.SCRIPT_URL ||
-    CONFIG.SCRIPT_URL.indexOf("PASTE_YOUR") === 0
-  ){
-
-    console.warn(
-      "CONFIG.SCRIPT_URL not set. Lead was NOT sent to the sheet."
-    );
-
+function submitLead(payload) {
+  if (!CONFIG.SCRIPT_URL || CONFIG.SCRIPT_URL.indexOf("PASTE_YOUR") === 0) {
+    console.warn("CONFIG.SCRIPT_URL not set. Lead was NOT sent to the sheet.");
     return Promise.resolve();
-
   }
-
-
-  return fetch(
-    CONFIG.SCRIPT_URL,
-    {
-      method:"POST",
-      mode:"no-cors",
-      headers:{
-        "Content-Type":
-          "text/plain;charset=utf-8"
-      },
-      body:
-        JSON.stringify(payload)
-    }
-  )
-  .catch(err =>
-    console.error(
-      "Lead submit failed:",
-      err
-    )
-  );
-
+  return fetch(CONFIG.SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload)
+  }).catch(err => console.error("Lead submit failed:", err));
 }
 
-
-function revealResult(
-  name,
-  email,
-  whatsapp
-){
-
-  const {ok, tier} =
-    pendingResult;
-
-  const T =
-    ok ? CONFIG.TIERS[tier] : null;
-
+function revealResult(name) {
+  const { ok, tier } = pendingResult;
+  const T = ok ? CONFIG.TIERS[tier] : null;
 
   $("capture").classList.add("hidden");
-
   $("result").classList.remove("hidden");
+  $("qnum").textContent = "Done";
 
+  $("title").textContent = ok ? T.name + " looks like your fit." : "Let's talk it through first.";
+  $("text").textContent = ok
+    ? "Based on your answers and budget, " + T.name + " (" + T.price + ") is the right place to start."
+    : "Based on your answers, none of the three tiers is the right starting point yet — but there's likely still a way I can help, whether that's a smaller first step or a plan to get you ready.";
 
-  $("title").textContent =
-    ok
-      ? T.name + " looks like your fit."
-      : "Let's talk it through first.";
+  $("paybox").classList.toggle("hidden", !ok);
+  $("talkbox").classList.toggle("hidden", ok);
+  $("altTiers").classList.toggle("hidden", !ok);
 
-
-  $("text").textContent =
-    ok
-      ? "Based on your answers and budget, " + T.name + " (" + T.price + ") is the right place to start."
-      : "Based on your answers, none of the three tiers is the right starting point yet — but there's likely still a way I can help, whether that's a smaller first step or a plan to get you ready.";
-
-
-  $("paybox").classList.toggle(
-    "hidden",
-    !ok
-  );
-
-  $("talkbox").classList.toggle(
-    "hidden",
-    ok
-  );
-
-  $("altTiers").classList.toggle(
-    "hidden",
-    !ok
-  );
-
-  if(!ok){
-
-    const msg =
-      "Hi Chirag, I'm " + (name || "") +
-      ". I took the quiz on your cohort page and would like to schedule a call to figure out the right next step.";
-
-    $("talkNow").href =
-      "https://wa.me/918447355977?text=" + encodeURIComponent(msg);
-
-  }
-
-
-  if(ok){
-
-    $("agreeTerms").checked =
-      false;
-
-    $("joinNow").classList.add(
-      "disabled"
-    );
-
+  if (!ok) {
+    const msg = "Hi Chirag, I'm " + (name || "") + ". I took the quiz on your cohort page and would like to schedule a call to figure out the right next step.";
+    $("talkNow").href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
+  } else {
+    $("agreeTerms").checked = false;
+    $("joinNow").classList.add("disabled");
+    $("joinNow").setAttribute("aria-disabled", "true");
     $("payPrice").textContent = T.price;
     $("payName").textContent = T.line;
     $("payTools").textContent = T.tools;
     $("payWhat").textContent = T.what;
-
-    if(T.pay){
-
+    if (T.pay) {
       $("joinNow").href = T.pay;
       $("joinLabel").textContent = "Join " + T.name + " →";
-      $("joinNote").textContent =
-        "By clicking Join, you acknowledge the terms above and proceed to payment.";
-
-    }else{
-
-      const msg =
-        "Hi Chirag, I'm " + (name || "") +
-        ". The quiz recommended the " + T.name + " tier (" + T.price +
-        ") and I'd like to join. Please send me the payment link.";
-
-      $("joinNow").href =
-        "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
+      $("joinNote").textContent = "By clicking Join, you acknowledge the terms above and proceed to payment.";
+    } else {
+      const msg = "Hi Chirag, I'm " + (name || "") + ". The quiz recommended the " + T.name + " tier (" + T.price + ") and I'd like to join. Please send me the payment link.";
+      $("joinNow").href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent(msg);
       $("joinLabel").textContent = "Get your " + T.name + " payment link on WhatsApp →";
-      $("joinNote").textContent =
-        "I'll send your payment link personally on WhatsApp.";
-
+      $("joinNote").textContent = "I'll send your payment link personally on WhatsApp.";
     }
-
   }
-
-
   scrollToWidget();
-
 }
 
-
 $("agreeTerms").onchange = () => {
-
-  const checked =
-    $("agreeTerms").checked;
-
-  $("joinNow").classList.toggle(
-    "disabled",
-    !checked
-  );
-
+  const checked = $("agreeTerms").checked;
+  $("joinNow").classList.toggle("disabled", !checked);
+  $("joinNow").setAttribute("aria-disabled", String(!checked));
 };
-
 
 $("restart").onclick = () => {
-
-  i = 0;
-
-  a = [];
-
-  pendingResult = null;
-
-
-  $("cName").value = "";
-
-  $("cEmail").value = "";
-
-  $("cWhatsapp").value = "";
-
-  $("cWebsite").value = "";
-
-
-  $("captureSubmit").disabled =
-    false;
-
-  $("captureSubmit").textContent =
-    "See my result →";
-
-  $("capture").classList.remove(
-    "submitting"
-  );
-
-
-  $("agreeTerms").checked =
-    false;
-
-  $("joinNow").classList.add(
-    "disabled"
-  );
-
-
-  $("result").classList.add(
-    "hidden"
-  );
-
-  $("quiz").classList.remove(
-    "hidden"
-  );
-
-
+  i = 0; a = []; pendingResult = null;
+  ["cName", "cEmail", "cWhatsapp", "cWebsite"].forEach(id => { $(id).value = ""; $(id).removeAttribute("aria-invalid"); });
+  $("captureSubmit").disabled = false;
+  $("captureSubmit").textContent = "See my result →";
+  $("result").classList.add("hidden");
+  $("quiz").classList.remove("hidden");
   render(false);
-
   scrollToWidget();
-
 };
 
+/* ---------- page chrome ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-goquiz]");
+  if (!t) return;
+  e.preventDefault();
+  scrollToWidget();
+  setTimeout(() => { const f = document.querySelector("#options .opt"); if (f && f.offsetParent) f.focus({ preventScroll: true }); }, reduceMotion ? 0 : 600);
+});
 
 render(false);
 
-</script>
+if ("IntersectionObserver" in window && !reduceMotion) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+}
 
+(function chrome() {
+  const nav = $("nav"), sticky = $("sticky"), wa = $("waFloat");
+  let heroGone = false, quizIn = false;
+  const update = () => {
+    const show = heroGone && !quizIn;
+    sticky.classList.toggle("show", show);
+    sticky.setAttribute("aria-hidden", String(!show));
+    sticky.querySelectorAll("button, a").forEach(el => el.tabIndex = show ? 0 : -1);
+    wa.classList.toggle("hide", quizIn);
+  };
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([en]) => { heroGone = !en.isIntersecting; update(); }, { rootMargin: "-40% 0px 0px 0px" }).observe($("top"));
+    new IntersectionObserver(([en]) => { quizIn = en.isIntersecting; update(); }, { threshold: 0.2 }).observe($("interactive"));
+  }
+  window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 8), { passive: true });
+})();
+</script>
 </body>
 </html>
