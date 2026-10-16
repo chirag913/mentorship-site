@@ -884,6 +884,28 @@ footer{
     </div>
 
 
+    <!-- NOT-A-FIT: keep the conversation going instead of a dead end -->
+    <div id="talkbox" class="paybox hidden">
+
+      <p>
+        Message me on WhatsApp and we'll schedule a quick call to work out
+        the right next step for where you are right now.
+      </p>
+
+      <a
+        id="talkNow"
+        class="pay"
+        href="https://wa.me/918447355977?text=Hi%20Chirag%2C%20I%20took%20the%20quiz%20on%20your%20cohort%20page%20and%20would%20like%20to%20schedule%20a%20call."
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Message me on WhatsApp to schedule a call →
+
+      </a>
+
+    </div>
+
+
     <button
       class="btn secondary restart"
       id="restart"
@@ -1451,19 +1473,35 @@ function revealResult(
   $("title").textContent =
     ok
       ? "You look like a strong fit."
-      : "You're not quite ready yet.";
+      : "Let's talk it through first.";
 
 
   $("text").textContent =
     ok
       ? "Sounds like you're in the right place. You're ready to take the next step."
-      : "This program's built for people ready to put the work in every week: reaching out, showing up, following through. Come back when you're ready for that. No hard feelings.";
+      : "The full 90-day program might not be the right starting point for you yet — but there's likely still a way I can help, whether that's a smaller first step or a plan to get you ready.";
 
 
   $("paybox").classList.toggle(
     "hidden",
     !ok
   );
+
+  $("talkbox").classList.toggle(
+    "hidden",
+    ok
+  );
+
+  if(!ok){
+
+    const msg =
+      "Hi Chirag, I'm " + (name || "") +
+      ". I took the quiz on your cohort page and would like to schedule a call to figure out the right next step.";
+
+    $("talkNow").href =
+      "https://wa.me/918447355977?text=" + encodeURIComponent(msg);
+
+  }
 
 
   if(ok){
