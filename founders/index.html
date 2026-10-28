@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Founders’ Table · Near Manali</title>
+<meta name="description" content="A small, handpicked group of founders. Mid November, near Manali. 3 to 4 days of real conversations about dropshipping, agencies and AI startups.">
+<meta property="og:title" content="Founders’ Table · Near Manali">
+<meta property="og:description" content="A small, handpicked group of founders. Mid November. Real conversations.">
+<meta property="og:image" content="manali.jpg">
+<meta name="theme-color" content="#0E0C0A">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E0C0A; --bg2:#15120F; --card:#1A1612; --line:rgba(242,232,216,.12); --line2:rgba(242,232,216,.22);
+    --cream:#F2E8D8; --muted:#A79D8F; --gold:#C9A36A; --gold2:#E2C08A; --yellow:#FFD84D; --red:#E0715C;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--cream);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  /* film grain over everything, very subtle */
+  body::before{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.07;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+  a{color:inherit}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .narrow{max-width:720px}
+  .rule{display:inline-block;width:38px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px}
+
+  /* nav */
+  .nav{position:absolute;top:0;left:0;right:0;z-index:5;padding:22px 0}
+  .nav .wrap{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:22px;letter-spacing:.01em}
+  .nav a.small{font-size:13px;font-weight:600;letter-spacing:.08em;text-decoration:none;color:rgba(242,232,216,.85)}
+
+  /* hero */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#20180f}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;transform:scale(1.04);animation:drift 18s ease-out forwards}
+  @keyframes drift{to{transform:scale(1)}}
+  .hero::after{content:"";position:absolute;inset:0;background:
+    linear-gradient(180deg,rgba(10,9,8,.55) 0%,rgba(10,9,8,.05) 30%,rgba(10,9,8,.15) 55%,rgba(14,12,10,.92) 88%,var(--bg) 100%)}
+  .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:64px}
+  .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:clamp(72px,15vw,168px);line-height:.88;margin:18px 0 22px;letter-spacing:-.015em}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--gold2)}
+  .hero .lead{font-size:clamp(18px,2.4vw,22px);color:rgba(242,232,216,.9);max-width:34ch;margin:0 0 30px}
+  .ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--cream);color:#16120E;text-decoration:none;font-weight:700;font-size:16px;padding:17px 30px;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,background .2s}
+  .btn:hover{transform:translateY(-1px);background:#fff}
+  .btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
+  .btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--line2)}
+  .btn.ghost:hover{background:rgba(242,232,216,.06)}
+  .btn:disabled{opacity:.55;cursor:wait;transform:none}
+  .scarcity{font-size:13px;color:var(--muted);letter-spacing:.02em}
+
+  /* facts strip */
+  .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+  .facts .wrap{display:grid;grid-template-columns:repeat(2,1fr)}
+  @media(min-width:820px){.facts .wrap{grid-template-columns:repeat(4,1fr)}}
+  .fact{padding:26px 6px 26px 0;border-bottom:1px solid var(--line)}
+  @media(min-width:820px){.fact{border-bottom:0;border-right:1px solid var(--line);padding:30px 22px}.fact:first-child{padding-left:0}.fact:last-child{border-right:0}}
+  .fact .k{font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  .fact .v{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;line-height:1.15;margin-top:6px}
+
+  section{padding:110px 0}
+  @media(max-width:640px){section{padding:76px 0}}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:clamp(42px,6.5vw,72px);line-height:1;margin:16px 0 22px;letter-spacing:-.01em}
+  h2 em{font-style:italic;color:var(--gold2);font-weight:500}
+  p.body{color:rgba(242,232,216,.82);font-size:18px;max-width:60ch}
+
+  /* manifesto */
+  .manifesto .big{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(36px,6vw,64px);line-height:1.12;margin:0 0 34px;letter-spacing:-.01em}
+  .mark{background:var(--yellow);color:#17130E;padding:0 .18em;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  /* topics */
+  .topics{display:grid;gap:0;border-top:1px solid var(--line);margin-top:40px}
+  .topic{display:grid;grid-template-columns:72px 1fr;gap:18px;padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  @media(min-width:820px){.topic{grid-template-columns:120px 1.1fr 1.4fr;gap:30px}}
+  .topic .n{font-family:"Cormorant Garamond",serif;font-size:44px;color:var(--gold);line-height:1}
+  .topic h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(28px,3.4vw,38px);margin:0;line-height:1.1}
+  .topic p{margin:6px 0 0;color:var(--muted)}
+  @media(min-width:820px){.topic p{margin:0}}
+
+  /* photo break */
+  .photo{height:62vh;min-height:360px;background:url(manali.jpg) center 78%/cover no-repeat;position:relative}
+  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(14,12,10,0) 20%,rgba(14,12,10,0) 75%,var(--bg) 100%)}
+  .photo .cap{position:absolute;left:0;right:0;bottom:46px;z-index:1;text-align:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(24px,3.5vw,34px)}
+
+  /* fit */
+  .fit{display:grid;gap:18px;margin-top:34px}
+  @media(min-width:820px){.fit{grid-template-columns:1fr 1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}
+  .panel h3{margin:0 0 14px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+  .panel.no h3{color:var(--red)}
+  .panel ul{list-style:none;margin:0;padding:0}
+  .panel li{padding:14px 0 14px 30px;border-top:1px solid var(--line);position:relative;color:rgba(242,232,216,.88)}
+  .panel li:first-child{border-top:0}
+  .panel li::before{content:"";position:absolute;left:4px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+  .panel.no li::before{background:transparent;border:1.5px solid var(--red)}
+
+  /* steps */
+  .steps{display:grid;gap:0;margin-top:40px;counter-reset:s}
+  @media(min-width:820px){.steps{grid-template-columns:repeat(4,1fr);gap:22px}}
+  .step{padding:26px 0;border-top:1px solid var(--line);counter-increment:s}
+  .step::before{content:"0" counter(s);display:block;font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--gold);line-height:1;margin-bottom:12px}
+  .step b{display:block;font-size:18px;margin-bottom:4px}
+  .step span{color:var(--muted);font-size:15.5px}
+
+  /* faq */
+  details{border-top:1px solid var(--line);padding:22px 0}
+  details:last-child{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;display:flex;justify-content:space-between;gap:20px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:Inter;font-weight:300;color:var(--gold);font-size:28px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:rgba(242,232,216,.8);margin:12px 0 0;max-width:62ch}
+
+  /* application */
+  .apply{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+  .formcard{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:34px 30px;margin-top:34px;box-shadow:0 40px 80px rgba(0,0,0,.35)}
+  @media(max-width:560px){.formcard{padding:26px 20px;border-radius:22px}}
+  .progress{height:3px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:26px}
+  .progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .45s ease}
+  .stepmeta{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .fs{display:none;animation:fade .35s ease}
+  .fs.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .fs h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(30px,4vw,40px);line-height:1.05;margin:0 0 8px}
+  .fs .sub{color:var(--muted);margin:0 0 24px;font-size:15.5px}
+  .q{margin:0 0 20px}
+  .q > label,.q > .qt{display:block;font-weight:600;font-size:15px;margin-bottom:8px;color:rgba(242,232,216,.95)}
+  .q .hint{display:block;font-weight:400;color:var(--muted);font-size:13.5px;margin-top:2px}
+  input[type=text],input[type=email],input[type=tel],input[type=url],textarea,select{width:100%;font:inherit;font-size:16px;color:var(--cream);background:rgba(242,232,216,.04);border:1px solid var(--line2);border-radius:14px;padding:15px 16px;outline:none;transition:border-color .2s,background .2s}
+  input::placeholder,textarea::placeholder{color:rgba(167,157,143,.7)}
+  textarea{min-height:120px;resize:vertical}
+  select option{color:#111}
+  input:focus,textarea:focus,select:focus{border-color:var(--gold);background:rgba(242,232,216,.06)}
+  .invalid{border-color:var(--red)!important}
+  .row2{display:grid;gap:0 14px}
+  @media(min-width:600px){.row2{grid-template-columns:1fr 1fr}}
+  .opts{display:grid;gap:10px}
+  .opts.two{grid-template-columns:1fr}
+  @media(min-width:600px){.opts.two{grid-template-columns:1fr 1fr}}
+  .opt{display:flex;gap:12px;align-items:center;background:rgba(242,232,216,.04);border:1px solid var(--line2);border-radius:14px;padding:15px 16px;cursor:pointer;font-weight:500;transition:border-color .2s,background .2s}
+  .opt input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--muted);margin:0;flex:0 0 18px;display:grid;place-content:center}
+  .opt input::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--bg);transform:scale(0);transition:transform .15s}
+  .opt:has(input:checked){border-color:var(--gold);background:rgba(201,163,106,.10)}
+  .opt input:checked{border-color:var(--gold);background:var(--gold)}
+  .opt input:checked::before{transform:scale(1)}
+  .opt.bad{border-color:var(--red)}
+  .detailbox{border:1px solid rgba(201,163,106,.35);background:rgba(201,163,106,.07);border-radius:16px;padding:16px 18px;margin:0 0 22px;font-size:15.5px}
+  .detailbox b{color:var(--gold2)}
+  .consent{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--muted)}
+  .consent input{margin-top:4px;accent-color:var(--gold);width:18px;height:18px;flex:0 0 18px}
+  .navrow{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:28px}
+  .back{background:none;border:0;color:var(--muted);font:inherit;font-weight:600;cursor:pointer;padding:10px 0}
+  .back:hover{color:var(--cream)}
+  .err{color:var(--red);font-size:14px;margin-top:12px;min-height:20px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .thanks{display:none;text-align:center;padding:20px 0 6px}
+  .thanks .tick{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);display:grid;place-content:center;margin:0 auto 18px;color:var(--gold);font-size:28px}
+
+  footer{padding:60px 0 120px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer .brand{display:block;font-size:30px;color:var(--cream);margin-bottom:8px}
+  footer a{text-decoration:none;color:var(--gold2);font-weight:600}
+
+  /* sticky mobile CTA */
+  .sticky{position:fixed;left:14px;right:14px;bottom:14px;z-index:50;display:none}
+  .sticky .btn{width:100%;justify-content:center;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  @media(max-width:760px){.sticky.show{display:block}}
+
+  /* content is visible by default; the fade-in only runs when JS is active */
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}.hero img{animation:none;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="brand">Founders’ Table</span>
+    <a class="small" href="https://instagram.com/thechirag13" target="_blank" rel="noopener">@thechirag13</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="manali.jpg" alt="A wooden cabin balcony near Manali at sunset, laptop and notebook on the table, snow peaks in the distance">
+  <div class="wrap">
+    <div class="eyebrow"><span class="rule"></span>Mid November · Near Manali</div>
+    <h1>Founders’<br><em>Table</em></h1>
+    <p class="lead">3 to 4 days. A small, handpicked group. Real conversations about building.</p>
+    <div class="ctas">
+      <a class="btn" href="#apply">Apply for a seat <span class="arr">→</span></a>
+      <span class="scarcity">Every application is read personally.<br>Not everyone gets in.</span>
+    </div>
+  </div>
+</header>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><div class="k">When</div><div class="v">Mid November</div></div>
+    <div class="fact"><div class="k">Where</div><div class="v">Near Manali, Himachal</div></div>
+    <div class="fact"><div class="k">Group</div><div class="v">Small &amp; handpicked</div></div>
+    <div class="fact"><div class="k">Contribution</div><div class="v">₹25,000 to 30,000</div></div>
+  </div>
+</div>
+
+<main>
+  <section class="manifesto">
+    <div class="wrap narrow reveal">
+      <div class="eyebrow"><span class="rule"></span>The idea</div>
+      <p class="big" style="margin-top:22px">Not a tourist trip. Just a few people <span class="mark">building ambitious things.</span></p>
+      <p class="body">Founders’ Table is a small, private gathering in the mountains for people who are actually building. A few days away from the noise to share what is working, fix what is stuck, and sit with people who think at the same level.</p>
+      <p class="body">The room is deliberately small, so every person in it matters. That is why every seat is handpicked.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="eyebrow"><span class="rule"></span>At the table</div>
+      <h2>Real problems.<br><em>Real numbers.</em></h2>
+      <div class="topics">
+        <div class="topic"><div class="n">01</div><h3>Dropshipping</h3><p>Products, ads, margins, RTO, and scaling what already sells.</p></div>
+        <div class="topic"><div class="n">02</div><h3>Agency growth</h3><p>Getting clients, especially US clients, pricing, delivery and hiring.</p></div>
+        <div class="topic"><div class="n">03</div><h3>AI startup building</h3><p>Using AI to build products and run lean, from idea to first customers.</p></div>
+        <div class="topic"><div class="n">04</div><h3>Founder networking</h3><p>The people you will still be talking to years from now.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="photo"><div class="cap">Laptops open. Phones down. Mountains outside.</div></div>
+
+  <section>
+    <div class="wrap reveal">
+      <div class="eyebrow"><span class="rule"></span>Who it’s for</div>
+      <h2>Builders,<br><em>not spectators.</em></h2>
+      <div class="fit">
+        <div class="panel">
+          <h3>This is for you if</h3>
+          <ul>
+            <li>You are already running something, or are seriously starting</li>
+            <li>You are willing to share your numbers and problems openly</li>
+            <li>You can give value to others, not only take it</li>
+          </ul>
+        </div>
+        <div class="panel no">
+          <h3>Not for you if</h3>
+          <ul>
+            <li>You want a holiday or a party trip</li>
+            <li>You are looking for a course or shortcuts</li>
+            <li>You are not ready to invest time and money in yourself</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="eyebrow"><span class="rule"></span>How selection works</div>
+      <h2>Apply, <em>then we talk.</em></h2>
+      <div class="steps">
+        <div class="step"><b>Apply</b><span>About 4 minutes. Be specific, it helps us choose.</span></div>
+        <div class="step"><b>We review</b><span>Every application, personally. Shortlisted people hear from us on WhatsApp.</span></div>
+        <div class="step"><b>A short call</b><span>A quick conversation to make sure it is a fit, both ways.</span></div>
+        <div class="step"><b>Your invitation</b><span>Exact dates, stay and plan go to selected founders.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap narrow reveal">
+      <div class="eyebrow"><span class="rule"></span>Questions</div>
+      <h2>Good to <em>know.</em></h2>
+      <details><summary>Is this a course or a workshop?</summary><p>No. It is a small group of founders in one place for a few days, with honest conversations about what you are building. No slides, no selling.</p></details>
+      <details><summary>When exactly is it?</summary><p>We are planning for mid November. Exact dates are shared with selected founders.</p></details>
+      <details><summary>What does it cost?</summary><p>The contribution is ₹25,000 to 30,000 per person. Full details come with your invitation.</p></details>
+      <details><summary>How are people selected?</summary><p>We read every application and pick people who are building seriously and can add value to the group. Shortlisted applicants get a short call first.</p></details>
+      <details><summary>What if I am not selected?</summary><p>You will still hear from us, and you will be the first to know about the next one.</p></details>
+    </div>
+  </section>
+
+  <section id="apply" class="apply">
+    <div class="wrap narrow">
+      <div class="eyebrow"><span class="rule"></span>Application</div>
+      <h2>Apply for <em>a seat.</em></h2>
+      <p class="body" style="margin:-4px 0 0">Seats are limited and every application is handpicked.</p>
+
+      <div class="formcard">
+        <div class="progress"><i id="bar"></i></div>
+        <form id="f" novalidate>
+          <div class="hp" aria-hidden="true"><label>Leave empty <input type="text" name="website_hp" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="fs on" data-step="1">
+            <div class="stepmeta"><span>Step 1 of 5</span><span>About you</span></div>
+            <h3>First, who are you?</h3>
+            <p class="sub">So we know who we are talking to.</p>
+            <div class="row2">
+              <div class="q"><label for="name">Full name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
+              <div class="q"><label for="city">City</label><input id="city" name="city" type="text" required autocomplete="address-level2"></div>
+            </div>
+            <div class="row2">
+              <div class="q"><label for="instagram">Instagram</label><input id="instagram" name="instagram" type="text" placeholder="@yourhandle" required></div>
+              <div class="q"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" placeholder="+91" required autocomplete="tel"></div>
+            </div>
+            <div class="q"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          </div>
+
+          <div class="fs" data-step="2">
+            <div class="stepmeta"><span>Step 2 of 5</span><span>Your business</span></div>
+            <h3>What are you building?</h3>
+            <p class="sub">Early or established, both are welcome. Be specific.</p>
+            <div class="q">
+              <div class="opts two">
+                <label class="opt"><input type="radio" name="building" value="Dropshipping / ecommerce" required> Dropshipping or ecommerce</label>
+                <label class="opt"><input type="radio" name="building" value="Agency / services"> Agency or services</label>
+                <label class="opt"><input type="radio" name="building" value="AI / SaaS startup"> AI or SaaS startup</label>
+                <label class="opt"><input type="radio" name="building" value="Something else"> Something else</label>
+              </div>
+            </div>
+            <div class="q"><label for="what">Describe it in 2 or 3 lines<span class="hint">What it is, who it serves, how long you have been at it.</span></label><textarea id="what" name="what" required></textarea></div>
+            <div class="q"><label for="link">A link we can look at <span class="hint">Store, website, product or LinkedIn. Optional.</span></label><input id="link" name="link" type="url" placeholder="https://"></div>
+          </div>
+
+          <div class="fs" data-step="3">
+            <div class="stepmeta"><span>Step 3 of 5</span><span>Where you are</span></div>
+            <h3>Where are you right now?</h3>
+            <p class="sub">There is no wrong answer. It helps us build the right room.</p>
+            <div class="q"><span class="qt">Current monthly revenue</span>
+              <div class="opts two">
+                <label class="opt"><input type="radio" name="revenue" value="Pre-revenue" required> Pre-revenue</label>
+                <label class="opt"><input type="radio" name="revenue" value="Under 1L"> Under ₹1 lakh</label>
+                <label class="opt"><input type="radio" name="revenue" value="1L to 5L"> ₹1 to 5 lakh</label>
+                <label class="opt"><input type="radio" name="revenue" value="5L to 20L"> ₹5 to 20 lakh</label>
+                <label class="opt"><input type="radio" name="revenue" value="20L+"> ₹20 lakh+</label>
+              </div>
+            </div>
+            <div class="q"><label for="stuck">What is the biggest thing holding your business back right now?</label><textarea id="stuck" name="stuck" required></textarea></div>
+          </div>
+
+          <div class="fs" data-step="4">
+            <div class="stepmeta"><span>Step 4 of 5</span><span>The room</span></div>
+            <h3>Why you, at this table?</h3>
+            <p class="sub">This is the part we read most carefully.</p>
+            <div class="q"><label for="give">What can you bring for other founders?<span class="hint">A skill, an experience, a lesson you learned the hard way.</span></label><textarea id="give" name="give" required></textarea></div>
+            <div class="q"><label for="why">Why should we pick you?<span class="hint">One honest paragraph.</span></label><textarea id="why" name="why" required></textarea></div>
+          </div>
+
+          <div class="fs" data-step="5">
+            <div class="stepmeta"><span>Step 5 of 5</span><span>The details</span></div>
+            <h3>The practical part.</h3>
+            <p class="sub">So nobody is surprised later.</p>
+            <div class="detailbox">We are planning for <b>mid November</b>, near Manali, for 3 to 4 days. The contribution is <b>₹25,000 to 30,000</b> per person.</div>
+            <div class="q"><span class="qt">Can you make it in mid November?</span>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="dates" value="Yes" required> Yes, I will make time</label>
+                <label class="opt"><input type="radio" name="dates" value="Probably"> Probably, depends on exact dates</label>
+                <label class="opt"><input type="radio" name="dates" value="No"> Not this time</label>
+              </div>
+            </div>
+            <div class="q"><span class="qt">Does ₹25,000 to 30,000 work for you?</span>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="price" value="Yes" required> Yes, that works</label>
+                <label class="opt"><input type="radio" name="price" value="Need details"> I would like the full details first</label>
+                <label class="opt"><input type="radio" name="price" value="Not now"> Not right now</label>
+              </div>
+            </div>
+            <div class="q"><label for="source">How do you know me?</label>
+              <select id="source" name="source" required>
+                <option value="">Choose one</option>
+                <option>Instagram</option><option>YouTube</option><option>A friend</option><option>My mentorship / cohort</option><option>Other</option>
+              </select>
+            </div>
+            <div class="q"><label class="consent"><input type="checkbox" name="consent" value="yes" required> I understand seats are limited, applications are handpicked, and I may be contacted on WhatsApp or Instagram.</label></div>
+          </div>
+
+          <div class="navrow">
+            <button type="button" class="back" id="back" style="visibility:hidden">← Back</button>
+            <button type="button" class="btn" id="next">Continue <span class="arr">→</span></button>
+          </div>
+          <div class="err" id="err"></div>
+        </form>
+
+        <div class="thanks" id="thanks">
+          <div class="tick">✓</div>
+          <div class="eyebrow">Application received</div>
+          <h3 class="serif" style="font-size:44px;margin:14px 0 10px;font-weight:600">Thank you.</h3>
+          <p class="body" style="margin:0 auto">We read every application personally. If it looks like a fit, you will hear from us on WhatsApp.</p>
+          <p class="serif" style="font-style:italic;font-size:28px;margin:22px 0 0;color:var(--gold2)">Keep building.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="brand">Founders’ Table</span>
+  Hosted by Chirag Sharma · <a href="https://instagram.com/thechirag13" target="_blank" rel="noopener">@thechirag13</a>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="#apply">Apply for a seat <span class="arr">→</span></a></div>
+
+<script>
+  // Google Apps Script web app URL (the sheet's "doPost" endpoint). Submissions land in your Google Sheet.
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbxCUUwuQURaWZKGWw_n7hcfyck_LhB-FtBfZBu7FzNTOeukEJ9q6oJx7T7-d9kGdAwR/exec";
+
+  const f = document.getElementById('f'), steps = [...f.querySelectorAll('.fs')];
+  const next = document.getElementById('next'), back = document.getElementById('back');
+  const err = document.getElementById('err'), bar = document.getElementById('bar');
+  let cur = 0;
+
+  function show(i){
+    steps.forEach((s,k)=>s.classList.toggle('on', k===i));
+    back.style.visibility = i ? 'visible' : 'hidden';
+    next.innerHTML = i === steps.length-1 ? 'Submit application <span class="arr">→</span>' : 'Continue <span class="arr">→</span>';
+    bar.style.width = ((i)/(steps.length))*100 + '%';
+    err.textContent = '';
+  }
+  function valid(i){
+    let ok = true;
+    steps[i].querySelectorAll('input,textarea,select').forEach(el=>{
+      el.classList.remove('invalid'); const o = el.closest('.opt'); if (o) o.classList.remove('bad');
+    });
+    steps[i].querySelectorAll('input:not([type=radio]):not([type=checkbox]),textarea,select').forEach(el=>{
+      if (!el.checkValidity()) { el.classList.add('invalid'); ok = false; }
+    });
+    const groups = new Set([...steps[i].querySelectorAll('input[type=radio][required]')].map(r=>r.name));
+    groups.forEach(n=>{ if (!f.querySelector(`input[name="${n}"]:checked`)) { ok = false; f.querySelectorAll(`input[name="${n}"]`).forEach(r=>r.closest('.opt').classList.add('bad')); }});
+    steps[i].querySelectorAll('input[type=checkbox][required]').forEach(c=>{ if (!c.checked) ok = false; });
+    if (!ok) err.textContent = 'Please complete the highlighted fields.';
+    return ok;
+  }
+  back.onclick = ()=>{ if (cur>0){ cur--; show(cur); } };
+  next.onclick = async ()=>{
+    if (!valid(cur)) return;
+    if (cur < steps.length-1){ cur++; show(cur); document.getElementById('apply').scrollIntoView({behavior:'smooth'}); return; }
+    if (f.website_hp.value) return;                                   // bot trap
+    const data = new URLSearchParams(new FormData(f));
+    data.delete('website_hp');
+    data.append('submitted_at', new Date().toISOString());
+    data.append('page', location.href);
+    next.disabled = true; next.textContent = 'Sending…';
+    try {
+      if (ENDPOINT.startsWith('PASTE_')) throw new Error('endpoint not set');
+      await fetch(ENDPOINT, {method:'POST', mode:'no-cors', body:data});
+      bar.style.width = '100%';
+      f.style.display = 'none'; document.getElementById('thanks').style.display = 'block';
+    } catch(e){
+      err.textContent = 'Something went wrong. Please try again, or DM @thechirag13 on Instagram.';
+      next.disabled = false; next.innerHTML = 'Submit application <span class="arr">→</span>';
+    }
+  };
+  f.addEventListener('keydown', e=>{ if (e.key==='Enter' && e.target.tagName!=='TEXTAREA'){ e.preventDefault(); next.click(); }});
+  show(0);
+
+  // reveal on scroll + sticky CTA (hidden while the form is on screen)
+  const io = new IntersectionObserver(es=>es.forEach(x=>{ if (x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')), 1500);
+  const sticky = document.getElementById('sticky'), applySec = document.getElementById('apply'), hero = document.querySelector('.hero');
+  const so = new IntersectionObserver(()=>{
+    const h = hero.getBoundingClientRect(), a = applySec.getBoundingClientRect();
+    sticky.classList.toggle('show', h.bottom < 0 && a.top > innerHeight*0.6);
+  });
+  addEventListener('scroll', ()=>{ const h = hero.getBoundingClientRect(), a = applySec.getBoundingClientRect(); sticky.classList.toggle('show', h.bottom < 0 && a.top > innerHeight*0.6); }, {passive:true});
+</script>
+</body>
+</html>
