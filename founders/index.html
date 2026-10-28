@@ -23,7 +23,7 @@
   html,body{margin:0;padding:0}
   body{background:var(--bg);color:var(--cream);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   /* film grain over everything, very subtle */
-  body::before{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.07;
+  body::before{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.04;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
   a{color:inherit}
   .serif{font-family:"Cormorant Garamond",Georgia,serif}
@@ -57,6 +57,19 @@
   .btn:disabled{opacity:.55;cursor:wait;transform:none}
   .scarcity{font-size:13px;color:var(--muted);letter-spacing:.02em}
 
+  /* phones: photo on top, text below it on solid background so nothing sits on the busy part of the image */
+  @media(max-width:760px){
+    .nav{padding:18px 0;background:linear-gradient(180deg,rgba(10,9,8,.6),rgba(10,9,8,0))}
+    .hero{min-height:0;display:block;background:var(--bg)}
+    .hero img{height:60vh;height:60svh;object-position:50% 30%;animation:none;transform:none}
+    .hero::after{bottom:auto;height:60vh;height:60svh;background:linear-gradient(180deg,rgba(10,9,8,.35) 0%,rgba(10,9,8,0) 22%,rgba(10,9,8,0) 52%,rgba(14,12,10,.88) 84%,var(--bg) 100%)}
+    .hero .wrap{padding-top:calc(60svh - 110px);padding-bottom:52px}
+    .hero .eyebrow{letter-spacing:.2em;font-size:11.5px;color:var(--gold2)}
+    .hero h1{font-size:clamp(64px,19vw,92px);margin:14px 0 18px;text-shadow:0 2px 30px rgba(0,0,0,.55)}
+    .hero .lead{font-size:18px;color:var(--cream);margin-bottom:26px}
+    .scarcity{color:#BDB3A5}
+  }
+
   /* facts strip */
   .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
   .facts .wrap{display:grid;grid-template-columns:repeat(2,1fr)}
@@ -65,6 +78,7 @@
   @media(min-width:820px){.fact{border-bottom:0;border-right:1px solid var(--line);padding:30px 22px}.fact:first-child{padding-left:0}.fact:last-child{border-right:0}}
   .fact .k{font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
   .fact .v{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;line-height:1.15;margin-top:6px}
+  .fact .s{font-size:13px;color:var(--gold2);margin-top:4px;font-weight:500}
 
   section{padding:110px 0}
   @media(max-width:640px){section{padding:76px 0}}
@@ -87,8 +101,14 @@
 
   /* photo break */
   .photo{height:62vh;min-height:360px;background:url(/founders/manali.jpg) center 78%/cover no-repeat;position:relative}
-  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(14,12,10,0) 20%,rgba(14,12,10,0) 75%,var(--bg) 100%)}
-  .photo .cap{position:absolute;left:0;right:0;bottom:46px;z-index:1;text-align:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(24px,3.5vw,34px)}
+  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(14,12,10,0) 20%,rgba(14,12,10,0) 45%,rgba(14,12,10,.85) 82%,var(--bg) 100%)}
+  .photo .cap{position:absolute;left:22px;right:22px;bottom:46px;z-index:1;text-align:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(24px,3.5vw,34px);line-height:1.2;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+
+  /* included / on you */
+  .panel.you h3{color:var(--muted)}
+  .panel.you li::before{background:transparent;border:1.5px solid var(--muted)}
+  .panel li b{display:block;color:var(--cream);font-weight:600}
+  .panel li small{display:block;color:var(--muted);font-size:15px;margin-top:2px}
 
   /* fit */
   .fit{display:grid;gap:18px;margin-top:34px}
@@ -206,7 +226,7 @@
     <div class="fact"><div class="k">When</div><div class="v">Mid November</div></div>
     <div class="fact"><div class="k">Where</div><div class="v">Near Manali, Himachal</div></div>
     <div class="fact"><div class="k">Group</div><div class="v">Small &amp; handpicked</div></div>
-    <div class="fact"><div class="k">Contribution</div><div class="v">₹25,000 to 30,000</div></div>
+    <div class="fact"><div class="k">Contribution</div><div class="v">₹25,000 to 30,000</div><div class="s">Stay &amp; food included</div></div>
   </div>
 </div>
 
@@ -262,6 +282,28 @@
 
   <section style="padding-top:0">
     <div class="wrap reveal">
+      <div class="eyebrow"><span class="rule"></span>What’s included</div>
+      <h2>We host.<br><em>You show up.</em></h2>
+      <div class="fit">
+        <div class="panel">
+          <h3>Taken care of by us</h3>
+          <ul>
+            <li><b>Stay</b><small>For all the days of the gathering, near Manali.</small></li>
+            <li><b>Food</b><small>Meals during the stay.</small></li>
+          </ul>
+        </div>
+        <div class="panel you">
+          <h3>On you</h3>
+          <ul>
+            <li><b>Getting to Manali</b><small>Your travel up to the airport (Kullu Manali airport, Bhuntar) or Manali bus stand. The exact meeting point is shared with selected founders.</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap reveal">
       <div class="eyebrow"><span class="rule"></span>How selection works</div>
       <h2>Apply, <em>then we talk.</em></h2>
       <div class="steps">
@@ -279,7 +321,8 @@
       <h2>Good to <em>know.</em></h2>
       <details><summary>Is this a course or a workshop?</summary><p>No. It is a small group of founders in one place for a few days, with honest conversations about what you are building. No slides, no selling.</p></details>
       <details><summary>When exactly is it?</summary><p>We are planning for mid November. Exact dates are shared with selected founders.</p></details>
-      <details><summary>What does it cost?</summary><p>The contribution is ₹25,000 to 30,000 per person. Full details come with your invitation.</p></details>
+      <details><summary>What does it cost?</summary><p>The contribution is ₹25,000 to 30,000 per person, and it covers your stay and food. Full details come with your invitation.</p></details>
+      <details><summary>How do I get there?</summary><p>Getting to Manali is on you: fly to Kullu Manali airport (Bhuntar) or take a bus to Manali bus stand. Selected founders get the exact meeting point.</p></details>
       <details><summary>How are people selected?</summary><p>We read every application and pick people who are building seriously and can add value to the group. Shortlisted applicants get a short call first.</p></details>
       <details><summary>What if I am not selected?</summary><p>You will still hear from us, and you will be the first to know about the next one.</p></details>
     </div>
@@ -355,7 +398,7 @@
             <div class="stepmeta"><span>Step 5 of 5</span><span>The details</span></div>
             <h3>The practical part.</h3>
             <p class="sub">So nobody is surprised later.</p>
-            <div class="detailbox">We are planning for <b>mid November</b>, near Manali, for 3 to 4 days. The contribution is <b>₹25,000 to 30,000</b> per person.</div>
+            <div class="detailbox">We are planning for <b>mid November</b>, near Manali, for 3 to 4 days. The contribution is <b>₹25,000 to 30,000</b> per person, <b>stay and food included</b>. Travel up to Manali (airport or bus stand) is on you.</div>
             <div class="q"><span class="qt">Can you make it in mid November?</span>
               <div class="opts">
                 <label class="opt"><input type="radio" name="dates" value="Yes" required> Yes, I will make time</label>
