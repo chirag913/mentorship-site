@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Founders’ Table · Near Manali</title>
-<meta name="description" content="A small, handpicked group of founders. Mid November, near Manali. 3 to 4 days of real conversations about dropshipping, agencies and AI startups.">
+<meta name="description" content="A small, handpicked group of founders. Mid November, near Manali. 3 to 4 days of hot seats, mountain walks and bonfire nights with people building dropshipping, agency and AI businesses.">
 <meta property="og:title" content="Founders’ Table · Near Manali">
 <meta property="og:description" content="A small, handpicked group of founders. Mid November. Real conversations.">
 <meta property="og:image" content="https://chiragsharma.co/founders/manali.jpg">
@@ -96,13 +96,40 @@
   @media(min-width:820px){.topic{grid-template-columns:120px 1.1fr 1.4fr;gap:30px}}
   .topic .n{font-family:"Cormorant Garamond",serif;font-size:44px;color:var(--gold);line-height:1}
   .topic h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(28px,3.4vw,38px);margin:0;line-height:1.1}
-  .topic p{margin:6px 0 0;color:var(--muted)}
-  @media(min-width:820px){.topic p{margin:0}}
+  .topic p{margin:6px 0 0;color:var(--muted);grid-column:2}
+  @media(min-width:820px){.topic p{margin:0;grid-column:auto}}
 
   /* photo break */
   .photo{height:62vh;min-height:360px;background:url(/founders/manali.jpg) center 78%/cover no-repeat;position:relative}
   .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(14,12,10,0) 20%,rgba(14,12,10,0) 45%,rgba(14,12,10,.85) 82%,var(--bg) 100%)}
   .photo .cap{position:absolute;left:22px;right:22px;bottom:46px;z-index:1;text-align:center;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(24px,3.5vw,34px);line-height:1.2;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+
+  /* a day at the table */
+  .day{display:grid;gap:16px;margin-top:40px}
+  @media(min-width:820px){.day{grid-template-columns:repeat(4,1fr)}}
+  .moment{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+  .moment .img{aspect-ratio:16/10;background:#1f1913 center/cover no-repeat}
+  @media(min-width:820px){.moment .img{aspect-ratio:4/5}}
+  .moment .tx{padding:20px 22px 24px}
+  .moment .when{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .moment h3{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;margin:6px 0 6px;line-height:1.05}
+  .moment p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.55}
+  .moment.hot{background:linear-gradient(160deg,#2b2117,#16110c);border-color:rgba(201,163,106,.45)}
+  .hotmark{aspect-ratio:16/10;display:grid;place-content:center;text-align:center;border-bottom:1px solid rgba(201,163,106,.22);
+    background:radial-gradient(circle at 50% 60%,rgba(201,163,106,.18),transparent 62%)}
+  @media(min-width:820px){.hotmark{aspect-ratio:4/5}}
+  .hotmark .big{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:52px;line-height:.95;color:var(--gold2)}
+  .hotmark .tag{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--cream);margin-top:12px;opacity:.8}
+  .note{font-size:13.5px;color:var(--muted);margin-top:18px;font-style:italic}
+
+  /* host */
+  .host{display:grid;gap:30px;align-items:center;margin-top:10px}
+  @media(min-width:820px){.host{grid-template-columns:.8fr 1.2fr;gap:60px}}
+  .host img{width:100%;max-width:440px;aspect-ratio:4/5;object-fit:cover;border-radius:22px;display:block;border:1px solid var(--line)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:28px}
+  .stat{padding:20px 10px 0 0}
+  .stat .v{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4vw,42px);font-weight:600;line-height:1}
+  .stat .k{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.4}
 
   /* included / on you */
   .panel.you h3{color:var(--muted)}
@@ -253,7 +280,42 @@
     </div>
   </section>
 
-  <div class="photo"><div class="cap">Laptops open. Phones down. Mountains outside.</div></div>
+  <section style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="eyebrow"><span class="rule"></span>A day at the table</div>
+      <h2>Work by day.<br><em>Bonfire by night.</em></h2>
+      <div class="day">
+        <div class="moment"><div class="img" style="background-image:url(/founders/hike.jpg)"></div>
+          <div class="tx"><div class="when">Morning</div><h3>Walk &amp; chai</h3><p>A nature walk or short hike in the mountains to start the day slow.</p></div></div>
+        <div class="moment hot"><div class="hotmark"><div class="big">The hot<br>seat</div><div class="tag">Our signature session</div></div>
+          <div class="tx"><div class="when">Late morning</div><h3>Your business, on the table</h3><p>One founder shares their real numbers and biggest problem. The whole table works on it together. Then the next founder takes the seat.</p></div></div>
+        <div class="moment"><div class="img" style="background-image:url(/founders/old-manali.jpg)"></div>
+          <div class="tx"><div class="when">Evening</div><h3>Old Manali</h3><p>Cafés, old village lanes, and conversations that carry on away from the table.</p></div></div>
+        <div class="moment"><div class="img" style="background-image:url(/founders/bonfire.jpg)"></div>
+          <div class="tx"><div class="when">Night</div><h3>Bonfire night</h3><p>Food, music and stories around the fire. This is where strangers become friends.</p></div></div>
+      </div>
+      <p class="note">A typical day. The full plan goes to selected founders. Photos show the Manali region, not the stay.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="eyebrow"><span class="rule"></span>Your host</div>
+      <div class="host">
+        <img src="/founders/host.jpg" alt="Chirag Sharma" loading="lazy">
+        <div>
+          <h2>Chirag <em>Sharma.</em></h2>
+          <p class="body">Operator since 18. Chirag has run dropshipping stores in India and internationally for 8+ years, and shares what works with his community on YouTube and Instagram.</p>
+          <p class="body">At Founders’ Table he is a founder in the room, not a speaker on a stage.</p>
+          <div class="stats">
+            <div class="stat"><div class="v">8+ yrs</div><div class="k">running stores in India &amp; abroad</div></div>
+            <div class="stat"><div class="v">₹30 Cr+</div><div class="k">combined revenue across stores</div></div>
+            <div class="stat"><div class="v">60K+</div><div class="k">YouTube subscribers</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section>
     <div class="wrap reveal">
@@ -288,7 +350,7 @@
         <div class="panel">
           <h3>Taken care of by us</h3>
           <ul>
-            <li><b>Stay</b><small>For all the days of the gathering, near Manali.</small></li>
+            <li><b>Stay</b><small>For all the days of the gathering, near Manali. Private or shared rooms, finalised once we know the group size and everyone’s preference.</small></li>
             <li><b>Food</b><small>Meals during the stay.</small></li>
           </ul>
         </div>
@@ -299,6 +361,17 @@
             <li><b>Need a pickup?</b><small>We can arrange one from Kullu airport or Manali bus stand. Just tell us in advance, once your payment is confirmed.</small></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="eyebrow"><span class="rule"></span>After the mountains</div>
+      <h2>The table doesn’t<br><em>end in Manali.</em></h2>
+      <div class="topics">
+        <div class="topic"><div class="n">01</div><h3>A private group</h3><p>Everyone from the table in one private WhatsApp group. Ask for help, share wins, make intros, long after the trip.</p></div>
+        <div class="topic"><div class="n">02</div><h3>A seat at the next table</h3><p>Everyone who attends gets first access to the next Founders’ Table.</p></div>
       </div>
     </div>
   </section>
@@ -323,6 +396,7 @@
       <details><summary>Is this a course or a workshop?</summary><p>No. It is a small group of founders in one place for a few days, with honest conversations about what you are building. No slides, no selling.</p></details>
       <details><summary>When exactly is it?</summary><p>We are planning for mid November. Exact dates are shared with selected founders.</p></details>
       <details><summary>What does it cost?</summary><p>The contribution is ₹25,000 to 30,000 per person, and it covers your stay and food. Full details come with your invitation.</p></details>
+      <details><summary>Will I get a private room?</summary><p>Rooms are finalised once we know the group size and everyone’s preference, private or shared. Tell us yours in the application.</p></details>
       <details><summary>How do I get there?</summary><p>Getting to Manali is on you: fly to Kullu airport (Bhuntar) or take a bus to Manali bus stand. If you need a pickup from either, we can arrange it. Just tell us in advance, once your payment is confirmed. Selected founders get the exact meeting point.</p></details>
       <details><summary>How are people selected?</summary><p>We read every application and pick people who are building seriously and can add value to the group. Shortlisted applicants get a short call first.</p></details>
       <details><summary>What if I am not selected?</summary><p>You will still hear from us, and you will be the first to know about the next one.</p></details>
@@ -412,6 +486,13 @@
                 <label class="opt"><input type="radio" name="price" value="Yes" required> Yes, that works</label>
                 <label class="opt"><input type="radio" name="price" value="Need details"> I would like the full details first</label>
                 <label class="opt"><input type="radio" name="price" value="Not now"> Not right now</label>
+              </div>
+            </div>
+            <div class="q"><span class="qt">Room preference</span>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="room" value="Private room" required> Private room</label>
+                <label class="opt"><input type="radio" name="room" value="Shared is fine"> Shared room is fine</label>
+                <label class="opt"><input type="radio" name="room" value="No preference"> No preference</label>
               </div>
             </div>
             <div class="q"><label for="source">How do you know me?</label>
