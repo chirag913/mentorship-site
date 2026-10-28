@@ -79,6 +79,14 @@
   .fact .k{font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
   .fact .v{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;line-height:1.15;margin-top:6px}
   .fact .s{font-size:13px;color:var(--gold2);margin-top:4px;font-weight:500}
+  /* phones: one row per detail, label left and value right, so values stay on one line */
+  @media(max-width:819px){
+    .facts .wrap{grid-template-columns:1fr}
+    .fact{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:4px 16px;padding:18px 0}
+    .fact:last-child{border-bottom:0}
+    .fact .v{grid-column:2;margin:0;text-align:right;font-size:24px;white-space:nowrap}
+    .fact .s{grid-column:2;text-align:right;margin:0}
+  }
 
   section{padding:110px 0}
   @media(max-width:640px){section{padding:76px 0}}
@@ -96,7 +104,8 @@
   @media(min-width:820px){.topic{grid-template-columns:120px 1.1fr 1.4fr;gap:30px}}
   .topic .n{font-family:"Cormorant Garamond",serif;font-size:44px;color:var(--gold);line-height:1}
   .topic h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(28px,3.4vw,38px);margin:0;line-height:1.1}
-  .topic p{margin:6px 0 0;color:var(--muted);grid-column:2}
+  .topic p{margin:6px 0 0;color:var(--muted);grid-column:1 / -1}
+  @media(max-width:819px){.topic{grid-template-columns:52px 1fr;gap:4px 12px;padding:24px 0}.topic .n{font-size:34px}}
   @media(min-width:820px){.topic p{margin:0;grid-column:auto}}
 
   /* photo break */
