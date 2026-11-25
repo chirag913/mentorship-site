@@ -190,6 +190,7 @@ ul, ol { padding: 0; list-style: none; }
 
 /* reels */
 .reel { margin: 0; }
+@media (min-width: 900px) { .swipe.reels { grid-template-columns: repeat(2, 1fr); max-width: 780px; } }
 .reel-frame { position: relative; height: 600px; border-radius: var(--r); overflow: hidden; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; }
 .reel-frame iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
 .reel-load { min-height: 48px; padding: 0 22px; border-radius: var(--pill); border: 2px solid var(--line-2); background: var(--bg); cursor: pointer; font: 600 15px var(--sans); }
@@ -388,12 +389,11 @@ footer a:hover { color: var(--ink); }
       <span class="kicker"><span class="dot"></span>Seen these on Instagram?</span>
       <h2 id="reels-title" class="h2">The reels show the result. <span class="mark">The cohort shows the process.</span></h2>
     </div>
-    <div class="swipe" aria-label="Reels">
+    <div class="swipe reels" aria-label="Reels">
       <figure class="reel"><div class="reel-frame" data-reel="DfrviBQBrPB"><button type="button" class="reel-load" data-load-reel>▶ Watch reel</button></div><figcaption><b>Turned a wheel clock into a 6-figure dropshipping business</b><span>1.3 lakh+ plays</span></figcaption></figure>
       <figure class="reel"><div class="reel-frame" data-reel="DcVOl2sTbnf"><button type="button" class="reel-load" data-load-reel>▶ Watch reel</button></div><figcaption><b>$1,000 in one day — my first 1 lakh day</b><span>2.1 lakh+ plays</span></figcaption></figure>
-      <figure class="reel"><div class="reel-frame" data-reel="CbaRmriA_Z7"><button type="button" class="reel-load" data-load-reel>▶ Watch reel</button></div><figcaption><b>How to start an international dropshipping store</b><span>28K+ plays</span></figcaption></figure>
     </div>
-    <p class="swipe-hint">Swipe for more reels →</p>
+    <p class="swipe-hint">Swipe for the second reel →</p>
   </div>
 </section>
 
